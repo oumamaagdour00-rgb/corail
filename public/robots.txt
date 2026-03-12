@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://corail-88p.pages.dev/sitemap.xml
