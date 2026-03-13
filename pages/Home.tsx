@@ -135,10 +135,10 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className="w-full lg:w-3/5"
 						>
-							<span className="text-corail-500 font-bold tracking-widest text-xs uppercase mb-6 block flex items-center space-x-3">
-								<div className="h-px w-8 bg-corail-300"></div>
-								<span>{t.home.presidentTitle}</span>
-							</span>
+							<h1 className="text-3xl md:text-5xl font-display font-black mb-16 text-corail-900 leading-tight flex items-center gap-4">
+								<span className="h-1 w-12 bg-corail-900"></span>
+								{t.home.presidentTitle}
+							</h1>
 							<div className="space-y-3 relative">
 								<span className="absolute -top-10 -left-6 text-8xl font-serif text-corail-100 opacity-50 pointer-events-none select-none">
 									"
@@ -150,7 +150,7 @@ const Home: React.FC = () => {
 										whileInView={{ opacity: 1, y: 0 }}
 										viewport={{ once: true, amount: 0.3 }}
 										transition={{ duration: 0.6, delay: 0.2 + (i * 0.1), ease: "easeOut" }}
-										className={`text-lg leading-relaxed text-corail-600 text-justify ${i === 0 ? "font-display font-medium text-corail-800" : "font-light"}`}
+										className="text-lg leading-relaxed text-corail-600 text-justify font-light"
 									>
 										{paragraph}
 									</motion.p>

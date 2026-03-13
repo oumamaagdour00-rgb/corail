@@ -295,7 +295,7 @@ export const translations: { [key: string]: TranslationData } = {
       formSubject: "Subject",
       formMessage: "Message",
       formButton: "Send message",
-      subjects: ["General inquiry", "Partnership proposal", "Career opportunity", "Product information"]
+      subjects: ["Partnership proposal", "General inquiry", "Career opportunity"]
     },
     footer: {
       description: "Specialized FMCG distributor in Morocco since 2010.",
@@ -637,7 +637,7 @@ export const translations: { [key: string]: TranslationData } = {
       formSubject: "Sujet",
       formMessage: "Message",
       formButton: "Envoyer le message",
-      subjects: ["Demande générale", "Proposition de partenariat", "Opportunité de carrière", "Information produit"]
+      subjects: ["Proposition de partenariat", "Demande générale", "Opportunité de carrière"]
     },
     footer: {
       description: "Distributeur spécialisé en FMCG au Maroc depuis 2010.",
@@ -775,7 +775,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Optimisation des niveaux de stock'
               ]
             },
-            { type: 'emphasis', content: ['Notre objectif :', 'Fluidité, fiabilité et maîtrise du risque.'] }
+            { type: 'emphasis', content: ['Notre objectif :', 'Disponibilité, réactivité et maîtrise du risque.'] }
           ]
         },
         {
@@ -976,7 +976,7 @@ export const translations: { [key: string]: TranslationData } = {
       formSubject: "الموضوع",
       formMessage: "الرسالة",
       formButton: "إرسال الرسالة",
-      subjects: ["استفسار عام", "اقتراح شراكة", "فرصة عمل", "معلومات حول منتج"]
+      subjects: ["اقتراح شراكة", "استفسار عام", "فرصة عمل"]
     },
     footer: {
     description: "موزّع متخصص في السلع الاستهلاكية سريعة التداول في المغرب منذ عام 2010",
