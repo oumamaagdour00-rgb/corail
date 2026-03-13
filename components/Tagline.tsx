@@ -30,6 +30,8 @@ const Tagline: React.FC<TaglineProps> = ({ className = '' }) => {
 
     const phrase = language === 'fr'
         ? "Parce que la distribution n'est pas une simple fonction, mais un levier de performance durable."
+        : language === 'ar'
+        ? "لأن التوزيع ليس مجرد عملية تشغيلية، بل هو رافعة أساسية لتحقيق أداء مستدام."
         : "Because distribution is not just a mere operation, but a lever for sustainable performance.";
 
     return (

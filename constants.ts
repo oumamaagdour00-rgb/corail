@@ -1,6 +1,5 @@
 import { Brand, Product } from './types';
 import colgateObj from './public/colgate.png';
-import palmoliveObj from './public/palmolive.png';
 import esemmatObj from './public/esemmat.jpg';
 import joyfulObj from './public/joyful.png';
 import souplineObj from './public/soupline.png';
@@ -19,12 +18,6 @@ export const BRAND_DETAILS = [
     logoUrl: colgateObj,
     color: "border-red-600",
     website: "https://www.colgate.com"
-  },
-  {
-    id: Brand.Palmolive,
-    logoUrl: palmoliveObj,
-    color: "border-green-600",
-    website: "https://www.palmolive.com/fr-ca/products"
   },
   {
     id: Brand.Esemmat,

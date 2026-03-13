@@ -11,12 +11,13 @@ import {
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
-import BrandCarousel from "../components/BrandCarousel";
+import Tagline from "../components/Tagline";
+import { motion } from "motion/react";
 
-import img1 from "../public/assets/top-view-shopping-cart-arrangement.jpg";
-import img2 from "../public/assets/person-setting-up-online-store-uploading-products-laptop-compressed.jpg";
-import img3 from "../public/assets/chess-designed-art-golden-silver-light.jpg";
-import img4 from "../public/corail-stock.png";
+import img1 from "../public/assets/transition-multicanal-omnicanal.1.5.png";
+import img2 from "../public/assets/Capture d'écran 2026-03-13 140135.png";
+import img3 from "../public/assets/Capture d'écran 2026-03-13 140824.png";
+import img4 from "../public/Capture d'écran 2026-03-13 141013.png";
 import img5 from "../public/assets/distant-shot-port-shipment-nighttime-compressed.jpg";
 import bgImg from "../public/corail-siege.jpeg";
 
@@ -25,9 +26,9 @@ const Services: React.FC = () => {
 
 	const serviceImages: Record<string, string> = {
 		"1": img1,
-		"2": img2,
 		"3": img3,
 		"4": img4,
+		"2": img2,
 		"5": img5,
 	};
 
@@ -43,37 +44,36 @@ const Services: React.FC = () => {
 		<div className="flex flex-col w-full min-h-screen bg-white font-sans">
 			<SEO pageKey="services" />
 			{/* Header */}
-			<div className="relative bg-corail-900 text-white py-24 mb-16 overflow-hidden">
+			<div className="relative bg-corail-900 text-white py-48 mb-16 overflow-hidden">
 				<div
-					className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none mix-blend-luminosity"
-					style={{ backgroundImage: `url(${bgImg})` }}
+					className="absolute inset-0 bg-cover bg-center pointer-events-none"
+					style={{ backgroundImage: `url(${bgImg})`, backgroundPosition: 'center 60%' }}
 				></div>
-				<div className="absolute inset-0 bg-gradient-to-b from-corail-900/70 to-corail-800/95 pointer-events-none"></div>
-				<div className="absolute inset-0 opacity-20 bg-mesh pointer-events-none"></div>
-				<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
-					<h1 className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">
-						{t.services.title}
-					</h1>
-					{t.services.subtitle && (
-						<p className="text-xl text-teal-100/90 max-w-2xl mx-auto font-light leading-relaxed">
-							{t.services.subtitle}
-						</p>
-					)}
-				</div>
+				<div className="absolute inset-0 bg-gradient-to-r from-corail-900/80 via-corail-800/40 to-transparent pointer-events-none"></div>
+				<div className="absolute inset-0 opacity-10 bg-mesh pointer-events-none"></div>
 			</div>
 
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Main Service Pillars */}
 				<div className="py-24 space-y-32">
-					{t.data.services.map((service, index) => {
+					{t.data.services.map((service: any, index: number) => {
 						const Icon = icons[service.iconName] || Truck;
+						const mainBlocks = service.blocks.filter((b: any) => !b.type.startsWith('footer'));
+						const footerBlocks = service.blocks.filter((b: any) => b.type.startsWith('footer'));
+						
 						return (
-							<div
-								key={service.id}
-								className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 lg:gap-20 items-center group`}
-							>
+							<div key={service.id} className="space-y-8">
+								<div
+									className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 lg:gap-20 items-center group`}
+								>
 								{/* Image Visual */}
-								<div className="w-full lg:w-1/2">
+								<motion.div 
+									initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									viewport={{ once: true, amount: 0.3 }}
+									transition={{ duration: 0.8, ease: "easeOut" }}
+									className="w-full lg:w-1/2"
+								>
 									<div className="relative group/image">
 										<div
 											className={`absolute -inset-4 bg-gradient-to-r ${index % 2 === 0 ? "from-corail-100 to-transparent" : "from-teal-100 to-transparent"} rounded-3xl opacity-30 transform rotate-2 group-hover:rotate-4 transition-transform duration-[1500ms] ease-out`}
@@ -89,26 +89,36 @@ const Services: React.FC = () => {
 											</div>
 										</div>
 									</div>
-								</div>
+								</motion.div>
 
 								{/* Text Content */}
-								<div className="w-full lg:w-1/2">
-									<h3 className="text-4xl font-display font-bold text-corail-900 mb-6">
+								<motion.div 
+									initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									viewport={{ once: true, amount: 0.3 }}
+									transition={{ duration: 0.8, ease: "easeOut" }}
+									className="w-full lg:w-1/2"
+								>
+									<h3 className="text-3xl md:text-4xl font-display font-bold text-corail-900 mb-6">
 										{service.title}
 									</h3>
-									<div className="space-y-6">
-										{service.blocks.map((block, i) => {
+									<div className="space-y-2">
+										{mainBlocks.map((block: any, i: number) => {
 											if (block.type === "text") {
 												const paragraphs = Array.isArray(block.content)
 													? block.content
 													: [block.content];
-												return paragraphs.map((p, j) => (
-													<p
+												return paragraphs.map((p: string, j: number) => (
+													<motion.p
 														key={`${i}-${j}`}
-														className="text-xl text-corail-400 leading-relaxed font-light"
+														initial={{ opacity: 0, y: 20 }}
+														whileInView={{ opacity: 1, y: 0 }}
+														viewport={{ once: true, amount: 0.3 }}
+														transition={{ duration: 0.6, delay: 0.2 + (j * 0.1), ease: "easeOut" }}
+														className="text-lg text-corail-400 leading-relaxed font-light text-justify"
 													>
 														{p}
-													</p>
+													</motion.p>
 												));
 											}
 											if (block.type === "list") {
@@ -116,13 +126,17 @@ const Services: React.FC = () => {
 													? block.content
 													: [block.content];
 												return (
-													<div
+													<motion.div
 														key={i}
+														initial={{ opacity: 0, y: 20 }}
+														whileInView={{ opacity: 1, y: 0 }}
+														viewport={{ once: true, amount: 0.3 }}
+														transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
 														className="group/list bg-corail-50/50 hover:bg-white rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700"
 													>
 														{/* Mobile Single Column */}
 														<ul className="md:hidden space-y-3">
-															{items.map((item, k) => (
+															{items.map((item: string, k: number) => (
 																<li
 																	key={k}
 																	className="flex items-start space-x-2 text-sm text-corail-500"
@@ -139,8 +153,8 @@ const Services: React.FC = () => {
 														<div className="hidden md:grid md:grid-cols-2 gap-6">
 															<ul className="space-y-3">
 																{items
-																	.filter((_, idx) => idx % 2 === 0)
-																	.map((item, k) => (
+																	.filter((_: any, idx: number) => idx % 2 === 0)
+																	.map((item: string, k: number) => (
 																		<li
 																			key={k}
 																			className="flex items-start space-x-2 text-sm text-corail-500"
@@ -155,8 +169,8 @@ const Services: React.FC = () => {
 															</ul>
 															<ul className="space-y-3">
 																{items
-																	.filter((_, idx) => idx % 2 === 1)
-																	.map((item, k) => (
+																	.filter((_: any, idx: number) => idx % 2 === 1)
+																	.map((item: string, k: number) => (
 																		<li
 																			key={k}
 																			className="flex items-start space-x-2 text-sm text-corail-500"
@@ -170,7 +184,7 @@ const Services: React.FC = () => {
 																	))}
 															</ul>
 														</div>
-													</div>
+													</motion.div>
 												);
 											}
 											if (block.type === "emphasis") {
@@ -178,11 +192,15 @@ const Services: React.FC = () => {
 													? block.content
 													: [block.content];
 												return (
-													<div
+													<motion.div
 														key={i}
-														className="border-l-4 border-corail-500 pl-4 py-2 bg-corail-50/30 rounded-r-lg"
+														initial={{ opacity: 0, y: 20 }}
+														whileInView={{ opacity: 1, y: 0 }}
+														viewport={{ once: true, amount: 0.3 }}
+														transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+														className={language === 'ar' ? "border-r-4 border-corail-500 pr-4 py-2 bg-corail-50/30 rounded-l-lg" : "border-l-4 border-corail-500 pl-4 py-2 bg-corail-50/30 rounded-r-lg"}
 													>
-														{content.map((p, l) => (
+														{content.map((p: string, l: number) => (
 															<p
 																key={l}
 																className="text-lg text-corail-900 font-bold italic"
@@ -190,20 +208,61 @@ const Services: React.FC = () => {
 																{p}
 															</p>
 														))}
-													</div>
+													</motion.div>
 												);
 											}
 											return null;
 										})}
 									</div>
-								</div>
+								</motion.div>
 							</div>
+							
+							{/* Footer Content - Full Width Below */}
+							{footerBlocks.length > 0 && (
+								<motion.div 
+									initial={{ opacity: 0, y: 30 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true, amount: 0.3 }}
+									transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+									className="w-full space-y-4"
+								>
+									{footerBlocks.map((block: any, i: number) => {
+										if (block.type === 'footer-text') {
+											return (
+												<p key={i} className="text-lg text-corail-600 leading-relaxed font-light text-justify">
+													{block.content}
+												</p>
+											);
+										}
+										if (block.type === 'footer-emphasis') {
+											const content = Array.isArray(block.content) ? block.content : [block.content];
+											return (
+												<div key={i} className={language === 'ar' ? "border-r-4 border-corail-500 pr-4 py-2 bg-corail-50/30 rounded-l-lg" : "border-l-4 border-corail-500 pl-4 py-2 bg-corail-50/30 rounded-r-lg"}>
+													{content.map((p: string, l: number) => (
+														<p key={l} className="text-lg text-corail-900 font-bold italic">
+															{p}
+														</p>
+													))}
+												</div>
+											);
+										}
+										return null;
+									})}
+								</motion.div>
+							)}
+						</div>
 						);
 					})}
 				</div>
 
 				{/* CTA to Brands */}
-				<div className="text-center py-12">
+				<motion.div 
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: "easeOut" }}
+					className="text-center py-12"
+				>
 					<NavLink
 						to="/brands"
 						className="inline-flex items-center px-8 py-4 bg-corail-900 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-corail-800 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"
@@ -215,11 +274,11 @@ const Services: React.FC = () => {
 							<ArrowRight className="ml-2 h-4 w-4" />
 						)}
 					</NavLink>
-				</div>
+				</motion.div>
 			</div>
 
-			{/* Brands Carousel */}
-			<BrandCarousel />
+			{/* Tagline */}
+			<Tagline />
 		</div>
 	);
 };

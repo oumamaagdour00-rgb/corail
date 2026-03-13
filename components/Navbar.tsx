@@ -93,21 +93,21 @@ const Navbar: React.FC = () => {
 							<div className="flex items-center space-x-3 ml-2">
 								<button
 									onClick={() => setLanguage("fr")}
-									className={`text-[10px] font-black transition-all ${language === "fr" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
+									className={`text-[10px] font-black transition-all cursor-pointer ${language === "fr" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
 								>
 									FR
 								</button>
 								<span className="text-corail-200">|</span>
 								<button
 									onClick={() => setLanguage("en")}
-									className={`text-[10px] font-black transition-all ${language === "en" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
+									className={`text-[10px] font-black transition-all cursor-pointer ${language === "en" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
 								>
 									EN
 								</button>
 								<span className="text-corail-200">|</span>
 								<button
 									onClick={() => setLanguage("ar")}
-									className={`text-[10px] font-black transition-all ${language === "ar" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
+									className={`text-[10px] font-black transition-all cursor-pointer ${language === "ar" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
 								>
 									AR
 								</button>
@@ -156,7 +156,7 @@ const Navbar: React.FC = () => {
 								setLanguage("fr");
 								setIsOpen(false);
 							}}
-							className={`text-sm font-bold tracking-widest ${language === "fr" ? "text-corail-600" : "text-corail-300"}`}
+							className={`text-sm font-bold tracking-widest cursor-pointer ${language === "fr" ? "text-corail-600" : "text-corail-300"}`}
 						>
 							Français
 						</button>
@@ -165,7 +165,7 @@ const Navbar: React.FC = () => {
 								setLanguage("en");
 								setIsOpen(false);
 							}}
-							className={`text-sm font-bold tracking-widest ${language === "en" ? "text-corail-600" : "text-corail-300"}`}
+							className={`text-sm font-bold tracking-widest cursor-pointer ${language === "en" ? "text-corail-600" : "text-corail-300"}`}
 						>
 							English
 						</button>
@@ -174,7 +174,7 @@ const Navbar: React.FC = () => {
 								setLanguage("ar");
 								setIsOpen(false);
 							}}
-							className={`text-sm font-bold tracking-widest ${language === "ar" ? "text-corail-600" : "text-corail-300"}`}
+							className={`text-sm font-bold tracking-widest cursor-pointer ${language === "ar" ? "text-corail-600" : "text-corail-300"}`}
 						>
 							العربية
 						</button>

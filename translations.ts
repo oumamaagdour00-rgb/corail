@@ -252,7 +252,6 @@ export const translations: { [key: string]: TranslationData } = {
       introText: "We serve as the exclusive distributor for major international brands, acting as the bridge between global manufacturers and Moroccan households.",
       brands: {
         Colgate: { description: "Global leader in oral care products, offering protection and healthy smiles for the whole family.", category: "Oral care" },
-        Palmolive: { description: "Trusted personal care brand offering gentle shower gels and skincare products.", category: "Personal care" },
         Esemmat: { description: "Quality household products for everyday needs.", category: "Household" },
         Joyful: { description: "Advanced baby care solutions designed to provide maximum comfort and protection for infants.", category: "Baby care" },
         Soupline: { description: "France’s #1 fabric softener brand, bringing irresistible softness and long-lasting fragrance to your laundry.", category: "Laundry care" },
@@ -319,12 +318,12 @@ export const translations: { [key: string]: TranslationData } = {
     data: {
       stats: [
         { value: "7 M +", label: "de foyers servis", subLabel: "quotidiennement", iconName: 'Users' },
-        { value: "15+ Years", label: "Continuous growth", iconName: 'Package' },
+        { value: "+15 Years", label: "Continuous growth", iconName: 'Package' },
         { value: "3,500 +", label: "Capital humain", iconName: 'DollarSign' },
       ],
       figures: [
         {
-          value: "15+ Years",
+          value: "+15 Years",
           label: "Experience",
           description: "Over 15 years of operational excellence and expertise in FMCG distribution since 2010.",
           iconName: "Award"
@@ -372,8 +371,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'Multi-channel distribution',
           iconName: 'Truck',
           blocks: [
-            { type: 'text', content: 'Channels are evolving and purchasing behaviors are fragmenting.' },
-            { type: 'text', content: 'Corail deploys a Route-to-Market architecture tailored to each channel:' },
+            { type: 'text', content: 'Channels are evolving and purchasing behaviors are fragmenting. Corail deploys a Route-to-Market architecture tailored to each channel:' },
             {
               type: 'list',
               content: [
@@ -395,26 +393,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'Stock rotation'
               ]
             },
-            { type: 'text', content: 'Our commercial setups integrate both conventional and pre-sale models, allowing for fine-tuned performance optimization based on needs and product type.' },
-            { type: 'emphasis', content: ['Our goal:', 'To ensure a consistent, profitable, and sustainable presence.'] }
-          ]
-        },
-        {
-          id: '2',
-          title: 'Brand development',
-          iconName: 'Handshake',
-          blocks: [
-            { type: 'text', content: 'We intervene upstream and downstream of launch:' },
-            {
-              type: 'list',
-              content: [
-                'Structuring of range architecture and product mix',
-                'Definition of pricing and elasticity',
-                'Market implementation study and entry strategy',
-                'Identification of development and growth axes'
-              ]
-            },
-            { type: 'text', content: 'We act as a development partner, moving beyond a simple distribution link.' }
+            { type: 'footer-text', content: 'Our commercial setups integrate both conventional and pre-sale models, allowing for fine-tuned performance optimization based on needs and product type.' },
+            { type: 'footer-emphasis', content: ['Our goal:', 'To ensure a consistent, profitable, and sustainable presence.'] }
           ]
         },
         {
@@ -434,7 +414,8 @@ export const translations: { [key: string]: TranslationData } = {
               ]
             },
             { type: 'text', content: 'Our teams operate on a data-driven logic with analytical reporting.' },
-            { type: 'text', content: 'Corail also acts as a full service provider, structuring integrated setups adapted to the commercial, logistical, and operational challenges of its partners.' }
+            { type: 'footer-text', content: 'Corail also acts as a full service provider, structuring integrated setups adapted to the commercial, logistical, and operational challenges of its partners.' },
+            { type: 'footer-emphasis', content: ['Our goal:', 'Optimize commercial performance through disciplined execution.'] }
           ]
         },
         {
@@ -442,8 +423,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'Logistical & operational mastery',
           iconName: 'Warehouse',
           blocks: [
-            { type: 'text', content: 'Efficient distribution requires a robust supply chain.' },
-            { type: 'text', content: 'We coordinate:' },
+            { type: 'text', content: 'Efficient distribution requires a robust supply chain. We coordinate:' },
             {
               type: 'list',
               content: [
@@ -453,7 +433,26 @@ export const translations: { [key: string]: TranslationData } = {
                 'Optimization of stock levels'
               ]
             },
-            { type: 'emphasis', content: ['Our priority:', 'Fluidity, reliability, and risk management.'] }
+            { type: 'emphasis', content: ['Our goal:', 'Fluidity, reliability, and risk management.'] }
+          ]
+        },
+        {
+          id: '2',
+          title: 'Brand development',
+          iconName: 'Handshake',
+          blocks: [
+            { type: 'text', content: 'We intervene upstream and downstream of launch:' },
+            {
+              type: 'list',
+              content: [
+                'Structuring of range architecture and product mix',
+                'Definition of pricing and elasticity',
+                'Market implementation study and entry strategy',
+                'Identification of development and growth axes'
+              ]
+            },
+            { type: 'text', content: 'We act as a development partner, moving beyond a simple distribution link.' },
+            { type: 'emphasis', content: ['Our goal:', 'Structure strong brands capable of establishing themselves sustainably.'] }
           ]
         },
         {
@@ -461,8 +460,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'International trade & regulatory support',
           iconName: 'CheckCircle2',
           blocks: [
-            { type: 'text', content: 'Each market presents its constraints.' },
-            { type: 'text', content: 'We support our partners on:' },
+            { type: 'text', content: 'Each market presents its constraints. We support our partners on:' },
             {
               type: 'list',
               content: [
@@ -489,14 +487,14 @@ export const translations: { [key: string]: TranslationData } = {
       catalog: 'Catalogue'
     },
     hero: {
-      title: "Connecter les marchés aux marques qui façonnent le quotidien",
-      subtitle: "Fort de plus de 15 ans d’expérience, Corail L’Océan est un acteur clé de la distribution FMCG au Maroc. Nous opérons sur l’ensemble de la chaîne de valeur distributive : du go-to-market à l’exécution terrain, en passant par la maîtrise logistique, la compréhension fine des dynamiques locales et le pilotage de la performance commerciale. Notre mission est claire : transformer la distribution en un levier structurant de création de valeur durable.",
+      title: "Connecter les marchés aux marques qui comptent",
+      subtitle: "Fort de plus de 15 ans d’expérience, Corail L’Océan est un acteur clé de la distribution FMCG au Maroc. Nous opérons sur l’ensemble de la chaîne de valeur distributive : du go-to-market à l’exécution terrain. Notre mission est claire : transformer la distribution en un levier structurant de création de valeur durable.",
       button: "En savoir plus"
     },
     home: {
       introTitle: "Corail",
       introSubtitle: "Corail est une plateforme de distribution FMCG spécialisée dans le développement de portefeuilles de marques.",
-      introText: "Fort de plus de 15 ans d’expérience, Corail L’Océan est un acteur clé de la distribution FMCG au Maroc. Nous opérons sur l’ensemble de la chaîne de valeur distributive : du go-to-market à l’exécution terrain, en passant par la maîtrise logistique, la compréhension fine des dynamiques locales et le pilotage de la performance commerciale. Notre mission est claire : transformer la distribution en un levier structurant de création de valeur durable.",
+      introText: "Fort de plus de 15 ans d’expérience, Corail L’Océan est un acteur clé de la distribution FMCG au Maroc. Nous opérons sur l’ensemble de la chaîne de valeur distributive : du go-to-market à l’exécution terrain. Notre mission est claire : transformer la distribution en un levier structurant de création de valeur durable.",
       introList: ['Go-to-Market Stratégique', 'Exécution Terrain', 'Maîtrise Logistique', 'Pilotage de la Performance'],
       introButton: "En savoir plus",
       growthTitle: "Une plateforme de croissance, au-delà de la distribution",
@@ -596,8 +594,7 @@ export const translations: { [key: string]: TranslationData } = {
       introText: "Nous servons de distributeur exclusif pour de grandes marques internationales, servant de pont entre les fabricants mondiaux et les foyers marocains.",
       brands: {
         Colgate: { description: "Leader mondial des produits d’hygiène bucco-dentaire, offrant protection et sourires sains pour toute la famille.", category: "Hygiène bucco-dentaire" },
-        Palmolive: { description: "Marque de soins personnels de confiance offrant des gels douche doux et des produits de soin de la peau.", category: "Soins personnels" },
-        Esemmat: { description: "Produits ménagers de qualité pour les besoins quotidiens.", category: "Maison" },
+        Palmolive: { description: "Marque de soins personnels de confiance offrant des gels douche doux et des produits de soin de la peau.", category: "Soins personnels" },        Esemmat: { description: "Produits ménagers de qualité pour les besoins quotidiens.", category: "Maison" },
         Joyful: { description: "Solutions de soins pour bébés avancées conçues pour offrir un confort et une protection maximaux aux nourrissons.", category: "Soins bébé" },
         Soupline: { description: "Marque n°1 d’adoucissant en France, apportant une douceur irrésistible et un parfum durable à votre linge.", category: "Soin du linge" },
         Ajax: { description: "Produits de nettoyage ménager puissants qui assurent un environnement domestique étincelant de propreté et de fraîcheur.", category: "Entretien maison" },
@@ -668,8 +665,8 @@ export const translations: { [key: string]: TranslationData } = {
       ],
       figures: [
         {
-          value: "15+ Ans",
-          label: "D’existence",
+          value: "+15 Ans",
+          label: "D’expérience",
           description: "Plus de 15 ans d’excellence opérationnelle et d’expertise dans la distribution FMCG depuis 2010.",
           iconName: "Award"
         },
@@ -716,8 +713,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'Distribution multi-canale',
           iconName: 'Truck',
           blocks: [
-            { type: 'text', content: 'Les circuits évoluent et les comportements d’achat se fragmentent.' },
-            { type: 'text', content: 'Corail déploie une architecture route-to-market adaptée à chaque canal :' },
+            { type: 'text', content: 'Les circuits évoluent et les comportements d’achat se fragmentent. Corail déploie une architecture route-to-market adaptée à chaque canal :' },
             {
               type: 'list',
               content: [
@@ -739,26 +735,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'La rotation des stocks'
               ]
             },
-            { type: 'text', content: 'Nos dispositifs commerciaux intègrent aussi bien des modèles de vente conventionnelle que de pré-vente, permettant une optimisation fine de la couverture et de la performance terrain en fonction des besoins et du type de produit.' },
-            { type: 'emphasis', content: ['Notre objectif :', 'Garantir une présence cohérente, rentable et durable.'] }
-          ]
-        },
-        {
-          id: '2',
-          title: 'Développement de marques',
-          iconName: 'Handshake',
-          blocks: [
-            { type: 'text', content: 'Nous intervenons en amont et en aval du lancement :' },
-            {
-              type: 'list',
-              content: [
-                'Structuration de l\'architecture de gamme et du mix produit',
-                'Définition du pricing et de l\'élasticité',
-                'Étude d\'implantation et stratégie d\'entrée marché',
-                'Identification des axes de développement et de croissance'
-              ]
-            },
-            { type: 'text', content: 'Nous agissons comme un partenaire de développement, au-delà du simple relais distributif.' }
+            { type: 'footer-text', content: 'Nos dispositifs commerciaux intègrent aussi bien des modèles de vente conventionnelle que de pré-vente, permettant une optimisation fine de la couverture et de la performance terrain en fonction des besoins et du type de produit.' },
+            { type: 'footer-emphasis', content: ['Notre objectif :', 'Garantir une présence cohérente, rentable et durable.'] }
           ]
         },
         {
@@ -778,7 +756,8 @@ export const translations: { [key: string]: TranslationData } = {
               ]
             },
             { type: 'text', content: 'Nos équipes opèrent selon une logique data-driven intégrant un reporting analytique.' },
-            { type: 'text', content: 'Corail intervient également comme full service provider, en structurant des dispositifs intégrés adaptés aux enjeux commerciaux, logistiques et opérationnels de ses partenaires.' }
+            { type: 'footer-text', content: 'Corail intervient également comme full service provider, en structurant des dispositifs intégrés adaptés aux enjeux commerciaux, logistiques et opérationnels de ses partenaires.' },
+            { type: 'footer-emphasis', content: ['Notre objectif :', 'Optimiser la performance commerciale par une exécution disciplinée.'] }
           ]
         },
         {
@@ -786,8 +765,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'Maîtrise logistique & opérationnelle',
           iconName: 'Warehouse',
           blocks: [
-            { type: 'text', content: 'Une distribution performante nécessite une supply chain robuste.' },
-            { type: 'text', content: 'Nous coordonnons :' },
+            { type: 'text', content: 'Une distribution performante nécessite une supply chain robuste. Nous coordonnons :' },
             {
               type: 'list',
               content: [
@@ -797,7 +775,26 @@ export const translations: { [key: string]: TranslationData } = {
                 'Optimisation des niveaux de stock'
               ]
             },
-            { type: 'emphasis', content: ['Notre priorité :', 'Fluidité, fiabilité et maîtrise du risque.'] }
+            { type: 'emphasis', content: ['Notre objectif :', 'Fluidité, fiabilité et maîtrise du risque.'] }
+          ]
+        },
+        {
+          id: '2',
+          title: 'Développement de marques',
+          iconName: 'Handshake',
+          blocks: [
+            { type: 'text', content: 'Nous intervenons en amont et en aval du lancement :' },
+            {
+              type: 'list',
+              content: [
+                'Structuration de l\'architecture de gamme et du mix produit',
+                'Définition du pricing et de l\'élasticité',
+                'Étude d\'implantation et stratégie d\'entrée marché',
+                'Identification des axes de développement et de croissance'
+              ]
+            },
+            { type: 'text', content: 'Nous agissons comme un partenaire de développement, au-delà du simple relais distributif.' },
+            { type: 'emphasis', content: ['Notre objectif :', 'Structurer des marques solides capables de s\'imposer durablement.'] }
           ]
         },
         {
@@ -805,8 +802,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'Commerce international et accompagnement réglementaire',
           iconName: 'CheckCircle2',
           blocks: [
-            { type: 'text', content: 'Chaque marché présente ses contraintes.' },
-            { type: 'text', content: 'Nous accompagnons nos partenaires sur :' },
+            { type: 'text', content: 'Chaque marché présente ses contraintes. Nous accompagnons nos partenaires sur :' },
             {
               type: 'list',
               content: [
@@ -937,7 +933,6 @@ export const translations: { [key: string]: TranslationData } = {
       introText: "نؤدي دور الموزع الحصري لعدد من أبرز العلامات التجارية الدولية.",
       brands: {
         Colgate: { description: "رائد عالمي في منتجات العناية بصحة الفم.", category: "العناية بالفم والأسنان" },
-        Palmolive: { description: "علامة موثوقة في مجال العناية الشخصية.", category: "العناية الشخصية" },
         Esemmat: { description: "منتجات منزلية عالية الجودة.", category: "المنزل" },
         Joyful: { description: "حلول متقدمة للعناية بالأطفال الرضع.", category: "العناية بالرضع" },
         Soupline: { description: "العلامة الأولى في فرنسا في مجال منعمات الأقمشة.", category: "العناية بالغسيل" },
@@ -1024,13 +1019,13 @@ export const translations: { [key: string]: TranslationData } = {
     },
     data: {
     stats: [
-        { value: "7 M +", label: "من الأسر التي يتم خدمتها", subLabel: "يوميًا", iconName: 'Users' },
-        { value: "15+ عامًا", label: "نمو متواصل", iconName: 'Package' },
-        { value: "3,500 +", label: "رأس المال البشري", iconName: 'DollarSign' },
+        { value: "+7 M", label: "من الأسر التي يتم خدمتها", subLabel: "يوميًا", iconName: 'Users' },
+        { value: "+15 عامًا", label: "نمو متواصل", iconName: 'Package' },
+        { value: "+3,500", label: "رأس المال البشري", iconName: 'DollarSign' },
       ],
     figures: [
       {
-        value: "15+ عامًا",
+        value: "+15 عامًا",
         label: "الخبرة",
         description: "أكثر من 15 عامًا من التميز التشغيلي والخبرة في مجال توزيع السلع الاستهلاكية سريعة التداول منذ عام 2010.",
         iconName: "Award"
@@ -1077,8 +1072,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'التوزيع متعدد القنوات',
           iconName: 'Truck',
           blocks: [
-            { type: 'text', content: 'تشهد قنوات التوزيع تطورًا مستمرًا، كما تتزايد تجزئة سلوكيات الشراء لدى المستهلكين.' },
-            { type: 'text', content: 'تعتمد كوراي بنية Route-to-Market مصممة خصيصًا لكل قناة توزيع:' },
+            { type: 'text', content: 'تشهد قنوات التوزيع تطورًا مستمرًا، كما تتزايد تجزئة سلوكيات الشراء لدى المستهلكين. تعتمد كوراي بنية Route-to-Market مصممة خصيصًا لكل قناة توزيع:' },
             {
               type: 'list',
               content: [
@@ -1100,26 +1094,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'معدل دوران المخزون'
               ]
             },
-            { type: 'text', content: 'تعتمد منظوماتنا التجارية على نماذج البيع التقليدي والبيع المسبق، بما يتيح تحسين الأداء بدقة وفق احتياجات كل منتج وطبيعة السوق.' },
-            { type: 'emphasis', content: ['هدفنا:', 'ضمان حضور متماسك ومربح ومستدام في السوق.'] }
-          ]
-        },
-        {
-          id: '2',
-          title: 'تطوير العلامات التجارية',
-          iconName: 'Handshake',
-          blocks: [
-            { type: 'text', content: 'نتدخل في مراحل ما قبل الإطلاق وما بعده:' },
-            {
-              type: 'list',
-              content: [
-                'هيكلة بنية التشكيلة ومزيج المنتجات',
-                'تحديد استراتيجية التسعير وتحليل مرونة الطلب',
-                'دراسة دخول السوق واستراتيجية الإطلاق',
-                'تحديد محاور التطوير وفرص النمو'
-              ]
-            },
-            { type: 'text', content: 'نؤدي دور شريك في تطوير العلامات التجارية، وليس مجرد حلقة ضمن سلسلة التوزيع.' }
+            { type: 'footer-text', content: 'تعتمد منظوماتنا التجارية على نماذج البيع التقليدي والبيع المسبق، بما يتيح تحسين الأداء بدقة وفق احتياجات كل منتج وطبيعة السوق.' },
+            { type: 'footer-emphasis', content: ['هدفنا:', 'ضمان حضور متماسك ومربح ومستدام في السوق.'] }
           ]
         },
         {
@@ -1139,7 +1115,8 @@ export const translations: { [key: string]: TranslationData } = {
               ]
             },
             { type: 'text', content: 'تعمل فرقنا وفق منهجية قائمة على تحليل البيانات، مدعومة بتقارير تحليلية دقيقة.' },
-            { type: 'text', content: 'كما تعمل كوراي كمزوّد خدمات متكامل، من خلال تصميم منظومات متكاملة تستجيب للتحديات التجارية واللوجستية والتشغيلية لشركائها.' }
+            { type: 'footer-text', content: 'كما تعمل كوراي كمزوّد خدمات متكامل، من خلال تصميم منظومات متكاملة تستجيب للتحديات التجارية واللوجستية والتشغيلية لشركائها.' },
+            { type: 'footer-emphasis', content: ['هدفنا:', 'تحسين الأداء التجاري من خلال تنفيذ منضبط.'] }
           ]
         },
         {
@@ -1159,6 +1136,25 @@ export const translations: { [key: string]: TranslationData } = {
               ]
             },
             { type: 'emphasis', content: ['أولويتنا:', 'ضمان الانسيابية والموثوقية وإدارة المخاطر بكفاءة.'] }
+          ]
+        },
+        {
+          id: '2',
+          title: 'تطوير العلامات التجارية',
+          iconName: 'Handshake',
+          blocks: [
+            { type: 'text', content: 'نتدخل في مراحل ما قبل الإطلاق وما بعده:' },
+            {
+              type: 'list',
+              content: [
+                'هيكلة بنية التشكيلة ومزيج المنتجات',
+                'تحديد استراتيجية التسعير وتحليل مرونة الطلب',
+                'دراسة دخول السوق واستراتيجية الإطلاق',
+                'تحديد محاور التطوير وفرص النمو'
+              ]
+            },
+            { type: 'text', content: 'نؤدي دور شريك في تطوير العلامات التجارية، وليس مجرد حلقة ضمن سلسلة التوزيع.' },
+            { type: 'emphasis', content: ['هدفنا:', 'بناء علامات تجارية قوية قادرة على فرض حضورها بشكل مستدام.'] }
           ]
         },
         {

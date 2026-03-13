@@ -1,7 +1,7 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { DollarSign, Package, MapPin, Users, Warehouse, Truck, BarChart3, Award, Clock } from 'lucide-react';
 import { Stat } from '../types';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface StatCardProps {
   stat: Stat;
@@ -23,10 +23,78 @@ const icons: Record<string, React.ElementType> = {
 const StatCard: React.FC<StatCardProps> = ({ stat, variant = 'overview' }) => {
   const Icon = stat.iconName ? (icons[stat.iconName] || Package) : BarChart3;
   const [imgError, setImgError] = useState(false);
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
+
+  // Extract numeric value from stat.value (e.g., "5+ 000" -> 5000, "15M MAD" -> 15)
+  const extractNumber = (value: string): number => {
+    // Remove spaces and extract number
+    const cleanValue = value.replace(/\s+/g, '');
+    const match = cleanValue.match(/[\d,]+/);
+    if (match) {
+      return parseInt(match[0].replace(/,/g, ''), 10);
+    }
+    return 0;
+  };
+
+  const targetNumber = extractNumber(stat.value);
+  // Extract prefix (like +) and suffix (like M MAD)
+  const cleanValue = stat.value.replace(/\s+/g, '');
+  const numberMatch = cleanValue.match(/[\d,]+/);
+  const numberStr = numberMatch ? numberMatch[0] : '';
+  const beforeNumber = cleanValue.substring(0, cleanValue.indexOf(numberStr));
+  const afterNumber = cleanValue.substring(cleanValue.indexOf(numberStr) + numberStr.length);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            animateCount();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const animateCount = () => {
+    const duration = 2500; // 2.5 seconds for smoother animation
+    const frameRate = 1000 / 60; // 60 FPS
+    const totalFrames = Math.round(duration / frameRate);
+    const increment = targetNumber / totalFrames;
+    let current = 0;
+    let frame = 0;
+
+    const timer = setInterval(() => {
+      frame++;
+      current += increment;
+      
+      if (frame >= totalFrames) {
+        setCount(targetNumber);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, frameRate);
+  };
 
   if (variant === 'figure') {
     return (
-      <div className="relative flex flex-col items-center text-center h-full bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(54,91,120,0.05)] hover:shadow-[0_20px_40px_rgba(54,91,120,0.1)] hover:-translate-y-2 transition-all duration-[1000ms] border border-corail-50 hover:border-corail-100 group overflow-hidden">
+      <div ref={cardRef} className="relative flex flex-col items-center text-center h-full bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(54,91,120,0.05)] hover:shadow-[0_20px_40px_rgba(54,91,120,0.1)] hover:-translate-y-2 transition-all duration-[1000ms] border border-corail-50 hover:border-corail-100 group overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-corail-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-out"></div>
         {/* Brand Logo or Icon Header */}
         <div className="h-16 w-full flex items-center justify-center mb-6">
@@ -47,7 +115,7 @@ const StatCard: React.FC<StatCardProps> = ({ stat, variant = 'overview' }) => {
         {/* Value */}
         <div className="mb-3 relative">
           <h3 className="text-4xl md:text-5xl font-display font-black text-corail-600 tracking-tight leading-none group-hover:scale-105 group-hover:text-corail-700 transition-all duration-700">
-            {stat.value}
+            {beforeNumber}{hasAnimated ? count.toLocaleString() : '0'}{afterNumber ? ` ${afterNumber}` : ''}
           </h3>
         </div>
 

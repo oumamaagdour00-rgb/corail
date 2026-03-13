@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { BRAND_DETAILS } from '../constants';
 
 const BrandCarousel: React.FC = () => {
     const { t } = useLanguage();
+    const [isPaused, setIsPaused] = useState(false);
 
     return (
         <section className="py-24 bg-corail-900 overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 relative z-10">
-                <h2 className="text-4xl font-display font-bold text-white mb-4">{t.home.brandsTitle}</h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4">{t.home.brandsTitle}</h2>
                 <div className="h-1 w-24 bg-corail-600 mx-auto rounded-full"></div>
             </div>
 
@@ -16,8 +17,16 @@ const BrandCarousel: React.FC = () => {
             <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-corail-900 to-transparent z-10"></div>
             <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-corail-900 to-transparent z-10"></div>
 
-            <div className="relative flex overflow-x-hidden group/marquee no-scrollbar hover:[--animate-play-state:paused] py-12" dir="ltr">
-                <div className="animate-marquee whitespace-nowrap flex space-x-8 items-center pl-4 bg-[length:24px_24px] [animation-play-state:var(--animate-play-state,running)]">
+            <div 
+                className="relative flex overflow-x-hidden group/marquee no-scrollbar py-12" 
+                dir="ltr"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+            >
+                <div 
+                    className="animate-marquee whitespace-nowrap flex space-x-8 items-center pl-4 bg-[length:24px_24px]"
+                    style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+                >
                     {[...BRAND_DETAILS, ...BRAND_DETAILS, ...BRAND_DETAILS].map((brand, i) => (
                         <a
                             key={`${brand.id}-${i}`}

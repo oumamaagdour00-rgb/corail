@@ -47,6 +47,5 @@ export enum Brand {
   Ajax = 'Ajax',
   Cadum = 'Cadum',
   Tahiti = 'Tahiti',
-  Palmolive = 'Palmolive',
   Esemmat = 'Esemmat'
 }

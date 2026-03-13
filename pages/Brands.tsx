@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import Tagline from '../components/Tagline';
 import { useLanguage } from '../contexts/LanguageContext';
 import { BRAND_DETAILS } from '../constants';
+import YouTubeSlider from '../components/YouTubeSlider';
 
 const Brands: React.FC = () => {
   const { t, language } = useLanguage();
@@ -14,24 +15,25 @@ const Brands: React.FC = () => {
     <div className="pb-16 min-h-screen bg-white">
       <SEO pageKey="brands" />
       {/* Header */}
-      <div className="relative bg-corail-900 text-white py-24 mb-16 overflow-hidden">
+      <div className="relative bg-corail-900 text-white py-48 mb-16 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none mix-blend-luminosity"
-          style={{ backgroundImage: "url('/corail-siege.jpeg')" }}
+          className="absolute inset-0 bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: "url('/corail-siege.jpeg')", backgroundPosition: 'center 60%' }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-corail-900/70 to-corail-800/95 pointer-events-none"></div>
-        <div className="absolute inset-0 opacity-20 bg-mesh pointer-events-none"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">{t.brandsPage.title}</h1>
-          <p className="text-xl text-teal-100/90 max-w-2xl mx-auto font-light leading-relaxed">
-            {t.brandsPage.subtitle}
-          </p>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-corail-900/80 via-corail-800/40 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-10 bg-mesh pointer-events-none"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Minimal Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-px bg-corail-200 border border-corail-200 rounded-lg overflow-hidden shadow-sm">
+        {/* Title before grid */}
+        <div className="text-center mb-12">
+          <p className="text-[30px] text-corail-900 font-display font-bold leading-relaxed">
+            Distribution de portefeuilles de classe mondiale à travers le Maroc.
+          </p>
+        </div>
+
+        {/* Minimal Grid - 2 rows x 4 columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-corail-200 border border-corail-200 rounded-lg overflow-hidden shadow-sm">
           {BRAND_DETAILS.map((brand) => {
             return (
               <a
@@ -52,21 +54,21 @@ const Brands: React.FC = () => {
                     <span className="text-xl font-display font-bold text-corail-200 group-hover:text-corail-600 transition-colors">{brand.id}</span>
                   </div>
                 )}
-
-                {/* Brand Name Tooltip-ish */}
-                <div className="absolute bottom-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700 text-xs font-bold text-corail-300 uppercase tracking-widest pointer-events-none">
-                  {brand.id}
-                </div>
               </a>
             );
           })}
+        </div>
+
+        {/* YouTube Video Slider */}
+        <div className="mt-24">
+          <YouTubeSlider />
         </div>
 
         {/* CTA Section */}
         <div className="mt-24 mb-12 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl font-display font-bold text-corail-900 mb-4">{t.brandsPage.ctaTitle}</h2>
-            <p className="text-corail-400 mb-8">{t.brandsPage.ctaSubtitle}</p>
+            <p className="text-corail-400 mb-8 text-justify">{t.brandsPage.ctaSubtitle}</p>
             <NavLink
               to="/contact"
               className="inline-flex items-center px-8 py-3 bg-corail-900 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-corail-800 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"

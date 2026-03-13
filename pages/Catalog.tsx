@@ -38,8 +38,8 @@ const Catalog: React.FC = () => {
       {/* Header */}
       <div className="bg-teal-600 text-white py-16 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-display font-bold mb-4">{t.catalog.title}</h1>
-          <p className="text-teal-100 text-lg">{t.catalog.subtitle}</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 tracking-tight">{t.catalog.title}</h1>
+          <p className="text-teal-100 text-lg text-justify">{t.catalog.subtitle}</p>
         </div>
       </div>
 
@@ -189,7 +189,7 @@ const Catalog: React.FC = () => {
                   <Search size={48} className="mx-auto" />
                 </div>
                 <h3 className="text-xl font-bold text-corail-900 mb-2">{t.catalog.noProducts}</h3>
-                <p className="text-corail-300">{t.catalog.noProductsText}</p>
+                <p className="text-corail-300 text-justify">{t.catalog.noProductsText}</p>
                 <button
                   onClick={() => {
                     setSelectedBrand('All');
