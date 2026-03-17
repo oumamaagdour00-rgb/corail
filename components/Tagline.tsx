@@ -41,12 +41,12 @@ const Tagline: React.FC<TaglineProps> = ({ className = '' }) => {
         >
             <div
                 className={`absolute inset-0 bg-cover bg-center transition-all duration-[3000ms] ease-out ${isVisible ? 'scale-100 blur-0' : 'scale-110 blur-sm'}`}
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2000&auto=format&fit=crop")' }}
+                style={{ backgroundImage: 'url("/assets/cfc.jpeg")', backgroundPosition: 'center 20%' }}
             >
             </div>
 
-            <div className="absolute inset-0 bg-corail-900/50 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-corail-600/85 to-corail-500/85"></div>
+            <div className="absolute inset-0 bg-corail-900/30 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-corail-600/55 to-corail-500/55"></div>
 
             <div className={`relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex items-center justify-center transition-all duration-[1500ms] delay-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white leading-relaxed md:leading-snug tracking-wide">
