@@ -500,7 +500,7 @@ export const translations: { [key: string]: TranslationData } = {
       growthTitle: "Une plateforme de croissance, au-delà de la distribution",
       growthSubtitle: "Chez Corail, la distribution ne se limite pas à la circulation des produits. Nous construisons des passerelles durables entre marques, réseaux et consommateurs grâce à :",
       growthList: [
-        'Une optimisation du route-to-market',
+        'Une optimisation du Route-to-Market',
         'Une sélection stratégique des SKUs',
         'Une maîtrise des flux logistiques',
         'Une exécution commerciale basée sur des KPI terrain, portée par un pilotage data-driven',
@@ -713,7 +713,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'Distribution multi-canale',
           iconName: 'Truck',
           blocks: [
-            { type: 'text', content: 'Les circuits évoluent et les comportements d’achat se fragmentent. Corail déploie une architecture route-to-market adaptée à chaque canal :' },
+            { type: 'text', content: 'Les circuits évoluent et les comportements d’achat se fragmentent. Corail déploie une architecture Route-to-Market adaptée à chaque canal :' },
             {
               type: 'list',
               content: [

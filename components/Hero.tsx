@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
 							initial={{ opacity: 0, x: -100 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-							className={`text-lg text-white/90 mb-8 leading-relaxed font-light ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							className={`text-lg text-white/90 mb-8 leading-relaxed font-light ${language === 'ar' ? 'text-right' : 'text-justify'}`}
 						>
 							{t.hero.subtitle}
 						</motion.p>
