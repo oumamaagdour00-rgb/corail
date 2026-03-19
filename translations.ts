@@ -487,7 +487,7 @@ export const translations: { [key: string]: TranslationData } = {
       catalog: 'Catalogue'
     },
     hero: {
-      title: "Connecter les marchés aux marques qui comptent",
+      title: "Connecter les marchés aux marques qui façonnent le quotidien",
       subtitle: "Fort de plus de 15 ans d’expérience, Corail L’Océan est un acteur clé de la distribution FMCG au Maroc. Nous opérons sur l’ensemble de la chaîne de valeur distributive : du go-to-market à l’exécution terrain. Notre mission est claire : transformer la distribution en un levier structurant de création de valeur durable.",
       button: "En savoir plus"
     },
