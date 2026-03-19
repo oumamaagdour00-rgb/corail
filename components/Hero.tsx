@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
 	const { t, language } = useLanguage();
 
 	return (
-		<div className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 160px)', minHeight: '500px' }}>
+		<div className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 85px)', minHeight: '500px' }}>
 			{/* Background Image - Corporate Building */}
 			<div
 				className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[120%] -top-[10%] will-change-transform animate-[parallax_linear_both] [animation-timeline:scroll(root)] [animation-range:0_850px] scale-105"
