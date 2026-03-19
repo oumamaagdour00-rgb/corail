@@ -1,14 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import logoUrl from "../public/favicon-not-ocean.png";
+
+const LANGUAGES = [
+	{ code: "fr", flag: "https://flagcdn.com/w40/fr.png", label: "Français" },
+	{ code: "en", flag: "https://flagcdn.com/w40/gb.png", label: "English" },
+	{ code: "ar", flag: "https://flagcdn.com/w40/ma.png", label: "العربية" },
+] as const;
 
 const Navbar: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [langOpen, setLangOpen] = useState(false);
+	const langRef = useRef<HTMLDivElement>(null);
 	const location = useLocation();
 	const { language, setLanguage, t } = useLanguage();
+
+	const currentLang = LANGUAGES.find(l => l.code === language) || LANGUAGES[0];
+
+	useEffect(() => {
+		const handleClickOutside = (e: MouseEvent) => {
+			if (langRef.current && !langRef.current.contains(e.target as Node)) {
+				setLangOpen(false);
+			}
+		};
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => document.removeEventListener("mousedown", handleClickOutside);
+	}, []);
 
 	// Handle scroll effect
 	useEffect(() => {
@@ -90,27 +110,30 @@ const Navbar: React.FC = () => {
 
 							<div className="h-4 w-px bg-corail-200 mx-2"></div>
 
-							<div className="flex items-center space-x-3 ml-2">
+							{/* Language Dropdown */}
+							<div className="relative" ref={langRef}>
 								<button
-									onClick={() => setLanguage("fr")}
-									className={`text-[10px] font-black transition-all cursor-pointer ${language === "fr" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
+									onClick={() => setLangOpen(!langOpen)}
+									className="flex items-center gap-1.5 px-2 py-1 rounded-lg hover:bg-corail-50 transition-colors duration-200"
 								>
-									FR
+									<img src={currentLang.flag} alt={currentLang.code} className="w-5 h-3.5 object-cover rounded-sm" />
+									<span className="text-[10px] font-black text-corail-400 uppercase tracking-widest">{currentLang.code}</span>
+									<ChevronDown className={`h-3 w-3 text-corail-300 transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`} />
 								</button>
-								<span className="text-corail-200">|</span>
-								<button
-									onClick={() => setLanguage("en")}
-									className={`text-[10px] font-black transition-all cursor-pointer ${language === "en" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
-								>
-									EN
-								</button>
-								<span className="text-corail-200">|</span>
-								<button
-									onClick={() => setLanguage("ar")}
-									className={`text-[10px] font-black transition-all cursor-pointer ${language === "ar" ? "text-corail-600 scale-110" : "text-corail-300 hover:text-corail-500"}`}
-								>
-									AR
-								</button>
+								{langOpen && (
+									<div className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-xl border border-corail-100 overflow-hidden z-50 min-w-[140px]">
+										{LANGUAGES.map(lang => (
+											<button
+												key={lang.code}
+												onClick={() => { setLanguage(lang.code); setLangOpen(false); }}
+												className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors duration-150 ${language === lang.code ? 'bg-corail-50 text-corail-700 font-bold' : 'text-corail-400 hover:bg-corail-50 hover:text-corail-600'}`}
+											>
+												<img src={lang.flag} alt={lang.code} className="w-5 h-3.5 object-cover rounded-sm" />
+												<span className="font-medium">{lang.label}</span>
+											</button>
+										))}
+									</div>
+								)}
 							</div>
 						</div>
 
@@ -150,34 +173,17 @@ const Navbar: React.FC = () => {
 							{link.name}
 						</NavLink>
 					))}
-					<div className="pt-8 border-t border-corail-100 flex items-center space-x-6">
-						<button
-							onClick={() => {
-								setLanguage("fr");
-								setIsOpen(false);
-							}}
-							className={`text-sm font-bold tracking-widest cursor-pointer ${language === "fr" ? "text-corail-600" : "text-corail-300"}`}
-						>
-							Français
-						</button>
-						<button
-							onClick={() => {
-								setLanguage("en");
-								setIsOpen(false);
-							}}
-							className={`text-sm font-bold tracking-widest cursor-pointer ${language === "en" ? "text-corail-600" : "text-corail-300"}`}
-						>
-							English
-						</button>
-						<button
-							onClick={() => {
-								setLanguage("ar");
-								setIsOpen(false);
-							}}
-							className={`text-sm font-bold tracking-widest cursor-pointer ${language === "ar" ? "text-corail-600" : "text-corail-300"}`}
-						>
-							العربية
-						</button>
+					<div className="pt-8 border-t border-corail-100 flex items-center space-x-4">
+						{LANGUAGES.map(lang => (
+							<button
+								key={lang.code}
+								onClick={() => { setLanguage(lang.code); setIsOpen(false); }}
+								className={`flex items-center gap-2 text-sm font-bold tracking-widest cursor-pointer transition-colors ${language === lang.code ? "text-corail-600" : "text-corail-300"}`}
+							>
+								<img src={lang.flag} alt={lang.code} className="w-6 h-4 object-cover rounded-sm" />
+								{lang.label}
+							</button>
+						))}
 					</div>
 				</div>
 			</div>

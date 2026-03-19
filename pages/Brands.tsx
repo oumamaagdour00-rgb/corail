@@ -27,7 +27,7 @@ const Brands: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title before grid */}
         <div className="text-center mb-12">
-          <p className="text-[30px] text-corail-900 font-display font-bold leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl xl:text-[30px] text-corail-900 font-display font-bold leading-relaxed">
             Distribution de portefeuilles de classe mondiale à travers le Maroc.
           </p>
         </div>
@@ -67,8 +67,8 @@ const Brands: React.FC = () => {
         {/* CTA Section */}
         <div className="mt-24 mb-12 text-center">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-display font-bold text-corail-900 mb-4">{t.brandsPage.ctaTitle}</h2>
-            <p className="text-corail-400 mb-8 text-justify">{t.brandsPage.ctaSubtitle}</p>
+            <h2 className="text-xl sm:text-2xl xl:text-3xl font-display font-bold text-corail-900 mb-4">{t.brandsPage.ctaTitle}</h2>
+            <p className="text-sm sm:text-base text-corail-400 mb-8 text-justify">{t.brandsPage.ctaSubtitle}</p>
             <NavLink
               to="/contact"
               className="inline-flex items-center px-8 py-3 bg-corail-900 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-corail-800 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"

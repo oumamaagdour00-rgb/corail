@@ -68,8 +68,8 @@ const Services: React.FC = () => {
 								>
 								{/* Image Visual */}
 								<motion.div 
-									initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-									whileInView={{ opacity: 1, x: 0 }}
+									initial={{ opacity: 0, y: 40 }}
+									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.3 }}
 									transition={{ duration: 0.8, ease: "easeOut" }}
 									className="w-full lg:w-1/2"
@@ -93,13 +93,13 @@ const Services: React.FC = () => {
 
 								{/* Text Content */}
 								<motion.div 
-									initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }}
-									whileInView={{ opacity: 1, x: 0 }}
+									initial={{ opacity: 0, y: 40 }}
+									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.3 }}
 									transition={{ duration: 0.8, ease: "easeOut" }}
 									className="w-full lg:w-1/2"
 								>
-									<h3 className="text-3xl md:text-4xl font-display font-bold text-corail-900 mb-6">
+									<h3 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-display font-bold text-corail-900 mb-6">
 										{service.title}
 									</h3>
 									<div className="space-y-2">
@@ -115,7 +115,7 @@ const Services: React.FC = () => {
 														whileInView={{ opacity: 1, y: 0 }}
 														viewport={{ once: true, amount: 0.3 }}
 														transition={{ duration: 0.6, delay: 0.2 + (j * 0.1), ease: "easeOut" }}
-														className="text-lg text-corail-400 leading-relaxed font-light text-justify"
+														className="text-sm sm:text-base xl:text-lg text-corail-400 leading-relaxed font-light text-justify"
 													>
 														{p}
 													</motion.p>
@@ -229,7 +229,7 @@ const Services: React.FC = () => {
 									{footerBlocks.map((block: any, i: number) => {
 										if (block.type === 'footer-text') {
 											return (
-												<p key={i} className="text-lg text-corail-600 leading-relaxed font-light text-justify">
+												<p key={i} className="text-sm sm:text-base xl:text-lg text-corail-600 leading-relaxed font-light text-justify">
 													{block.content}
 												</p>
 											);

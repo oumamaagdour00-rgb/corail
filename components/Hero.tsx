@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
 			></div>
 
 			{/* Gradient Overlay */}
-			<div className={`absolute inset-0 ${language === 'ar' ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-corail-900/95 via-corail-800/50 to-transparent`}></div>
+			<div className={`absolute inset-0 ${language === 'ar' ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-corail-900 via-corail-800/70 to-teal-800/50`}></div>
 
 			{/* Navy Blue Haze Filter */}
 			<div className="absolute inset-0 bg-corail-900/20 pointer-events-none"></div>
@@ -36,25 +36,25 @@ const Hero: React.FC = () => {
 				<div className={`max-w-7xl w-full px-4 sm:px-6 lg:px-8 ${language === 'ar' ? 'mr-0 ml-auto' : 'ml-0 mr-auto'}`}>
 					<div className={`max-w-3xl ${language === 'ar' ? 'pr-8' : 'pl-8'}`}>
 						<motion.h1 
-							initial={{ opacity: 0, x: -100 }}
-							animate={{ opacity: 1, x: 0 }}
+							initial={{ opacity: 0, y: 40 }}
+							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
-							className={`text-4xl md:text-5xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-6 whitespace-nowrap ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							className={`text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-extrabold text-white leading-tight mb-6 lg:whitespace-nowrap ${language === 'ar' ? 'text-right' : 'text-left'}`}
 						>
 							{t.hero.title}
 						</motion.h1>
 						<motion.p 
-							initial={{ opacity: 0, x: -100 }}
-							animate={{ opacity: 1, x: 0 }}
+							initial={{ opacity: 0, y: 40 }}
+							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-							className={`text-lg text-white/90 mb-8 leading-relaxed font-light ${language === 'ar' ? 'text-right' : 'text-justify'}`}
+							className={`text-sm sm:text-base xl:text-lg text-white/90 mb-8 leading-relaxed font-light ${language === 'ar' ? 'text-right' : 'text-justify'}`}
 						>
 							{t.hero.subtitle}
 						</motion.p>
 
 						<motion.div 
-							initial={{ opacity: 0, x: -100 }}
-							animate={{ opacity: 1, x: 0 }}
+							initial={{ opacity: 0, y: 40 }}
+							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
 							className={`flex ${language === 'ar' ? 'justify-end' : 'justify-start'}`}
 						>

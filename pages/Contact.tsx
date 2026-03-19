@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="bg-white/60 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-corail-100/50 shadow-sm hover:shadow-2xl transition-all duration-700"
         >
-          <h3 className="text-2xl font-bold text-corail-900 mb-6">{t.footer.contact}</h3>
+          <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-corail-900 mb-6">{t.footer.contact}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Address */}
             <motion.div 
@@ -114,64 +114,40 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="bg-white/60 backdrop-blur-md rounded-3xl p-8 lg:p-10 border border-corail-100/50 shadow-sm hover:shadow-2xl transition-all duration-700"
         >
-          <h3 className="text-2xl font-bold text-corail-900 mb-8">{t.contact.formTitle}</h3>
+          <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-corail-900 mb-8">{t.contact.formTitle}</h3>
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-              >
+              <div>
                 <label htmlFor="name" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formName}</label>
                 <input type="text" id="name" className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50" placeholder={t.contact.formName} />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-              >
+              </div>
+              <div>
                 <label htmlFor="email" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formEmail}</label>
                 <input type="email" id="email" className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50" placeholder={t.contact.formEmail} />
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            >
+            <div>
               <label htmlFor="subject" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formSubject}</label>
               <select id="subject" className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50">
                 {t.contact.subjects.map((subject: string) => (
                   <option key={subject}>{subject}</option>
                 ))}
               </select>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-            >
+            <div>
               <label htmlFor="message" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formMessage}</label>
               <textarea id="message" rows={5} className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all resize-none bg-white/50" placeholder="..."></textarea>
-            </motion.div>
+            </div>
 
-            <motion.button 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            <button 
               type="button" 
               className="w-full bg-corail-900 hover:bg-teal-500 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex items-center justify-center space-x-2"
             >
               <span>{t.contact.formButton}</span>
               <Send size={18} />
-            </motion.button>
+            </button>
           </form>
         </motion.div>
 

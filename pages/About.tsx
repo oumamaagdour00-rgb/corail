@@ -59,8 +59,8 @@ const About: React.FC = () => {
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 					{/* Approach */}
 					<motion.div 
-						initial={{ opacity: 0, x: -100 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, y: 40 }}
+						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
 						className="bg-gray-50 p-8 rounded-2xl"
@@ -88,8 +88,8 @@ const About: React.FC = () => {
 
 					{/* Engagement */}
 					<motion.div 
-						initial={{ opacity: 0, x: 100 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, y: 40 }}
+						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
 						className="bg-corail-50 p-8 rounded-2xl"
