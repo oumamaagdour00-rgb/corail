@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
-							className={`text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-extrabold text-white leading-tight mb-6 lg:whitespace-nowrap ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							className={`text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-extrabold text-white leading-tight mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}
 						>
 							{t.hero.title}
 						</motion.h1>

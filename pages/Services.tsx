@@ -69,7 +69,7 @@ const Services: React.FC = () => {
 										<div
 											className={`absolute -inset-4 bg-gradient-to-r ${index % 2 === 0 ? "from-corail-100 to-transparent" : "from-teal-100 to-transparent"} rounded-3xl opacity-30 transform rotate-2 group-hover:rotate-4 transition-transform duration-[1500ms] ease-out`}
 										></div>
-										<div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-[1500ms]">
+										<div className="relative h-[250px] sm:h-[320px] lg:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-[1500ms]">
 											<img
 												src={serviceImages[service.id]}
 												alt={service.title}

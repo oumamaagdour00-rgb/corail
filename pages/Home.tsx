@@ -118,7 +118,7 @@ const Home: React.FC = () => {
 									className="w-full h-full object-cover filter contrast-110 grayscale group-hover/president:grayscale-0 group-hover/president:scale-105 transition-all duration-[2000ms] ease-out"
 								/>
 							</div>
-							<div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-corail-900 to-corail-800 text-white p-8 rounded-2xl shadow-xl max-w-xs group-hover/president:-translate-y-2 transition-transform duration-700 border border-white/10">
+							<div className="absolute -bottom-6 -right-6 sm:-bottom-6 sm:-right-6 bg-gradient-to-br from-corail-900 to-corail-800 text-white p-5 sm:p-8 rounded-2xl shadow-xl max-w-[200px] sm:max-w-xs group-hover/president:-translate-y-2 transition-transform duration-700 border border-white/10">
 								<div className="absolute top-0 right-0 w-16 h-16 bg-white/5 rounded-bl-full pointer-events-none"></div>
 								<p className="font-display font-black text-xl mb-1">
 									{t.home.presidentName}
