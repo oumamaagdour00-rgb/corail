@@ -1,4 +1,4 @@
-
+﻿
 import { Service, Stat, NewsItem } from './types';
 
 interface TranslationData {
@@ -191,7 +191,6 @@ export const translations: { [key: string]: TranslationData } = {
       ],
       approachTitle: "Our approach",
       approachText: [
-        "At Corail, we consider distribution as a strategic infrastructure for value creation. Our vision is based on a simple conviction: brand performance depends not only on their quality, but on the precision with which they are deployed in their markets.",
         "We operate with a structured approach, guided by Route-to-Market optimization, commercial execution discipline, mastery of multi-channel dynamics, and continuous performance management.",
         "Through the integration of advanced analytical tools, flow management systems, and intelligent tools for inventory and operations management, Corail strengthens the efficiency of its distributive architectures, optimizes operational productivity, and secures execution reliability.",
         "This systemic approach promotes end-to-end process fluidity, operational risk control, and sustainable value creation for all partners.",
@@ -199,6 +198,7 @@ export const translations: { [key: string]: TranslationData } = {
       ],
       engagementTitle: "Our engagement",
       engagementText: [
+        "At Corail, we consider distribution as a strategic infrastructure for value creation. Our vision is based on a simple conviction: brand performance depends not only on their quality, but on the precision with which they are deployed in their markets.",
         "Corail accompanies brands in the structuring, deployment, and optimization of their market presence. Our mission consists of building distributive architectures adapted to field realities, optimizing sell-in and sell-out performance, and ensuring maximum market visibility while simplifying operational and logistical complexity.",
         "We intervene as a performance platform, combining commercial expertise, operational rigor, and data-driven management.",
         "Our commitment is clear: to create sustainable and measurable growth environments for our partners."
@@ -533,7 +533,6 @@ export const translations: { [key: string]: TranslationData } = {
       ],
       approachTitle: "Notre approche",
       approachText: [
-        "Chez Corail, nous considérons la distribution comme une infrastructure stratégique de création de valeur. Notre vision repose sur une conviction simple : la performance des marques ne dépend pas uniquement de leur qualité, mais de la précision avec laquelle elles sont déployées sur leurs marchés.",
         "Nous opérons avec une approche structurée, guidée par l’optimisation du Route-to-Market, la discipline d’exécution commerciale, la maîtrise des dynamiques multi-canales et le pilotage continu de la performance.",
         "À travers l’intégration de dispositifs analytiques avancés, de systèmes de pilotage des flux et d’outils intelligents de gestion des stocks et des opérations, Corail renforce l’efficacité de ses architectures distributives, optimise la productivité opérationnelle et sécurise la fiabilité de l’exécution.",
         "Cette approche systémique favorise la fluidité des processus end-to-end, la maîtrise des risques opérationnels et la création de valeur durable pour l’ensemble des partenaires.",
@@ -541,6 +540,7 @@ export const translations: { [key: string]: TranslationData } = {
       ],
       engagementTitle: "Notre engagement",
       engagementText: [
+        "Chez Corail, nous considérons la distribution comme une infrastructure stratégique de création de valeur. Notre vision repose sur une conviction simple : la performance des marques ne dépend pas uniquement de leur qualité, mais de la précision avec laquelle elles sont déployées sur leurs marchés.",
         "Corail accompagne les marques dans la structuration, le déploiement et l’optimisation de leur présence marché. Notre mission consiste à construire des architectures distributives adaptées aux réalités terrain, à optimiser la performance du sell-in et du sell-out et à assurer un maximum de visibilité marché tout en simplifiant la complexité opérationnelle et logistique.",
         "Nous intervenons comme une plateforme de performance, combinant expertise commerciale, rigueur opérationnelle et pilotage data-driven.",
         "Notre engagement est clair : créer des environnements de croissance durables et mesurables pour nos partenaires."
@@ -875,7 +875,6 @@ export const translations: { [key: string]: TranslationData } = {
     ],
     approachTitle: "مقاربتنا",
     approachText: [
-      "في كوراي، نعتبر التوزيع بنية استراتيجية أساسية لخلق القيمة. وترتكز رؤيتنا على قناعة واضحة مفادها أن أداء العلامات التجارية لا يعتمد فقط على جودة منتجاتها، بل أيضاً على دقة انتشارها وتنفيذها داخل الأسواق.",
       "نعتمد مقاربة منظمة تقوم على تحسين استراتيجية الوصول إلى السوق (Route-to-Market)، والانضباط في التنفيذ التجاري، وإتقان إدارة القنوات المتعددة، إلى جانب المتابعة المستمرة للأداء.",
       "ومن خلال دمج أدوات تحليل متقدمة، وأنظمة متطورة لإدارة تدفقات العمليات، وحلول ذكية لإدارة المخزون والأنشطة التشغيلية، تعمل كوراي على تعزيز كفاءة بنياتها التوزيعية، وتحسين الإنتاجية التشغيلية، وضمان موثوقية التنفيذ.",
       "تسهم هذه المقاربة المنهجية في تحقيق انسيابية العمليات من البداية إلى النهاية، والحد من المخاطر التشغيلية، وخلق قيمة مستدامة لجميع الشركاء.",
@@ -883,6 +882,7 @@ export const translations: { [key: string]: TranslationData } = {
     ],
     engagementTitle: "التزامنا",
     engagementText: [
+      "في كوراي، نعتبر التوزيع بنية استراتيجية أساسية لخلق القيمة. وترتكز رؤيتنا على قناعة واضحة مفادها أن أداء العلامات التجارية لا يعتمد فقط على جودة منتجاتها، بل أيضاً على دقة انتشارها وتنفيذها داخل الأسواق.",
       "تواكب كوراي العلامات التجارية في هيكلة حضورها في السوق ونشره وتحسينه. وتتمثل مهمتنا في بناء منظومات توزيع تتلاءم مع واقع الميدان، وتحسين أداء عمليات البيع للموزعين (Sell-in) ودعم المبيعات لدى المستهلك النهائي (Sell-out)، مع ضمان أقصى درجات الحضور في السوق وتبسيط التعقيد التشغيلي واللوجستي.",
       "نحن نعمل كمنصة أداء تجمع بين الخبرة التجارية والانضباط التشغيلي والقيادة المعتمدة على تحليل البيانات.",
       "التزامنا واضح: خلق بيئات نمو مستدامة وقابلة للقياس لشركائنا."

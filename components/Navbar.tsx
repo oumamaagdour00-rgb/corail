@@ -110,6 +110,16 @@ const Navbar: React.FC = () => {
 
 							<div className="h-4 w-px bg-corail-200 mx-2"></div>
 
+							{/* CTA Button */}
+							<NavLink
+								to="/contact"
+								className="inline-flex items-center px-5 py-2 bg-corail-900 text-white font-bold uppercase tracking-widest text-[10px] rounded-lg hover:bg-corail-600 transition-all duration-300 shadow hover:shadow-md hover:-translate-y-0.5"
+							>
+								Devenez partenaire
+							</NavLink>
+
+							<div className="h-4 w-px bg-corail-200 mx-2"></div>
+
 							{/* Language Dropdown */}
 							<div className="relative" ref={langRef}>
 								<button
@@ -173,7 +183,15 @@ const Navbar: React.FC = () => {
 							{link.name}
 						</NavLink>
 					))}
-					<div className="pt-8 border-t border-corail-100 flex items-center space-x-4">
+					<div className="pt-8 border-t border-corail-100 flex flex-col space-y-6">
+						<NavLink
+							to="/contact"
+							className="inline-flex items-center justify-center px-6 py-3 bg-corail-900 text-white font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-corail-600 transition-all duration-300"
+							onClick={() => setIsOpen(false)}
+						>
+							Devenez partenaire
+						</NavLink>
+						<div className="flex items-center space-x-4">
 						{LANGUAGES.map(lang => (
 							<button
 								key={lang.code}
@@ -184,6 +202,7 @@ const Navbar: React.FC = () => {
 								{lang.label}
 							</button>
 						))}
+						</div>
 					</div>
 				</div>
 			</div>

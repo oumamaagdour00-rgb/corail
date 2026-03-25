@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import logoUrl from "../public/favicon-not-ocean.png";
@@ -7,10 +7,18 @@ import logoUrl from "../public/favicon-not-ocean.png";
 const Footer: React.FC = () => {
 	const { t } = useLanguage();
 
+	const navLinks = [
+		{ name: t.nav.home, path: "/" },
+		{ name: t.nav.about, path: "/about" },
+		{ name: t.nav.services, path: "/services" },
+		{ name: t.nav.brands, path: "/brands" },
+		{ name: t.nav.contact, path: "/contact" },
+	];
+
 	return (
 		<footer className="bg-white border-t border-corail-100 text-corail-400">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
 					{/* Brand Logo Placeholder */}
 					<div className="col-span-1">
 						<div className="mb-4 flex items-center space-x-4 group cursor-default">
@@ -34,8 +42,27 @@ const Footer: React.FC = () => {
 						</div>
 					</div>
 
+					{/* Navigation */}
+					<div className="md:justify-self-center">
+						<h3 className="text-xs font-bold text-corail-900 uppercase tracking-widest mb-4 border-b-2 border-corail-200 w-fit pb-1">
+							Navigation
+						</h3>
+						<ul className="space-y-3">
+							{navLinks.map((link) => (
+								<li key={link.path}>
+									<Link
+										to={link.path}
+										className="text-xs font-bold text-corail-400 uppercase tracking-widest hover:text-corail-600 transition-colors duration-200"
+									>
+										{link.name}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+
 					{/* Contact */}
-					<div>
+					<div className="md:justify-self-end">
 						<h3 className="text-xs font-bold text-corail-900 uppercase tracking-widest mb-4 border-b-2 border-corail-200 w-fit pb-1">
 							{t.footer.contact}
 						</h3>

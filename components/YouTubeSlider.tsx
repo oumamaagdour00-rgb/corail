@@ -64,7 +64,7 @@ const YouTubeSlider: React.FC = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full ${
+            className={`cursor-pointer transition-all duration-300 rounded-full ${
               index === currentIndex
                 ? 'w-8 h-3 bg-corail-900'
                 : 'w-3 h-3 bg-corail-300 hover:bg-corail-500'

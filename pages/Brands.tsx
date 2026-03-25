@@ -7,6 +7,7 @@ import Tagline from '../components/Tagline';
 import { useLanguage } from '../contexts/LanguageContext';
 import { BRAND_DETAILS } from '../constants';
 import YouTubeSlider from '../components/YouTubeSlider';
+import PageBanner from '../components/PageBanner';
 
 const Brands: React.FC = () => {
   const { t, language } = useLanguage();
@@ -15,16 +16,9 @@ const Brands: React.FC = () => {
     <div className="pb-16 min-h-screen bg-white">
       <SEO pageKey="brands" />
       {/* Header */}
-      <div className="relative bg-corail-900 text-white py-48 mb-16 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center pointer-events-none"
-          style={{ backgroundImage: "url('/corail-siege.jpeg')", backgroundPosition: 'center 60%' }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-corail-900/80 via-corail-800/40 to-transparent pointer-events-none"></div>
-        <div className="absolute inset-0 opacity-10 bg-mesh pointer-events-none"></div>
-      </div>
+      <PageBanner />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         {/* Title before grid */}
         <div className="text-center mb-12">
           <p className="text-lg sm:text-xl md:text-2xl xl:text-[30px] text-corail-900 font-display font-bold leading-relaxed">
@@ -64,24 +58,21 @@ const Brands: React.FC = () => {
           <YouTubeSlider />
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-24 mb-12 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-xl sm:text-2xl xl:text-3xl font-display font-bold text-corail-900 mb-4">{t.brandsPage.ctaTitle}</h2>
-            <p className="text-sm sm:text-base text-corail-400 mb-8 text-justify">{t.brandsPage.ctaSubtitle}</p>
-            <NavLink
-              to="/contact"
-              className="inline-flex items-center px-8 py-3 bg-corail-900 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-corail-800 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"
-            >
-              {t.brandsPage.ctaButton}
-              {language === 'ar' ? (
-                <ArrowLeft className="mr-2 h-4 w-4" />
-              ) : (
-                <ArrowRight className="ml-2 h-4 w-4" />
-              )}
-            </NavLink>
-          </div>
+        {/* CTA Button */}
+        <div className="mt-16 mb-12 text-center">
+          <NavLink
+            to="/contact"
+            className="inline-flex items-center px-8 py-3 bg-corail-900 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-corail-800 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"
+          >
+            Devenez partenaire
+            {language === 'ar' ? (
+              <ArrowLeft className="mr-2 h-4 w-4" />
+            ) : (
+              <ArrowRight className="ml-2 h-4 w-4" />
+            )}
+          </NavLink>
         </div>
+
       </div>
       <Tagline />
     </div>

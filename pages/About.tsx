@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import Tagline from "../components/Tagline";
-import siegeImg from "../public/corail-siege.jpeg";
+import PageBanner from "../components/PageBanner";
 import { motion } from "motion/react";
 
 const About: React.FC = () => {
@@ -16,23 +16,16 @@ const About: React.FC = () => {
 			<SEO pageKey="about" />
 			
 			{/* Header Image Section */}
-			<div className="relative bg-corail-900 text-white py-48 mb-16 overflow-hidden">
-				<div
-					className="absolute inset-0 bg-cover bg-center pointer-events-none"
-					style={{ backgroundImage: `url(${siegeImg})`, backgroundPosition: 'center 60%' }}
-				></div>
-				<div className="absolute inset-0 bg-gradient-to-r from-corail-900/80 via-corail-800/40 to-transparent pointer-events-none"></div>
-				<div className="absolute inset-0 opacity-10 bg-mesh pointer-events-none"></div>
-			</div>
+			<PageBanner />
 
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+		<div className="w-full bg-gray-50 mt-4 shadow-md">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 				{/* Company Profile */}
 				<motion.div 
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: "easeOut" }}
-					className="max-w-4xl mx-auto"
 				>
 					<div className="prose prose-base text-corail-400">
 						{t.about.profileText.map((paragraph: string, idx: number) => (
@@ -49,11 +42,15 @@ const About: React.FC = () => {
 						))}
 					</div>
 				</motion.div>
+			</div>
+		</div>
 
-				{/* Divider */}
-				<div className="max-w-7xl mx-auto">
-					<div className="h-px bg-gradient-to-r from-transparent via-corail-200 to-transparent"></div>
-				</div>
+		{/* Divider */}
+		<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="h-px bg-corail-200"></div>
+		</div>
+
+		<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 mt-6">
 
 				{/* Approach and Engagement - Two Columns */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -63,7 +60,7 @@ const About: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="bg-gray-50 p-8 rounded-2xl"
+						className="bg-gray-50 p-8 rounded-2xl transition-colors duration-500 hover:bg-sky-100"
 					>
 						<SectionTitle title={t.about.approachTitle} alignment="left" />
 						<div className="prose prose-base text-corail-400 space-y-6">
@@ -74,11 +71,7 @@ const About: React.FC = () => {
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.3 }}
 									transition={{ duration: 0.6, delay: 0.2 + (idx * 0.1), ease: "easeOut" }}
-									className={
-										idx === t.about.approachText.length - 1
-											? "font-semibold text-corail-800 text-justify"
-											: "text-justify"
-									}
+									className="text-justify"
 								>
 									{paragraph}
 								</motion.p>
@@ -92,7 +85,7 @@ const About: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="bg-corail-50 p-8 rounded-2xl"
+						className="p-8 rounded-2xl transition-colors duration-500 hover:bg-sky-100"
 					>
 						<SectionTitle title={t.about.engagementTitle} alignment="left" />
 						<div className="prose prose-base text-corail-400 space-y-6">

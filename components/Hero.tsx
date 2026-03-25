@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
 			<div className={`absolute inset-0 ${language === 'ar' ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-corail-900 via-corail-800/70 to-teal-800/50`}></div>
 
 			{/* Navy Blue Haze Filter */}
-			<div className="absolute inset-0 bg-corail-900/20 pointer-events-none"></div>
+			<div className="absolute inset-0 bg-corail-900/40 pointer-events-none"></div>
 
 			{/* Grain Texture */}
 			<div

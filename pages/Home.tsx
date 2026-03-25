@@ -38,7 +38,7 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
 							className="flex flex-col justify-center"
 						>
-							<p className="text-sm sm:text-base xl:text-lg text-corail-600 mb-8 font-light leading-relaxed text-justify">
+							<p className="text-sm sm:text-base xl:text-base text-corail-600 mb-8 font-light leading-relaxed text-justify">
 								{t.home.growthSubtitle}
 							</p>
 							<div className="flex flex-col space-y-4">
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
 							className="bg-corail-50 p-8 md:p-12 rounded-3xl border border-corail-100 shadow-xl flex items-center hover:bg-corail-100 transition-colors duration-700 h-full w-full"
 						>
-							<p className="text-sm sm:text-base xl:text-lg text-corail-700 leading-relaxed font-light italic text-justify">
+							<p className="text-sm sm:text-base xl:text-base text-corail-700 leading-relaxed font-light italic text-justify">
 								{t.home.growthFooter
 									.split(/(service provider)/i)
 									.map((part, i) =>
@@ -150,7 +150,7 @@ const Home: React.FC = () => {
 										whileInView={{ opacity: 1, y: 0 }}
 										viewport={{ once: true, amount: 0.3 }}
 										transition={{ duration: 0.6, delay: 0.2 + (i * 0.1), ease: "easeOut" }}
-										className="text-sm sm:text-base xl:text-lg leading-relaxed text-corail-600 text-justify font-light"
+										className="text-sm sm:text-base xl:text-base leading-relaxed text-corail-600 text-justify font-light"
 									>
 										{paragraph}
 									</motion.p>

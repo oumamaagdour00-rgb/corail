@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import SEO from "../components/SEO";
 import {
 	Truck,
@@ -12,14 +12,14 @@ import {
 import { NavLink } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import Tagline from "../components/Tagline";
+import PageBanner from "../components/PageBanner";
 import { motion } from "motion/react";
 
 import img1 from "../public/assets/transition-multicanal-omnicanal.1.5.png";
 import img2 from "../public/assets/Capture d'écran 2026-03-13 140135.png";
 import img3 from "../public/assets/Capture d'écran 2026-03-13 140824.png";
-import img4 from "../public/Capture d'écran 2026-03-13 141013.png";
+import img4 from "../public/assets/container.png";
 import img5 from "../public/assets/distant-shot-port-shipment-nighttime-compressed.jpg";
-import bgImg from "../public/corail-siege.jpeg";
 
 const Services: React.FC = () => {
 	const { t, language } = useLanguage();
@@ -44,25 +44,16 @@ const Services: React.FC = () => {
 		<div className="flex flex-col w-full min-h-screen bg-white font-sans">
 			<SEO pageKey="services" />
 			{/* Header */}
-			<div className="relative bg-corail-900 text-white py-48 mb-16 overflow-hidden">
-				<div
-					className="absolute inset-0 bg-cover bg-center pointer-events-none"
-					style={{ backgroundImage: `url(${bgImg})`, backgroundPosition: 'center 60%' }}
-				></div>
-				<div className="absolute inset-0 bg-gradient-to-r from-corail-900/80 via-corail-800/40 to-transparent pointer-events-none"></div>
-				<div className="absolute inset-0 opacity-10 bg-mesh pointer-events-none"></div>
-			</div>
+			<PageBanner />
 
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Main Service Pillars */}
-				<div className="py-24 space-y-32">
 					{t.data.services.map((service: any, index: number) => {
 						const Icon = icons[service.iconName] || Truck;
 						const mainBlocks = service.blocks.filter((b: any) => !b.type.startsWith('footer'));
 						const footerBlocks = service.blocks.filter((b: any) => b.type.startsWith('footer'));
 						
 						return (
-							<div key={service.id} className="space-y-8">
+							<div key={service.id} className={`w-full ${index === 0 ? "pt-8 pb-6" : "py-6"}`}>
+							<div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 rounded-2xl py-12 ${index % 2 === 0 ? "" : "bg-sky-100"}`}>
 								<div
 									className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 lg:gap-20 items-center group`}
 								>
@@ -115,7 +106,7 @@ const Services: React.FC = () => {
 														whileInView={{ opacity: 1, y: 0 }}
 														viewport={{ once: true, amount: 0.3 }}
 														transition={{ duration: 0.6, delay: 0.2 + (j * 0.1), ease: "easeOut" }}
-														className="text-sm sm:text-base xl:text-lg text-corail-400 leading-relaxed font-light text-justify"
+														className="text-sm sm:text-base xl:text-base text-corail-400 leading-relaxed font-light text-justify"
 													>
 														{p}
 													</motion.p>
@@ -203,7 +194,7 @@ const Services: React.FC = () => {
 														{content.map((p: string, l: number) => (
 															<p
 																key={l}
-																className="text-lg text-corail-900 font-bold italic"
+																className="text-[14px] text-corail-900 font-bold italic"
 															>
 																{p}
 															</p>
@@ -229,7 +220,7 @@ const Services: React.FC = () => {
 									{footerBlocks.map((block: any, i: number) => {
 										if (block.type === 'footer-text') {
 											return (
-												<p key={i} className="text-sm sm:text-base xl:text-lg text-corail-600 leading-relaxed font-light text-justify">
+												<p key={i} className="text-sm sm:text-base xl:text-base text-corail-600 leading-relaxed font-light text-justify">
 													{block.content}
 												</p>
 											);
@@ -239,7 +230,7 @@ const Services: React.FC = () => {
 											return (
 												<div key={i} className={language === 'ar' ? "border-r-4 border-corail-500 pr-4 py-2 bg-corail-50/30 rounded-l-lg" : "border-l-4 border-corail-500 pl-4 py-2 bg-corail-50/30 rounded-r-lg"}>
 													{content.map((p: string, l: number) => (
-														<p key={l} className="text-lg text-corail-900 font-bold italic">
+														<p key={l} className="text-[14px] text-corail-900 font-bold italic">
 															{p}
 														</p>
 													))}
@@ -251,10 +242,11 @@ const Services: React.FC = () => {
 								</motion.div>
 							)}
 						</div>
+							</div>
 						);
 					})}
-				</div>
 
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* CTA to Brands */}
 				<motion.div 
 					initial={{ opacity: 0, y: 50 }}

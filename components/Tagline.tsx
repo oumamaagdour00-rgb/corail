@@ -37,13 +37,19 @@ const Tagline: React.FC<TaglineProps> = ({ className = '' }) => {
     return (
         <section
             ref={sectionRef}
-            className={`relative w-full py-16 md:py-24 overflow-hidden ${className}`}
+            className={`relative w-full py-16 md:py-24 ${className}`}
         >
             <div
-                className={`absolute inset-0 bg-cover bg-center transition-all duration-[3000ms] ease-out ${isVisible ? 'scale-100 blur-0' : 'scale-110 blur-sm'}`}
-                style={{ backgroundImage: 'url("/assets/cfc.jpeg")', backgroundPosition: 'center 20%' }}
-            >
-            </div>
+                style={{
+                    backgroundImage: 'url("/assets/amala.jpeg")',
+                    backgroundAttachment: 'fixed',
+                    backgroundPosition: 'center center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    position: 'absolute',
+                    inset: 0,
+                }}
+            ></div>
 
             <div className="absolute inset-0 bg-corail-900/30 mix-blend-multiply"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-corail-600/55 to-corail-500/55"></div>

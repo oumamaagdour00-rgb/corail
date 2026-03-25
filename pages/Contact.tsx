@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO from '../components/SEO';
 import Tagline from '../components/Tagline';
+import PageBanner from '../components/PageBanner';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from "motion/react";
@@ -17,94 +18,70 @@ const Contact: React.FC = () => {
       </div>
 
       <SEO pageKey="contact" />
+      <PageBanner />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 space-y-16">
-        {/* Contact Info Card - First */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-white/60 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-corail-100/50 shadow-sm hover:shadow-2xl transition-all duration-700"
-        >
-          <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-corail-900 mb-6">{t.footer.contact}</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Address */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-              className="group flex items-start space-x-4 p-3 rounded-xl hover:bg-white/60 transition-colors duration-500"
-            >
-              <div className="bg-teal-50 p-3 rounded-xl group-hover:bg-teal-100 transition-colors duration-500 flex-shrink-0">
-                <MapPin className="h-6 w-6 text-teal-600" />
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-corail-900 mb-1">{t.contact.headquarters}</h4>
-                <p className="text-corail-400 text-sm leading-relaxed group-hover:text-corail-500 transition-colors duration-300">
-                  Parc Industriel Sapino, Nouaceur<br />
-                  Casablanca 20100, Maroc
-                </p>
-              </div>
-            </motion.div>
+        {/* Contact Info Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Address */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="group bg-corail-900 hover:bg-white rounded-2xl p-8 flex flex-col items-center text-center text-white hover:text-black shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200"
+          >
+            <MapPin className="h-10 w-10 mb-4" />
+            <h4 className="text-base font-bold mb-3">{t.contact.headquarters}</h4>
+            <p className="text-sm leading-relaxed opacity-80 group-hover:opacity-100">
+              Parc Industriel Sapino, Nouaceur<br />
+              Casablanca 20100, Maroc
+            </p>
+          </motion.div>
 
-            {/* Phone */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="group flex items-start space-x-4 p-3 rounded-xl hover:bg-white/60 transition-colors duration-500"
-            >
-              <div className="bg-teal-50 p-3 rounded-xl group-hover:bg-teal-100 transition-colors duration-500 flex-shrink-0">
-                <Phone className="h-6 w-6 text-teal-600" />
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-corail-900 mb-1">{t.contact.phone}</h4>
-                <p className="text-corail-400 text-sm group-hover:text-corail-500 transition-colors duration-300" dir="ltr">+212 (0)5 22 53 84 41</p>
-              </div>
-            </motion.div>
+          {/* Phone */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="group bg-corail-900 hover:bg-white rounded-2xl p-8 flex flex-col items-center text-center text-white hover:text-black shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200"
+          >
+            <Phone className="h-10 w-10 mb-4" />
+            <h4 className="text-base font-bold mb-3">{t.contact.phone}</h4>
+            <p className="text-sm opacity-80 group-hover:opacity-100" dir="ltr">+212 (0)5 22 53 84 41</p>
+          </motion.div>
 
-            {/* Email */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-              className="group flex items-start space-x-4 p-3 rounded-xl hover:bg-white/60 transition-colors duration-500"
-            >
-              <div className="bg-teal-50 p-3 rounded-xl group-hover:bg-teal-100 transition-colors duration-500 flex-shrink-0">
-                <Mail className="h-6 w-6 text-teal-600" />
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-corail-900 mb-1">{t.contact.email}</h4>
-                <a href="mailto:contact@coraillocean.com" className="text-teal-600 text-sm font-semibold hover:underline">
-                  contact@coraillocean.com
-                </a>
-              </div>
-            </motion.div>
+          {/* Email */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="group bg-corail-900 hover:bg-white rounded-2xl p-8 flex flex-col items-center text-center text-white hover:text-black shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200"
+          >
+            <Mail className="h-10 w-10 mb-4" />
+            <h4 className="text-base font-bold mb-3">{t.contact.email}</h4>
+            <a href="mailto:contact@coraillocean.com" className="text-sm opacity-80 group-hover:opacity-100 hover:underline transition-opacity">
+              contact@coraillocean.com
+            </a>
+          </motion.div>
 
-            {/* Hours */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              className="group flex items-start space-x-4 p-3 rounded-xl hover:bg-white/60 transition-colors duration-500"
-            >
-              <div className="bg-teal-50 p-3 rounded-xl group-hover:bg-teal-100 transition-colors duration-500 flex-shrink-0">
-                <Clock className="h-6 w-6 text-teal-600" />
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-corail-900 mb-1">{t.contact.hours}</h4>
-                {t.contact.hoursText.map((hour: string, idx: number) => (
-                  <p key={idx} className="text-corail-400 text-sm group-hover:text-corail-500 transition-colors duration-300">{hour}</p>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
+          {/* Hours */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            className="group bg-corail-900 hover:bg-white rounded-2xl p-8 flex flex-col items-center text-center text-white hover:text-black shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200"
+          >
+            <Clock className="h-10 w-10 mb-4" />
+            <h4 className="text-base font-bold mb-3">{t.contact.hours}</h4>
+            {t.contact.hoursText.map((hour: string, idx: number) => (
+              <p key={idx} className="text-sm opacity-80 group-hover:opacity-100">{hour}</p>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Contact Form - Second */}
         <motion.div 
@@ -169,7 +146,7 @@ const Contact: React.FC = () => {
           ></iframe>
         </motion.div>
       </div>
-      <Tagline className="mt-24" />
+      <Tagline className="mt-8" />
     </div>
   );
 };
