@@ -142,7 +142,8 @@ export const translations: { [key: string]: TranslationData } = {
       brands: 'Our brands',
       contact: 'Contact',
       services: 'Our services',
-      catalog: 'Catalog'
+      catalog: 'Catalog',
+      partnerCta: 'Become a partner'
     },
     hero: {
       title: "Connecting markets to the brands that shape everyday life",
@@ -484,7 +485,8 @@ export const translations: { [key: string]: TranslationData } = {
       brands: 'Nos marques',
       contact: 'Contact',
       services: 'Nos services',
-      catalog: 'Catalogue'
+      catalog: 'Catalogue',
+      partnerCta: 'Devenez partenaire'
     },
     hero: {
       title: "Connecter les marchés aux marques qui façonnent le quotidien",
@@ -826,7 +828,8 @@ export const translations: { [key: string]: TranslationData } = {
     brands: 'علاماتنا التجارية',
     contact: 'اتصل بنا',
     services: 'خدماتنا',
-    catalog: 'الكتالوج'
+    catalog: 'الكتالوج',
+    partnerCta: 'كن شريكاً'
   },
   hero: {
     title: "ربط الأسواق بالعلامات التجارية التي تشكّل تفاصيل الحياة اليومية",

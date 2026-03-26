@@ -15,9 +15,9 @@ import Tagline from "../components/Tagline";
 import PageBanner from "../components/PageBanner";
 import { motion } from "motion/react";
 
-import img1 from "../public/assets/transition-multicanal-omnicanal.1.5.png";
+import img1 from "../public/assets/dis_multicanal.jpg";
 import img2 from "../public/assets/Capture d'écran 2026-03-13 140135.png";
-import img3 from "../public/assets/Capture d'écran 2026-03-13 140824.png";
+import img3 from "../public/assets/execution_terrain.jpg";
 import img4 from "../public/assets/container.png";
 import img5 from "../public/assets/distant-shot-port-shipment-nighttime-compressed.jpg";
 

@@ -22,7 +22,7 @@ const Brands: React.FC = () => {
         {/* Title before grid */}
         <div className="text-center mb-12">
           <p className="text-lg sm:text-xl md:text-2xl xl:text-[30px] text-corail-900 font-display font-bold leading-relaxed">
-            Distribution de portefeuilles de classe mondiale à travers le Maroc.
+            {t.brandsPage.subtitle}
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const Brands: React.FC = () => {
             to="/contact"
             className="inline-flex items-center px-8 py-3 bg-corail-900 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-corail-800 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
-            Devenez partenaire
+            {t.nav.partnerCta}
             {language === 'ar' ? (
               <ArrowLeft className="mr-2 h-4 w-4" />
             ) : (
