@@ -73,7 +73,7 @@ const Services: React.FC = () => {
 											<img
 												src={serviceImages[service.id]}
 												alt={service.title}
-												className="w-full h-full object-cover transform group-hover/image:scale-105 transition-transform duration-[2000ms] ease-out"
+												className="w-full h-full object-cover object-center scale-110 transform group-hover/image:scale-115 transition-transform duration-[2000ms] ease-out"
 											/>
 											<div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/20 group-hover/image:-translate-y-1 transition-all duration-700">
 												<Icon className="h-8 w-8 text-corail-600" />
