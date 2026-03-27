@@ -9,7 +9,7 @@ const BrandCarousel: React.FC = () => {
     return (
         <section className="py-12 bg-corail-900 overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8 relative z-30">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-bold text-white mb-4">{t.home.brandsTitle}</h2>
+                <h2 className="text-[36px] font-display font-bold text-white mb-4">{t.home.brandsTitle}</h2>
                 <div className="h-1 w-24 bg-corail-600 mx-auto rounded-full"></div>
             </div>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -7,13 +7,25 @@ import { motion } from "motion/react";
 
 const Hero: React.FC = () => {
 	const { t, language } = useLanguage();
+	const bgRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (bgRef.current) {
+				bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+			}
+		};
+		window.addEventListener("scroll", handleScroll, { passive: true });
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	return (
-		<div className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 85px)', minHeight: '500px' }}>
+		<div className="relative w-full overflow-hidden" style={{ height: 'calc(70vh - 85px)', minHeight: '400px' }}>
 			{/* Background Image - Corporate Building */}
 			<div
-				className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[120%] -top-[10%] will-change-transform animate-[parallax_linear_both] [animation-timeline:scroll(root)] [animation-range:0_850px] scale-105"
-				style={{ backgroundImage: `url(${bgImg})` }}
+				ref={bgRef}
+				className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform scale-110"
+				style={{ backgroundImage: `url(${bgImg})`, top: '-10%', height: '120%' }}
 			></div>
 
 			{/* Gradient Overlay */}
@@ -39,7 +51,7 @@ const Hero: React.FC = () => {
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
-							className={`text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-extrabold text-white leading-tight mb-6 xl:whitespace-nowrap ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							className={`text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-bold text-white leading-tight mb-6 xl:whitespace-nowrap ${language === 'ar' ? 'text-right' : 'text-left'}`}
 						>
 							{t.hero.title}
 						</motion.h1>

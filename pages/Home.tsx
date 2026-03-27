@@ -26,7 +26,7 @@ const Home: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-black mb-10 xl:mb-16 text-center text-corail-900 leading-tight"
+						className="text-[36px] font-display font-bold mb-10 xl:mb-16 text-center text-corail-900 leading-tight"
 					>
 						{t.home.growthTitle}
 					</motion.h2>
@@ -86,8 +86,8 @@ const Home: React.FC = () => {
 				</div>
 			</section>
 
-			{/* Key Figures */}
-			<section className="py-24 bg-corail-50 border-y border-corail-100">
+		{/* Key Figures */}
+			<section className="py-12 bg-corail-50 border-y border-corail-100">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<SectionTitle title={t.home.figuresTitle} alignment="center" />
 
@@ -135,7 +135,7 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className="w-full lg:w-3/5"
 						>
-							<h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-black mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4">
+							<h1 className="text-[36px] font-display font-bold mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4">
 								<span className="h-1 w-12 bg-corail-900"></span>
 								{t.home.presidentTitle}
 							</h1>

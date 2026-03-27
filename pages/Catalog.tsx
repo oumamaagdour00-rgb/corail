@@ -38,7 +38,7 @@ const Catalog: React.FC = () => {
       {/* Header */}
       <div className="bg-teal-600 text-white py-16 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-display font-bold mb-6 tracking-tight">{t.catalog.title}</h1>
+          <h1 className="text-[36px] font-display font-bold mb-6 tracking-tight">{t.catalog.title}</h1>
           <p className="text-sm sm:text-base xl:text-lg text-teal-100 text-justify">{t.catalog.subtitle}</p>
         </div>
       </div>
