@@ -26,7 +26,7 @@ const Home: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="text-[36px] font-display font-bold mb-10 xl:mb-16 text-center text-corail-900 leading-tight"
+						className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-center text-corail-900 leading-tight"
 					>
 						{t.home.growthTitle}
 					</motion.h2>
@@ -66,7 +66,8 @@ const Home: React.FC = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, amount: 0.3 }}
 							transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-							className="bg-corail-50 p-8 md:p-12 rounded-3xl border border-corail-100 shadow-xl flex items-center hover:bg-corail-100 transition-colors duration-700 h-full w-full"
+							className="p-8 md:p-12 rounded-3xl border border-corail-100 shadow-xl flex items-center hover:bg-corail-100 transition-colors duration-700 h-full w-full"
+							style={{ backgroundColor: '#f2f3f5' }}
 						>
 							<p className="text-sm sm:text-base xl:text-base text-corail-700 leading-relaxed font-light italic text-justify">
 								{t.home.growthFooter
@@ -87,7 +88,7 @@ const Home: React.FC = () => {
 			</section>
 
 		{/* Key Figures */}
-			<section className="py-12 bg-corail-50 border-y border-corail-100">
+			<section className="py-12 border-y border-corail-100" style={{ backgroundColor: '#f2f3f5' }}>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<SectionTitle title={t.home.figuresTitle} alignment="center" />
 
@@ -110,7 +111,7 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className="w-full lg:w-2/5 relative group/president"
 						>
-							<div className="absolute inset-0 bg-gradient-to-tr from-corail-200 to-teal-100 rounded-3xl transform rotate-3 scale-105 opacity-40 group-hover/president:rotate-6 transition-transform duration-[2000ms] ease-out"></div>
+							<div className="absolute inset-0 rounded-3xl transform rotate-3 scale-105 opacity-40 group-hover/president:rotate-6 transition-transform duration-[2000ms] ease-out" style={{ backgroundColor: '#f2f3f5' }}></div>
 							<div className="relative rounded-3xl shadow-2xl hover:shadow-[0_20px_50px_rgba(54,91,120,0.2)] transition-shadow duration-[1500ms] overflow-hidden w-full h-[500px]">
 								<img
 									src={presImg}
@@ -135,7 +136,7 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className="w-full lg:w-3/5"
 						>
-							<h1 className="text-[36px] font-display font-bold mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4">
+							<h1 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4">
 								<span className="h-1 w-12 bg-corail-900"></span>
 								{t.home.presidentTitle}
 							</h1>

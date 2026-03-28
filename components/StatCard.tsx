@@ -106,7 +106,7 @@ const StatCard: React.FC<StatCardProps> = ({ stat, variant = 'overview' }) => {
               onError={() => setImgError(true)}
             />
           ) : (
-            <div className="w-16 h-16 bg-corail-50 rounded-full flex items-center justify-center group-hover:bg-corail-100 transition-colors duration-700 shadow-inner">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center group-hover:bg-corail-100 transition-colors duration-700 shadow-inner" style={{ backgroundColor: '#f2f3f5' }}>
               <Icon size={32} className="text-corail-600 group-hover:scale-110 transition-transform duration-700" strokeWidth={1.5} />
             </div>
           )}

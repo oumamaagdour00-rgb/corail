@@ -52,22 +52,24 @@ const Services: React.FC = () => {
 						const footerBlocks = service.blocks.filter((b: any) => b.type.startsWith('footer'));
 						
 						return (
-							<div key={service.id} className={`w-full ${index === 0 ? "pt-8 pb-6" : "py-6"}`}>
+							<motion.div
+								key={service.id}
+								initial={{ opacity: 0, y: 60 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true, amount: 0.15 }}
+								transition={{ duration: 0.7, ease: "easeOut" }}
+								className={`w-full ${index === 0 ? "pt-8 pb-6" : "py-6"}`}
+							>
 							<div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 rounded-2xl py-12 ${index % 2 === 0 ? "" : "bg-sky-100"}`}>
 								<div
 									className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 lg:gap-20 items-center group`}
 								>
 								{/* Image Visual */}
-								<motion.div 
-									initial={{ opacity: 0, y: 40 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true, amount: 0.3 }}
-									transition={{ duration: 0.8, ease: "easeOut" }}
-									className="w-full lg:w-1/2"
-								>
+								<div className="w-full lg:w-1/2">
 									<div className="relative group/image">
 										<div
-											className={`absolute -inset-4 bg-gradient-to-r ${index % 2 === 0 ? "from-corail-100 to-transparent" : "from-teal-100 to-transparent"} rounded-3xl opacity-30 transform rotate-2 group-hover:rotate-4 transition-transform duration-[1500ms] ease-out`}
+											className="absolute -inset-4 rounded-3xl opacity-100 transform rotate-2 group-hover:rotate-4 transition-transform duration-[1500ms] ease-out"
+											style={{ backgroundColor: '#f2f3f5' }}
 										></div>
 										<div className="relative h-[250px] sm:h-[320px] lg:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-[1500ms]">
 											<img
@@ -80,16 +82,10 @@ const Services: React.FC = () => {
 											</div>
 										</div>
 									</div>
-								</motion.div>
+								</div>
 
 								{/* Text Content */}
-								<motion.div 
-									initial={{ opacity: 0, y: 40 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true, amount: 0.3 }}
-									transition={{ duration: 0.8, ease: "easeOut" }}
-									className="w-full lg:w-1/2"
-								>
+								<div className="w-full lg:w-1/2">
 									<h3 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-display font-bold text-corail-900 mb-6">
 										{service.title}
 									</h3>
@@ -100,16 +96,12 @@ const Services: React.FC = () => {
 													? block.content
 													: [block.content];
 												return paragraphs.map((p: string, j: number) => (
-													<motion.p
+													<p
 														key={`${i}-${j}`}
-														initial={{ opacity: 0, y: 20 }}
-														whileInView={{ opacity: 1, y: 0 }}
-														viewport={{ once: true, amount: 0.3 }}
-														transition={{ duration: 0.6, delay: 0.2 + (j * 0.1), ease: "easeOut" }}
 														className="text-sm sm:text-base xl:text-base text-corail-400 leading-relaxed font-light text-justify"
 													>
 														{p}
-													</motion.p>
+													</p>
 												));
 											}
 											if (block.type === "list") {
@@ -117,106 +109,63 @@ const Services: React.FC = () => {
 													? block.content
 													: [block.content];
 												return (
-													<motion.div
+													<div
 														key={i}
-														initial={{ opacity: 0, y: 20 }}
-														whileInView={{ opacity: 1, y: 0 }}
-														viewport={{ once: true, amount: 0.3 }}
-														transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-														className="group/list bg-corail-50/50 hover:bg-white rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700"
+														className={`group/list rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 ${index % 2 === 1 ? "bg-white hover:bg-white" : "hover:bg-white"}`}
+												style={index % 2 === 0 ? { backgroundColor: '#f2f3f5' } : {}}
 													>
-														{/* Mobile Single Column */}
 														<ul className="md:hidden space-y-3">
 															{items.map((item: string, k: number) => (
-																<li
-																	key={k}
-																	className="flex items-start space-x-2 text-sm text-corail-500"
-																>
-																	<CheckCircle2
-																		size={16}
-																		className="text-teal-500 flex-shrink-0 mt-0.5"
-																	/>
+																<li key={k} className="flex items-start space-x-2 text-sm text-corail-500">
+																	<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
 																	<span>{item}</span>
 																</li>
 															))}
 														</ul>
-														{/* Desktop Two Independent Columns */}
 														<div className="hidden md:grid md:grid-cols-2 gap-6">
 															<ul className="space-y-3">
-																{items
-																	.filter((_: any, idx: number) => idx % 2 === 0)
-																	.map((item: string, k: number) => (
-																		<li
-																			key={k}
-																			className="flex items-start space-x-2 text-sm text-corail-500"
-																		>
-																			<CheckCircle2
-																				size={16}
-																				className="text-teal-500 flex-shrink-0 mt-0.5"
-																			/>
-																			<span>{item}</span>
-																		</li>
-																	))}
+																{items.filter((_: any, idx: number) => idx % 2 === 0).map((item: string, k: number) => (
+																	<li key={k} className="flex items-start space-x-2 text-sm text-corail-500">
+																		<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+																		<span>{item}</span>
+																	</li>
+																))}
 															</ul>
 															<ul className="space-y-3">
-																{items
-																	.filter((_: any, idx: number) => idx % 2 === 1)
-																	.map((item: string, k: number) => (
-																		<li
-																			key={k}
-																			className="flex items-start space-x-2 text-sm text-corail-500"
-																		>
-																			<CheckCircle2
-																				size={16}
-																				className="text-teal-500 flex-shrink-0 mt-0.5"
-																			/>
-																			<span>{item}</span>
-																		</li>
-																	))}
+																{items.filter((_: any, idx: number) => idx % 2 === 1).map((item: string, k: number) => (
+																	<li key={k} className="flex items-start space-x-2 text-sm text-corail-500">
+																		<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+																		<span>{item}</span>
+																	</li>
+																))}
 															</ul>
 														</div>
-													</motion.div>
+													</div>
 												);
 											}
 											if (block.type === "emphasis") {
-												const content = Array.isArray(block.content)
-													? block.content
-													: [block.content];
+												const content = Array.isArray(block.content) ? block.content : [block.content];
 												return (
-													<motion.div
+													<div
 														key={i}
-														initial={{ opacity: 0, y: 20 }}
-														whileInView={{ opacity: 1, y: 0 }}
-														viewport={{ once: true, amount: 0.3 }}
-														transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-														className={language === 'ar' ? "border-r-4 border-corail-500 pr-4 py-2 bg-corail-50/30 rounded-l-lg" : "border-l-4 border-corail-500 pl-4 py-2 bg-corail-50/30 rounded-r-lg"}
+														className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg ${index % 2 === 1 ? "bg-white" : ""}` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg ${index % 2 === 1 ? "bg-white" : ""}`}
+											style={index % 2 === 0 ? { backgroundColor: '#f2f3f5' } : {}}
 													>
 														{content.map((p: string, l: number) => (
-															<p
-																key={l}
-																className="text-[14px] text-corail-900 font-bold italic"
-															>
-																{p}
-															</p>
+															<p key={l} className="text-[14px] text-corail-900 font-bold italic">{p}</p>
 														))}
-													</motion.div>
+													</div>
 												);
 											}
 											return null;
 										})}
 									</div>
-								</motion.div>
+								</div>
 							</div>
 							
 							{/* Footer Content - Full Width Below */}
 							{footerBlocks.length > 0 && (
-								<motion.div 
-									initial={{ opacity: 0, y: 30 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true, amount: 0.3 }}
-									transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-									className="w-full space-y-4"
-								>
+								<div className="w-full space-y-4">
 									{footerBlocks.map((block: any, i: number) => {
 										if (block.type === 'footer-text') {
 											return (
@@ -228,21 +177,20 @@ const Services: React.FC = () => {
 										if (block.type === 'footer-emphasis') {
 											const content = Array.isArray(block.content) ? block.content : [block.content];
 											return (
-												<div key={i} className={language === 'ar' ? "border-r-4 border-corail-500 pr-4 py-2 bg-corail-50/30 rounded-l-lg" : "border-l-4 border-corail-500 pl-4 py-2 bg-corail-50/30 rounded-r-lg"}>
+												<div key={i} className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg ${index % 2 === 1 ? "bg-white" : ""}` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg ${index % 2 === 1 ? "bg-white" : ""}`}
+											style={index % 2 === 0 ? { backgroundColor: '#f2f3f5' } : {}}>
 													{content.map((p: string, l: number) => (
-														<p key={l} className="text-[14px] text-corail-900 font-bold italic">
-															{p}
-														</p>
+														<p key={l} className="text-[14px] text-corail-900 font-bold italic">{p}</p>
 													))}
 												</div>
 											);
 										}
 										return null;
 									})}
-								</motion.div>
+								</div>
 							)}
 						</div>
-							</div>
+							</motion.div>
 						);
 					})}
 

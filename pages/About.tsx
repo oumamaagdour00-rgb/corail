@@ -19,7 +19,7 @@ const About: React.FC = () => {
 			<PageBanner />
 
 		<div className="w-full bg-gray-50 mt-4 shadow-md">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 				{/* Company Profile */}
 				<motion.div 
 					initial={{ opacity: 0, y: 50 }}
@@ -50,7 +50,8 @@ const About: React.FC = () => {
 			<div className="h-px bg-corail-200"></div>
 		</div>
 
-		<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 mt-6">
+		<div className="w-full pt-6 pb-8" style={{ backgroundColor: '#edf3f5' }}>
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
 				{/* Approach and Engagement - Two Columns */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -60,7 +61,7 @@ const About: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="bg-gray-50 p-8 rounded-2xl transition-colors duration-500 hover:bg-sky-100"
+						className="p-8 rounded-2xl transition-colors duration-500 hover:bg-white"
 					>
 						<SectionTitle title={t.about.approachTitle} alignment="left" />
 						<div className="prose prose-base text-corail-400 space-y-6">
@@ -85,7 +86,7 @@ const About: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="p-8 rounded-2xl transition-colors duration-500 hover:bg-sky-100"
+						className="p-8 rounded-2xl transition-colors duration-500 hover:bg-white"
 					>
 						<SectionTitle title={t.about.engagementTitle} alignment="left" />
 						<div className="prose prose-base text-corail-400 space-y-6">
@@ -111,7 +112,7 @@ const About: React.FC = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: "easeOut" }}
-					className="text-center py-12"
+					className="text-center pt-2 pb-2"
 				>
 					<NavLink
 						to="/services"
@@ -126,6 +127,7 @@ const About: React.FC = () => {
 					</NavLink>
 				</motion.div>
 			</div>
+		</div>
 
 			{/* Tagline */}
 			<Tagline />
