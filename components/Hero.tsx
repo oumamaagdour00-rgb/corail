@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
 	}, []);
 
 	return (
-		<div className="relative w-full overflow-hidden" style={{ height: 'calc(70vh - 85px)', minHeight: '400px' }}>
+		<div className="relative w-full overflow-hidden" style={{ height: 'calc(90vh - 85px)', minHeight: '500px' }}>
 			{/* Background Image - Corporate Building */}
 			<div
 				ref={bgRef}
