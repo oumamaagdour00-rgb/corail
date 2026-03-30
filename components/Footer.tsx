@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import logoUrl from "../public/favicon-not-ocean.webp";
+import logoUrl from "../public/favicon-not-ocean.png";
 
 const Footer: React.FC = () => {
 	const { t } = useLanguage();

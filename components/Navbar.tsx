@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import logoUrl from "../public/favicon-not-ocean.webp";
+import logoUrl from "../public/favicon-not-ocean.png";
 
 const LANGUAGES = [
 	{ code: "fr", flag: "https://flagcdn.com/w40/fr.png", label: "Français" },
