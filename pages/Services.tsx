@@ -15,11 +15,11 @@ import Tagline from "../components/Tagline";
 import PageBanner from "../components/PageBanner";
 import { motion } from "motion/react";
 
-import img1 from "../public/assets/dis_multicanal.jpg";
-import img2 from "../public/assets/Capture d'écran 2026-03-13 140135.png";
-import img3 from "../public/assets/execution_terrain.jpg";
-import img4 from "../public/assets/container.png";
-import img5 from "../public/assets/distant-shot-port-shipment-nighttime-compressed.jpg";
+import img1 from "../public/assets/dis_multicanal.webp";
+import img2 from "../public/assets/Capture d'écran 2026-03-13 140135.webp";
+import img3 from "../public/assets/salle_reunion.webp";
+import img4 from "../public/assets/container.webp";
+import img5 from "../public/assets/distant-shot-port-shipment-nighttime-compressed.webp";
 
 const Services: React.FC = () => {
 	const { t, language } = useLanguage();

@@ -1,5 +1,5 @@
 import React from "react";
-import siegeImg from "../public/corail-siege.jpeg";
+import siegeImg from "../public/corail-siege.webp";
 
 const PageBanner: React.FC = () => (
 	<div className="relative text-white py-28 overflow-hidden">

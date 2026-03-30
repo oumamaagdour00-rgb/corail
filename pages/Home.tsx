@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Check } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import BrandCarousel from "../components/BrandCarousel";
-import presImg from "../public/assets/businessman-using-tablet-working-car-inside-compressed.jpg";
+import presImg from "../public/assets/businessman-using-tablet-working-car-inside-compressed.webp";
 import { motion } from "motion/react";
 
 const Home: React.FC = () => {

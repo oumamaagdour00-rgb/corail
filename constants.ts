@@ -1,12 +1,12 @@
 import { Brand, Product } from './types';
-import colgateObj from './public/colgate.png';
-import esemmatObj from './public/esemmat.jpg';
-import joyfulObj from './public/joyful.png';
-import souplineObj from './public/soupline.png';
-import ajaxObj from './public/ajax.png';
-import cadumObj from './public/cadum.png';
-import tahitiObj from './public/tahiti.png';
-import holderObj from './public/holder.jpg';
+import colgateObj from './public/colgate.webp';
+import esemmatObj from './public/esemmat.webp';
+import joyfulObj from './public/joyful.webp';
+import souplineObj from './public/soupline.webp';
+import ajaxObj from './public/ajax.webp';
+import cadumObj from './public/cadum.webp';
+import tahitiObj from './public/tahiti.webp';
+import holderObj from './public/holder.webp';
 
 export const COMPANY_NAME = "Corail L'Océan";
 export const FOUNDED_YEAR = 2010;
