@@ -59,8 +59,9 @@ const Services: React.FC = () => {
 								viewport={{ once: true, amount: 0.15 }}
 								transition={{ duration: 0.7, ease: "easeOut" }}
 								className={`w-full ${index === 0 ? "pt-8 pb-6" : "py-6"}`}
+								style={index % 2 === 1 ? { backgroundColor: '#34597d' } : {}}
 							>
-							<div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 rounded-2xl py-12 ${index % 2 === 0 ? "" : "bg-sky-100"}`}>
+							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 rounded-2xl py-12">
 								<div
 									className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 lg:gap-20 items-center group`}
 								>
@@ -86,7 +87,7 @@ const Services: React.FC = () => {
 
 								{/* Text Content */}
 								<div className="w-full lg:w-1/2">
-									<h3 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-display font-bold text-corail-900 mb-6">
+									<h3 className={`text-xl sm:text-2xl md:text-3xl xl:text-4xl font-display font-bold mb-6 ${index % 2 === 1 ? "text-white" : "text-corail-900"}`}>
 										{service.title}
 									</h3>
 									<div className="space-y-2">
@@ -98,7 +99,7 @@ const Services: React.FC = () => {
 												return paragraphs.map((p: string, j: number) => (
 													<p
 														key={`${i}-${j}`}
-														className="text-sm sm:text-base xl:text-base text-corail-400 leading-relaxed font-light text-justify"
+														className={`text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify ${index % 2 === 1 ? "text-white/90" : "text-corail-400"}`}
 													>
 														{p}
 													</p>
@@ -169,7 +170,7 @@ const Services: React.FC = () => {
 									{footerBlocks.map((block: any, i: number) => {
 										if (block.type === 'footer-text') {
 											return (
-												<p key={i} className="text-sm sm:text-base xl:text-base text-corail-600 leading-relaxed font-light text-justify">
+												<p key={i} className={`text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify ${index % 2 === 1 ? "text-white/90" : "text-corail-600"}`}>
 													{block.content}
 												</p>
 											);

@@ -51,17 +51,32 @@ const Hero: React.FC = () => {
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
-							className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-display font-bold text-white leading-tight mb-6 lg:whitespace-nowrap ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							className={`font-display font-bold text-white leading-tight mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}
 						>
-							{t.hero.title}
+							{(() => {
+								const title = t.hero.title;
+								const keyword = language === 'ar' ? 'العلامات' : language === 'en' ? 'brands' : 'marques';
+								const idx = title.toLowerCase().indexOf(keyword);
+								if (idx === -1) return <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">{title}.</div>;
+								const line1 = title.slice(0, idx + keyword.length).trimEnd();
+								const line2 = title.slice(idx + keyword.length).trimStart();
+								return (
+									<>
+										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">{line1}</div>
+										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">{line2}.</div>
+									</>
+								);
+							})()}
 						</motion.h1>
 						<motion.p 
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-							className={`text-sm sm:text-base xl:text-lg text-white/90 mb-8 leading-relaxed font-light ${language === 'ar' ? 'text-right' : 'text-justify'}`}
+							className={`text-sm sm:text-base xl:text-lg text-white/90 mb-8 font-light ${language === 'ar' ? 'text-right' : 'text-left'}`}
 						>
-							{t.hero.subtitle}
+							{t.hero.subtitle.map((line, i) => (
+								<div key={i}>{line}</div>
+							))}
 						</motion.p>
 
 						<motion.div 

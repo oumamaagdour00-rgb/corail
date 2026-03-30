@@ -3,7 +3,7 @@ import { Service, Stat, NewsItem } from './types';
 
 interface TranslationData {
   nav: { [key: string]: string };
-  hero: { title: string; subtitle: string; button: string };
+  hero: { title: string; subtitle: string[]; button: string };
   home: {
     introTitle: string;
     introSubtitle: string;
@@ -147,7 +147,13 @@ export const translations: { [key: string]: TranslationData } = {
     },
     hero: {
       title: "Connecting markets to the brands that shape everyday life",
-      subtitle: "With over 15 years of experience, Corail L’Océan is a key player in FMCG distribution in Morocco. We operate across the entire distributive value chain: from go-to-market to field execution, including logistical mastery, deep understanding of local dynamics, and commercial performance management. Our mission is clear: to transform distribution into a structural lever for sustainable value creation.",
+      subtitle: [
+        "With over 15 years of experience,",
+        "Corail L'Océan is a key player in FMCG distribution in Morocco.",
+        "We operate across the entire distributive value chain:",
+        "from go-to-market to field execution.",
+        "Our mission: to transform distribution into a structural lever for sustainable value creation.",
+      ],
       button: "Learn more"
     },
     home: {
@@ -490,7 +496,13 @@ export const translations: { [key: string]: TranslationData } = {
     },
     hero: {
       title: "Connecter les marchés aux marques qui façonnent le quotidien",
-      subtitle: "Fort de plus de 15 ans d’expérience, Corail L’Océan est un acteur clé de la distribution FMCG au Maroc. Nous opérons sur l’ensemble de la chaîne de valeur distributive : du go-to-market à l’exécution terrain. Notre mission est claire : transformer la distribution en un levier structurant de création de valeur durable.",
+      subtitle: [
+        "Fort de plus de 15 ans d'expérience,",
+        "Corail L'Océan est un acteur clé de la distribution FMCG au Maroc.",
+        "Nous opérons sur l'ensemble de la chaîne de valeur distributive :",
+        "du go-to-market à l'exécution terrain.",
+        "Notre mission : transformer la distribution en un levier structurant de création de valeur durable.",
+      ],
       button: "En savoir plus"
     },
     home: {
@@ -833,7 +845,13 @@ export const translations: { [key: string]: TranslationData } = {
   },
   hero: {
     title: "ربط الأسواق بالعلامات التجارية التي تشكّل تفاصيل الحياة اليومية",
-    subtitle: "بخبرة تتجاوز 15 عاماً، تُعدّ كوراي لوسيان فاعلاً رئيسياً في مجال توزيع السلع الاستهلاكية سريعة التداول في المغرب. نعمل على مختلف مراحل سلسلة القيمة في التوزيع: من استراتيجيات الدخول إلى السوق وتنفيذ العمليات ميدانياً، مروراً بإدارة لوجستية متقنة وفهم عميق لديناميكيات الأسواق المحلية، وصولاً إلى قيادة الأداء التجاري بكفاءة. مهمتنا واضحة: تحويل التوزيع إلى رافعة استراتيجية لخلق قيمة مستدامة.",
+    subtitle: [
+        "بخبرة تتجاوز 15 عاماً،",
+        "تُعدّ كوراي لوسيان فاعلاً رئيسياً في توزيع السلع الاستهلاكية في المغرب.",
+        "نعمل على مختلف مراحل سلسلة القيمة في التوزيع:",
+        "من استراتيجيات الدخول إلى السوق وتنفيذ العمليات ميدانياً.",
+        "مهمتنا: تحويل التوزيع إلى رافعة استراتيجية لخلق قيمة مستدامة.",
+      ],
     button: "اكتشف المزيد"
   },
   home: {
