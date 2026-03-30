@@ -1,6 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+// Favicon injection (needed for vite-plugin-singlefile bundling)
+import faviconUrl from './public/favicon-not-ocean.png';
+const link = document.querySelector("link[rel='icon']") as HTMLLinkElement || document.createElement('link');
+link.rel = 'icon';
+link.type = 'image/png';
+link.href = faviconUrl;
+document.head.appendChild(link);
+
 // Fonts
 import "@fontsource/montserrat/300.css";
 import "@fontsource/montserrat/400.css";
