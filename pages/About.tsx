@@ -50,7 +50,7 @@ const About: React.FC = () => {
 
 				{/* Approach and Engagement - Two Columns */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-					{/* Approach */}
+					{/* Engagement */}
 					<motion.div 
 						initial={{ opacity: 0, y: 40 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -58,10 +58,10 @@ const About: React.FC = () => {
 						transition={{ duration: 0.8, ease: "easeOut" }}
 						className="py-5 px-6 rounded-2xl transition-colors duration-500 hover:bg-white"
 					>
-						<SectionTitle title={t.about.approachTitle} alignment="left" />
+						<SectionTitle title={t.about.engagementTitle} alignment="left" />
 						<div className="prose prose-base text-corail-400 space-y-6">
-							{t.about.approachText.map((paragraph: string, idx: number) => (
-								<motion.p
+							{t.about.engagementText.map((paragraph: string, idx: number) => (
+								<motion.p 
 									key={idx}
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
@@ -75,18 +75,18 @@ const About: React.FC = () => {
 						</div>
 					</motion.div>
 
-					{/* Engagement */}
-					<motion.div 
+					{/* Approach */}
+					<motion.div
 						initial={{ opacity: 0, y: 40 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
 						className="py-5 px-6 rounded-2xl transition-colors duration-500 hover:bg-white"
 					>
-						<SectionTitle title={t.about.engagementTitle} alignment="left" />
+						<SectionTitle title={t.about.approachTitle} alignment="left" />
 						<div className="prose prose-base text-corail-400 space-y-6">
-							{t.about.engagementText.map((paragraph: string, idx: number) => (
-								<motion.p 
+							{t.about.approachText.map((paragraph: string, idx: number) => (
+								<motion.p
 									key={idx}
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}

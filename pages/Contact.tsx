@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import Tagline from '../components/Tagline';
 import PageBanner from '../components/PageBanner';
@@ -8,9 +8,15 @@ import { motion } from "motion/react";
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
+  const [hovered, setHovered] = useState<number | null>(null);
+  const cardStyle = (idx: number) => ({
+    backgroundColor: hovered === idx ? '#ffffff' : '#f2f3f5',
+    color: hovered === idx ? '#000000' : '#1e3a5f',
+  });
+  const cardClass = "group rounded-2xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200";
 
   return (
-    <div className="flex flex-col w-full relative overflow-hidden">
+    <div className="flex flex-col w-full relative overflow-hidden bg-white">
       {/* Subtle Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none -z-10">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-50 rounded-full blur-[120px] opacity-60"></div>
@@ -29,7 +35,8 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="group bg-corail-900 hover:bg-white rounded-2xl p-8 flex flex-col items-center text-center text-white hover:text-black shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200"
+            className={cardClass} style={cardStyle(0)}
+            onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)}
           >
             <MapPin className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.headquarters}</h4>
@@ -45,7 +52,8 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="group bg-corail-900 hover:bg-white rounded-2xl p-8 flex flex-col items-center text-center text-white hover:text-black shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200"
+            className={cardClass} style={cardStyle(1)}
+            onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)}
           >
             <Phone className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.phone}</h4>
@@ -58,7 +66,8 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-            className="group bg-corail-900 hover:bg-white rounded-2xl p-8 flex flex-col items-center text-center text-white hover:text-black shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200"
+            className={cardClass} style={cardStyle(2)}
+            onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)}
           >
             <Mail className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.email}</h4>
@@ -73,7 +82,8 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="group bg-corail-900 hover:bg-white rounded-2xl p-8 flex flex-col items-center text-center text-white hover:text-black shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200"
+            className={cardClass} style={cardStyle(3)}
+            onMouseEnter={() => setHovered(3)} onMouseLeave={() => setHovered(null)}
           >
             <Clock className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.hours}</h4>
@@ -151,3 +161,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+
