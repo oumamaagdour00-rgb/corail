@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
 	return (
 		<>
 			<nav
-				className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? "bg-white shadow-md h-[70px]" : "bg-white h-[85px]"}`}
+				className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? "bg-white shadow-md h-[50px] lg:h-[70px]" : "bg-white h-[60px] lg:h-[85px]"}`}
 			>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full">
 					<div className="flex justify-between items-center h-full">
@@ -165,15 +165,15 @@ const Navbar: React.FC = () => {
 			</nav>
 			{/* Mobile Nav Overlay */}
 			<div
-				className={`lg:hidden fixed inset-0 ${isScrolled ? "top-[70px]" : "top-[85px]"} bg-white z-40 transition-all duration-500 ease-in-out transform ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+				className={`lg:hidden fixed inset-0 ${isScrolled ? "top-[50px]" : "top-[60px]"} bg-white z-40 transition-all duration-500 ease-in-out transform ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
 			>
-				<div className="px-6 py-12 space-y-6">
+				<div className="px-6 py-8 space-y-4">
 					{navLinks.map((link) => (
 						<NavLink
 							key={link.name}
 							to={link.path}
 							className={({ isActive }) =>
-								`block text-2xl font-display font-black uppercase tracking-tight ${
+								`block text-lg font-display font-black uppercase tracking-tight ${
 									isActive
 										? "text-corail-600 translate-x-4"
 										: "text-corail-300 hover:text-corail-800"
