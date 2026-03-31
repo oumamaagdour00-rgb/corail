@@ -43,7 +43,7 @@ const Tagline: React.FC<TaglineProps> = ({ className = '' }) => {
                 style={{
                     backgroundImage: 'url("/assets/mosqué.webp")',
                     backgroundAttachment: 'fixed',
-                    backgroundPosition: 'center 60%',
+                    backgroundPosition: 'center 20%',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                     position: 'absolute',
