@@ -27,7 +27,7 @@ const About: React.FC = () => {
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: "easeOut" }}
 				>
-					<div className="prose prose-base" style={{ color: '#65758c' }}>
+					<div className="prose prose-base">
 						{t.about.profileText.map((paragraph: string, idx: number) => (
 							<motion.p 
 								key={idx}
@@ -36,6 +36,7 @@ const About: React.FC = () => {
 								viewport={{ once: true, amount: 0.3 }}
 								transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
 								className="mb-4 text-justify"
+								style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 							>
 								{paragraph}
 							</motion.p>
@@ -59,7 +60,7 @@ const About: React.FC = () => {
 						className="py-5 px-6 rounded-2xl"
 					>
 						<SectionTitle title={t.about.engagementTitle} alignment="left" />
-						<div className="prose prose-base space-y-6" style={{ color: '#65758c' }}>
+						<div className="prose prose-base space-y-6">
 							{t.about.engagementText.map((paragraph: string, idx: number) => (
 								<motion.p 
 									key={idx}
@@ -68,6 +69,7 @@ const About: React.FC = () => {
 									viewport={{ once: true, amount: 0.3 }}
 									transition={{ duration: 0.6, delay: 0.2 + (idx * 0.1), ease: "easeOut" }}
 									className="text-justify"
+									style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 								>
 									{paragraph}
 								</motion.p>
@@ -84,7 +86,7 @@ const About: React.FC = () => {
 						className="py-5 px-6 rounded-2xl"
 					>
 						<SectionTitle title={t.about.approachTitle} alignment="left" />
-						<div className="prose prose-base space-y-6" style={{ color: '#65758c' }}>
+						<div className="prose prose-base space-y-6">
 							{t.about.approachText.map((paragraph: string, idx: number) => (
 								<motion.p
 									key={idx}
@@ -93,6 +95,7 @@ const About: React.FC = () => {
 									viewport={{ once: true, amount: 0.3 }}
 									transition={{ duration: 0.6, delay: 0.2 + (idx * 0.1), ease: "easeOut" }}
 									className="text-justify"
+									style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 								>
 									{paragraph}
 								</motion.p>

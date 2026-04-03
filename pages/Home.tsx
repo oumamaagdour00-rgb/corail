@@ -30,20 +30,35 @@ const Home: React.FC = () => {
 					>
 						{t.home.growthTitle}
 					</motion.h2>
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
-						<motion.div 
-							initial={{ opacity: 0, y: 50 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, amount: 0.3 }}
-							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-							className="flex flex-col justify-center"
-						>
-							<p className="text-sm sm:text-base xl:text-base mb-8 font-light leading-relaxed text-justify" style={{ color: '#65758c' }}>
-								{t.home.growthSubtitle}
-							</p>
-							<div className="rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 hover:bg-white" style={{ backgroundColor: '#f7fbfc' }}>
-								<div className="md:hidden space-y-3">
-									{t.home.growthList.map((item, i) => (
+					<motion.div 
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, amount: 0.3 }}
+						transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+						className="flex flex-col justify-center"
+					>
+						<p className="text-justify mb-8 leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
+							{t.home.growthSubtitle}
+						</p>
+						<div className="rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 hover:bg-white mb-8" style={{ backgroundColor: '#f7fbfc' }}>
+							<div className="md:hidden space-y-3">
+								{t.home.growthList.map((item, i) => (
+									<motion.div 
+										key={i}
+										initial={{ opacity: 0, y: 20 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true, amount: 0.3 }}
+										transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
+										className="flex items-start space-x-2 text-sm text-corail-500"
+									>
+										<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+										<span>{item}</span>
+									</motion.div>
+								))}
+							</div>
+							<div className="hidden md:grid md:grid-cols-2 gap-6">
+								<div className="space-y-3">
+									{t.home.growthList.filter((_, idx) => idx % 2 === 0).map((item, i) => (
 										<motion.div 
 											key={i}
 											initial={{ opacity: 0, y: 20 }}
@@ -57,63 +72,37 @@ const Home: React.FC = () => {
 										</motion.div>
 									))}
 								</div>
-								<div className="hidden md:grid md:grid-cols-2 gap-6">
-									<div className="space-y-3">
-										{t.home.growthList.filter((_, idx) => idx % 2 === 0).map((item, i) => (
-											<motion.div 
-												key={i}
-												initial={{ opacity: 0, y: 20 }}
-												whileInView={{ opacity: 1, y: 0 }}
-												viewport={{ once: true, amount: 0.3 }}
-												transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
-												className="flex items-start space-x-2 text-sm text-corail-500"
-											>
-												<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
-												<span>{item}</span>
-											</motion.div>
-										))}
-									</div>
-									<div className="space-y-3">
-										{t.home.growthList.filter((_, idx) => idx % 2 === 1).map((item, i) => (
-											<motion.div 
-												key={i}
-												initial={{ opacity: 0, y: 20 }}
-												whileInView={{ opacity: 1, y: 0 }}
-												viewport={{ once: true, amount: 0.3 }}
-												transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
-												className="flex items-start space-x-2 text-sm text-corail-500"
-											>
-												<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
-												<span>{item}</span>
-											</motion.div>
-										))}
-									</div>
+								<div className="space-y-3">
+									{t.home.growthList.filter((_, idx) => idx % 2 === 1).map((item, i) => (
+										<motion.div 
+											key={i}
+											initial={{ opacity: 0, y: 20 }}
+											whileInView={{ opacity: 1, y: 0 }}
+											viewport={{ once: true, amount: 0.3 }}
+											transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
+											className="flex items-start space-x-2 text-sm text-corail-500"
+										>
+											<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+											<span>{item}</span>
+										</motion.div>
+									))}
 								</div>
 							</div>
-						</motion.div>
-						<motion.div 
-							initial={{ opacity: 0, y: 50 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, amount: 0.3 }}
-							transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-							className="p-8 md:p-12 rounded-3xl border border-corail-100 shadow-xl flex items-center hover:bg-corail-100 transition-colors duration-700 h-full w-full"
-							style={{ backgroundColor: '#F7FBFC' }}
-						>
-							<p className="text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify" style={{ color: '#65758c' }}>
-								{t.home.growthFooter
-									.split(/(service provider)/i)
-									.map((part, i) =>
-										part.toLowerCase() === "service provider" ? (
-											<strong key={i} className="font-bold text-corail-900">
-												{part}
-											</strong>
-										) : (
-											part
-										),
-									)}
-							</p>
-						</motion.div>
-					</div>
+						</div>
+						<p className="text-justify leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
+							{t.home.growthFooter
+								.split(/(service provider)/i)
+								.map((part, i) =>
+									part.toLowerCase() === "service provider" ? (
+										<strong key={i} className="font-bold text-corail-900">
+											{part}
+										</strong>
+									) : (
+										part
+									),
+								)}
+						</p>
+					</motion.div>
 				</div>
 			</section>
 
@@ -181,8 +170,8 @@ const Home: React.FC = () => {
 										whileInView={{ opacity: 1, y: 0 }}
 										viewport={{ once: true, amount: 0.3 }}
 										transition={{ duration: 0.6, delay: 0.2 + (i * 0.1), ease: "easeOut" }}
-										className="text-sm sm:text-base xl:text-base leading-relaxed text-justify font-light"
-										style={{ color: '#65758c' }}
+										className="text-justify leading-relaxed"
+										style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 									>
 										{paragraph}
 									</motion.p>

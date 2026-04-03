@@ -21,7 +21,7 @@ const Brands: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         {/* Title before grid */}
         <div className="text-center mb-12">
-          <p className="text-lg sm:text-xl md:text-2xl xl:text-[30px] text-corail-900 font-display font-bold leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl xl:text-[30px] text-corail-900 font-display font-bold leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
             {t.brandsPage.subtitle}
           </p>
         </div>

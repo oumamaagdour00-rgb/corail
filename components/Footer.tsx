@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
 								</span>
 							</div>
 						</div>
-						<p className="text-sm leading-relaxed mb-4" style={{ color: '#65758c' }}>
+						<p className="leading-relaxed mb-4" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
 							{t.footer.description}
 						</p>
 						<div className="flex space-x-4">
@@ -47,20 +47,20 @@ const Footer: React.FC = () => {
 						<h3 className="text-xs font-bold text-corail-900 uppercase tracking-widest mb-4 border-b-2 border-corail-200 w-fit pb-1">
 							{t.footer.contact}
 						</h3>
-						<ul className="space-y-3 text-sm" style={{ color: '#65758c' }}>
+						<ul className="space-y-3">
 							<li className="flex items-start space-x-3">
 								<MapPin
 									size={20}
 									className="text-teal-500 mt-0.5 flex-shrink-0"
 									strokeWidth={1.5}
 								/>
-								<span className="leading-relaxed">
+								<span className="leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
 									Corail L'Océan, Parc Industriel Sapino, 57
 									<br />
 									Nouaceur 20100, Casablanca, Maroc
 								</span>
 							</li>
-							<li className="flex items-center space-x-3" style={{ color: '#65758c' }}>
+							<li className="flex items-center space-x-3">
 								<Mail
 									size={20}
 									className="text-teal-500 flex-shrink-0"
@@ -69,17 +69,18 @@ const Footer: React.FC = () => {
 								<a
 									href="mailto:contact@coraillocean.com"
 									className="hover:text-corail-600 transition-colors"
+									style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 								>
 									contact@coraillocean.com
 								</a>
 							</li>
-							<li className="flex items-center space-x-3" style={{ color: '#65758c' }}>
+							<li className="flex items-center space-x-3">
 								<Phone
 									size={20}
 									className="text-teal-500 flex-shrink-0"
 									strokeWidth={1.5}
 								/>
-								<span className="hover:text-corail-600 transition-colors cursor-pointer" dir="ltr">
+								<span className="hover:text-corail-600 transition-colors cursor-pointer" dir="ltr" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
 									+212 (0)5 22 53 84 41
 								</span>
 							</li>

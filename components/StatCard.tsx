@@ -128,7 +128,7 @@ const StatCard: React.FC<StatCardProps> = ({ stat, variant = 'overview' }) => {
         <div className="w-12 h-1 bg-corail-100 rounded-full mb-4 group-hover:bg-corail-300 group-hover:w-20 transition-all duration-700"></div>
 
         {/* Description */}
-        <p className="text-sm text-corail-300 leading-relaxed font-medium">
+        <p className="leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
           {stat.description}
         </p>
       </div>

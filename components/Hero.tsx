@@ -59,11 +59,25 @@ const Hero: React.FC = () => {
 								const idx = title.toLowerCase().indexOf(keyword);
 								if (idx === -1) return <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">{title}.</div>;
 								const line1 = title.slice(0, idx + keyword.length).trimEnd();
-								const line2 = title.slice(idx + keyword.length).trimStart();
+								const line2Part = title.slice(idx + keyword.length).trimStart();
+								
+								// Pour le français, séparer "qui façonnent" et "le quotidien"
+								if (language === 'fr') {
+									const parts = line2Part.split('le quotidien');
+									return (
+										<>
+											<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">{line1}</div>
+											<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+												{parts[0].trim()} <span className="lg:inline block">le quotidien.</span>
+											</div>
+										</>
+									);
+								}
+								
 								return (
 									<>
 										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">{line1}</div>
-										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">{line2}.</div>
+										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">{line2Part}.</div>
 									</>
 								);
 							})()}

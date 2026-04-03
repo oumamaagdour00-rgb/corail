@@ -26,7 +26,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       <h3 className="text-xl font-bold text-corail-900 mb-3 group-hover:text-corail-700 transition-colors">
         {service.title}
       </h3>
-      <p className="text-corail-400 mb-6 flex-grow leading-relaxed">
+      <p className="mb-6 flex-grow leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
         {service.description}
       </p>
       <div className="flex items-center text-teal-600 font-semibold text-sm group-hover:translate-x-2 transition-transform cursor-pointer">

@@ -59,7 +59,7 @@ const Services: React.FC = () => {
 								viewport={{ once: true, amount: 0.15 }}
 								transition={{ duration: 0.7, ease: "easeOut" }}
 								className={`w-full ${index === 0 ? "pt-8 pb-6" : "py-6"}`}
-								style={index % 2 === 1 ? { backgroundColor: '#34597d' } : {}}
+								style={index % 2 === 1 ? { backgroundColor: '#f7fbfc' } : {}}
 							>
 							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 rounded-2xl py-12">
 								<div
@@ -70,7 +70,7 @@ const Services: React.FC = () => {
 									<div className="relative group/image">
 										<div
 											className="absolute -inset-4 rounded-3xl opacity-100 transform rotate-2 group-hover:rotate-4 transition-transform duration-[1500ms] ease-out"
-											style={{ backgroundColor: '#f7fbfc' }}
+											style={index % 2 === 1 ? { backgroundColor: '#ffffff' } : { backgroundColor: '#f7fbfc' }}
 										></div>
 										<div className="relative h-[250px] sm:h-[320px] lg:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-[1500ms]">
 											<img
@@ -84,7 +84,7 @@ const Services: React.FC = () => {
 
 								{/* Text Content */}
 								<div className="w-full lg:w-1/2">
-									<h3 className={`text-xl sm:text-2xl md:text-3xl xl:text-4xl font-display font-bold mb-6 ${index % 2 === 1 ? "text-white" : "text-corail-900"}`}>
+									<h3 className={`text-xl sm:text-2xl md:text-3xl xl:text-4xl font-display font-bold mb-6 text-corail-900`}>
 										{service.title}
 									</h3>
 									<div className="space-y-2">
@@ -96,8 +96,8 @@ const Services: React.FC = () => {
 												return paragraphs.map((p: string, j: number) => (
 													<p
 														key={`${i}-${j}`}
-														className={`text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify ${index % 2 === 1 ? "text-white/90" : ""}`}
-														style={index % 2 === 0 ? { color: '#65758c' } : {}}
+														className="text-justify leading-relaxed"
+														style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 													>
 														{p}
 													</p>
@@ -110,8 +110,8 @@ const Services: React.FC = () => {
 												return (
 													<div
 														key={i}
-														className={`group/list rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 ${index % 2 === 1 ? "hover:bg-white" : "hover:bg-white"}`}
-												style={{ backgroundColor: '#f7fbfc' }}
+														className={`group/list rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 hover:bg-white`}
+												style={index % 2 === 1 ? { backgroundColor: '#ffffff' } : { backgroundColor: '#f7fbfc' }}
 													>
 														<ul className="md:hidden space-y-3">
 															{items.map((item: string, k: number) => (
@@ -148,7 +148,7 @@ const Services: React.FC = () => {
 													<div
 														key={i}
 														className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg`}
-											style={{ backgroundColor: '#f7fbfc' }}
+											style={index % 2 === 1 ? { backgroundColor: '#ffffff' } : { backgroundColor: '#f7fbfc' }}
 													>
 														{content.map((p: string, l: number) => (
 															<p key={l} className="text-[14px] text-corail-900 font-bold italic">{p}</p>
@@ -168,7 +168,7 @@ const Services: React.FC = () => {
 									{footerBlocks.map((block: any, i: number) => {
 										if (block.type === 'footer-text') {
 											return (
-												<p key={i} className={`text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify ${index % 2 === 1 ? "text-white/90" : ""}`} style={index % 2 === 0 ? { color: '#65758c' } : {}}>
+												<p key={i} className="text-justify leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
 													{block.content}
 												</p>
 											);
@@ -177,7 +177,7 @@ const Services: React.FC = () => {
 											const content = Array.isArray(block.content) ? block.content : [block.content];
 											return (
 												<div key={i} className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg`}
-											style={{ backgroundColor: '#f7fbfc' }}>
+											style={index % 2 === 1 ? { backgroundColor: '#ffffff' } : { backgroundColor: '#f7fbfc' }}>
 													{content.map((p: string, l: number) => (
 														<p key={l} className="text-[14px] text-corail-900 font-bold italic">{p}</p>
 													))}

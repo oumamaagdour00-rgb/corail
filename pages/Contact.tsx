@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
           >
             <MapPin className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.headquarters}</h4>
-            <p className="text-sm leading-relaxed opacity-80 group-hover:opacity-100">
+            <p className="leading-relaxed opacity-80 group-hover:opacity-100" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
               Corail L'Océan, Parc Industriel Sapino, 57<br />
               Nouaceur 20100, Casablanca, Maroc
             </p>
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
           >
             <Phone className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.phone}</h4>
-            <p className="text-sm opacity-80 group-hover:opacity-100" dir="ltr">+212 (0)5 22 53 84 41</p>
+            <p className="opacity-80 group-hover:opacity-100" dir="ltr" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>+212 (0)5 22 53 84 41</p>
           </motion.div>
 
           {/* Email */}
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
             <Clock className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.hours}</h4>
             {t.contact.hoursText.map((hour: string, idx: number) => (
-              <p key={idx} className="text-sm opacity-80 group-hover:opacity-100">{hour}</p>
+              <p key={idx} className="opacity-80 group-hover:opacity-100" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>{hour}</p>
             ))}
           </motion.div>
         </div>
