@@ -148,9 +148,10 @@ export const translations: { [key: string]: TranslationData } = {
     hero: {
       title: "Connecting markets to the brands that shape everyday life",
       subtitle: [
-        "With over 15 years of experience, Corail L'Océan is a key player in FMCG distribution in Morocco.",
-        "We operate across the entire distributive value chain: from go-to-market to field execution.",
-        "Our mission: to transform distribution into a structural lever for sustainable value creation.",
+        "With over 15 years of experience, Corail L'Océan is a key player",
+        "in FMCG distribution in Morocco. We operate across the entire distributive",
+        "value chain: from go-to-market to field execution. Our mission:",
+        "to transform distribution into a structural lever for sustainable value creation.",
       ],
       button: "Learn more"
     },
@@ -495,9 +496,10 @@ export const translations: { [key: string]: TranslationData } = {
     hero: {
       title: "Connecter les marchés aux marques qui façonnent le quotidien",
       subtitle: [
-        "Fort de plus de 15 ans d'expérience, Corail L'Océan est un acteur clé de la distribution FMCG au Maroc.",
-        "Nous opérons sur l'ensemble de la chaîne de valeur distributive : du go-to-market à l'exécution terrain.",
-        "Notre mission : transformer la distribution en un levier structurant de création de valeur durable.",
+        "Fort de plus de 15 ans d'expérience, Corail L'Océan est un acteur clé",
+        "de la distribution FMCG au Maroc. Nous opérons sur l'ensemble de la chaîne",
+        "de valeur distributive : du go-to-market à l'exécution terrain. Notre mission :",
+        "transformer la distribution en un levier structurant de création de valeur durable.",
       ],
       button: "En savoir plus"
     },
