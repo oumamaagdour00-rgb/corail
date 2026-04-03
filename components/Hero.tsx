@@ -74,14 +74,8 @@ const Hero: React.FC = () => {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
 							className={`text-sm sm:text-base xl:text-lg text-white/90 mb-8 font-light ${language === 'ar' ? 'text-right' : 'text-justify'}`}
-							style={language === 'ar' ? {} : { textAlign: 'justify', textAlignLast: 'justify' }}
 						>
-							{t.hero.subtitle.map((line, i) => (
-								<React.Fragment key={i}>
-									{line}
-									{i < t.hero.subtitle.length - 1 && <br />}
-								</React.Fragment>
-							))}
+							{t.hero.subtitle.join(' ')}
 						</motion.p>
 
 						<motion.div 
