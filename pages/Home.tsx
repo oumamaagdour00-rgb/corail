@@ -26,7 +26,8 @@ const Home: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-center text-corail-900 leading-tight break-words"
+						className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-center text-corail-900 leading-tight break-words"
+						style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
 					>
 						{t.home.growthTitle}
 					</motion.h2>
@@ -155,7 +156,7 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className="w-full lg:w-3/5"
 						>
-							<h1 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4 break-words">
+							<h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
 								<span className="h-1 w-12 bg-corail-900 flex-shrink-0"></span>
 								{t.home.presidentTitle}
 							</h1>

@@ -38,7 +38,7 @@ const Catalog: React.FC = () => {
       {/* Header */}
       <div className="bg-teal-600 text-white py-16 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-6 tracking-tight break-words">{t.catalog.title}</h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-6 tracking-tight break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{t.catalog.title}</h1>
           <p className="text-justify" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#ffffff' }}>{t.catalog.subtitle}</p>
         </div>
       </div>

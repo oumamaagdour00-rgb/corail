@@ -46,24 +46,25 @@ const Hero: React.FC = () => {
 			{/* Content */}
 			<div className="absolute inset-0 flex items-center">
 				<div className={`max-w-7xl w-full px-4 sm:px-6 lg:px-8 ${language === 'ar' ? 'mr-0 ml-auto' : 'ml-0 mr-auto'}`}>
-					<div className={`max-w-3xl ${language === 'ar' ? 'pr-8' : 'pl-8'}`}>
+					<div className={`max-w-3xl ${language === 'ar' ? 'pr-4 sm:pr-8' : 'pl-4 sm:pl-8'}`}>
 						<motion.h1 
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
-							className={`font-display font-bold text-white leading-tight mb-6 break-words ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							className={`font-display font-bold text-white leading-tight mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							style={{ wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}
 						>
 							{(() => {
 								const title = t.hero.title;
 								const keyword = language === 'ar' ? 'العلامات' : language === 'en' ? 'brands' : 'marques';
 								const idx = title.toLowerCase().indexOf(keyword);
-								if (idx === -1) return <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl break-words">{title}.</div>;
+								if (idx === -1) return <div className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{title}.</div>;
 								const line1 = title.slice(0, idx + keyword.length).trimEnd();
 								const line2 = title.slice(idx + keyword.length).trimStart();
 								return (
 									<>
-										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap break-words">{line1}</div>
-										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap break-words">{line2}.</div>
+										<div className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{line1}</div>
+										<div className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{line2}.</div>
 									</>
 								);
 							})()}

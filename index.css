@@ -162,6 +162,13 @@
     background-size: 24px 24px;
 }
 
+/* Prevent title overflow on mobile */
+h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
 /* RTL Support */
 [dir="rtl"] {
     direction: rtl;
