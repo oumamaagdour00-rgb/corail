@@ -26,7 +26,7 @@ const Home: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-center text-corail-900 leading-tight"
+						className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-center text-corail-900 leading-tight break-words"
 					>
 						{t.home.growthTitle}
 					</motion.h2>
@@ -155,8 +155,8 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className="w-full lg:w-3/5"
 						>
-							<h1 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4">
-								<span className="h-1 w-12 bg-corail-900"></span>
+							<h1 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4 break-words">
+								<span className="h-1 w-12 bg-corail-900 flex-shrink-0"></span>
 								{t.home.presidentTitle}
 							</h1>
 							<div className="space-y-3 relative">

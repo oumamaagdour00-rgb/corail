@@ -23,7 +23,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       <div className="mb-6 inline-block p-4 bg-corail-50 rounded-2xl group-hover:bg-teal-50 transition-colors">
         <Icon className="h-8 w-8 text-corail-600 group-hover:text-teal-600 transition-colors" />
       </div>
-      <h3 className="text-xl font-bold text-corail-900 mb-3 group-hover:text-corail-700 transition-colors">
+      <h3 className="text-xl font-bold text-corail-900 mb-3 group-hover:text-corail-700 transition-colors break-words">
         {service.title}
       </h3>
       <p className="mb-6 flex-grow leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>

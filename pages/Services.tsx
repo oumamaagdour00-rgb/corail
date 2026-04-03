@@ -84,7 +84,7 @@ const Services: React.FC = () => {
 
 								{/* Text Content */}
 								<div className="w-full lg:w-1/2">
-									<h3 className={`text-xl sm:text-2xl md:text-3xl xl:text-4xl font-display font-bold mb-6 text-corail-900`}>
+									<h3 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-display font-bold mb-6 text-corail-900 break-words">
 										{service.title}
 									</h3>
 									<div className="space-y-2">

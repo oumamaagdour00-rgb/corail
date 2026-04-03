@@ -51,19 +51,19 @@ const Hero: React.FC = () => {
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
-							className={`font-display font-bold text-white leading-tight mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							className={`font-display font-bold text-white leading-tight mb-6 break-words ${language === 'ar' ? 'text-right' : 'text-left'}`}
 						>
 							{(() => {
 								const title = t.hero.title;
 								const keyword = language === 'ar' ? 'العلامات' : language === 'en' ? 'brands' : 'marques';
 								const idx = title.toLowerCase().indexOf(keyword);
-								if (idx === -1) return <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">{title}.</div>;
+								if (idx === -1) return <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl break-words">{title}.</div>;
 								const line1 = title.slice(0, idx + keyword.length).trimEnd();
 								const line2 = title.slice(idx + keyword.length).trimStart();
 								return (
 									<>
-										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">{line1}</div>
-										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">{line2}.</div>
+										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap break-words">{line1}</div>
+										<div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap break-words">{line2}.</div>
 									</>
 								);
 							})()}

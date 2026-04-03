@@ -38,7 +38,7 @@ const Catalog: React.FC = () => {
       {/* Header */}
       <div className="bg-teal-600 text-white py-16 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-6 tracking-tight">{t.catalog.title}</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-display font-bold mb-6 tracking-tight break-words">{t.catalog.title}</h1>
           <p className="text-justify" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#ffffff' }}>{t.catalog.subtitle}</p>
         </div>
       </div>
@@ -141,7 +141,7 @@ const Catalog: React.FC = () => {
           {/* Product Grid */}
           <div className="w-full lg:w-3/4">
             <div className="hidden lg:flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-display font-bold text-corail-900">
+              <h2 className="text-2xl font-display font-bold text-corail-900 break-words">
                 {selectedBrand === 'All' ? t.catalog.allProducts : selectedBrand}
                 {selectedCategory !== 'All' && <span className="text-corail-300 font-normal"> / {selectedCategory}</span>}
               </h2>
@@ -164,7 +164,7 @@ const Catalog: React.FC = () => {
 
                     <div className="p-5 flex-grow flex flex-col">
                       <div className="text-xs font-bold text-corail-500 mb-1 uppercase tracking-wide">{product.brand}</div>
-                      <h3 className="text-lg font-bold text-corail-900 mb-3 group-hover:text-teal-600 transition-colors line-clamp-2">{product.name}</h3>
+                      <h3 className="text-lg font-bold text-corail-900 mb-3 group-hover:text-teal-600 transition-colors line-clamp-2 break-words">{product.name}</h3>
 
                       <div className="mt-auto">
                         <div className="space-y-1 mb-4">
@@ -188,7 +188,7 @@ const Catalog: React.FC = () => {
                 <div className="text-corail-200 mb-4">
                   <Search size={48} className="mx-auto" />
                 </div>
-                <h3 className="text-xl font-bold text-corail-900 mb-2">{t.catalog.noProducts}</h3>
+                <h3 className="text-xl font-bold text-corail-900 mb-2 break-words">{t.catalog.noProducts}</h3>
                 <p className="text-justify" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>{t.catalog.noProductsText}</p>
                 <button
                   onClick={() => {

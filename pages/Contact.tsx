@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
           className="rounded-3xl p-8 lg:p-10 border border-corail-100/50 shadow-sm hover:shadow-2xl transition-all duration-700"
           style={{ backgroundColor: '#f7fbfc' }}
         >
-          <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-corail-900 mb-8">{t.contact.formTitle}</h3>
+          <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-corail-900 mb-8 break-words">{t.contact.formTitle}</h3>
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>

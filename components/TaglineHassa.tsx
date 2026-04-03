@@ -55,7 +55,7 @@ const TaglineHassa: React.FC<TaglineProps> = ({ className = '' }) => {
             <div className="absolute inset-0 bg-gradient-to-r from-corail-600/55 to-corail-500/55"></div>
 
             <div className={`relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex items-center justify-center transition-all duration-[1500ms] delay-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white leading-relaxed md:leading-snug tracking-wide">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white leading-relaxed md:leading-snug tracking-wide break-words">
                     {phrase}
                 </h2>
             </div>
