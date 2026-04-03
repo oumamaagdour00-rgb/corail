@@ -97,7 +97,7 @@ const Home: React.FC = () => {
 							viewport={{ once: true, amount: 0.3 }}
 							transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
 							className="p-8 md:p-12 rounded-3xl border border-corail-100 shadow-xl flex items-center hover:bg-corail-100 transition-colors duration-700 h-full w-full"
-							style={{ backgroundColor: '#E2E8F0' }}
+							style={{ backgroundColor: '#F7FBFC' }}
 						>
 							<p className="text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify" style={{ color: '#65758c' }}>
 								{t.home.growthFooter
