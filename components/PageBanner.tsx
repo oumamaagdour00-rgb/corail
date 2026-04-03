@@ -17,7 +17,7 @@ const PageBanner: React.FC = () => {
 				className="absolute inset-0 pointer-events-none"
 				style={{ 
 					backgroundImage: `url(${siegeImg})`,
-					backgroundPosition: "center 30%",
+					backgroundPosition: "center 35%",
 					backgroundSize: bgSize,
 					backgroundRepeat: 'no-repeat',
 				}}

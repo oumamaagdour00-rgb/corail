@@ -4,7 +4,7 @@ import SectionTitle from "../components/SectionTitle";
 import { NavLink } from "react-router-dom";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import Tagline from "../components/Tagline";
+import TaglineCFC from "../components/TaglineCFC";
 import PageBanner from "../components/PageBanner";
 import { motion } from "motion/react";
 
@@ -27,7 +27,7 @@ const About: React.FC = () => {
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: "easeOut" }}
 				>
-					<div className="prose prose-base text-corail-400">
+					<div className="prose prose-base" style={{ color: '#65758c' }}>
 						{t.about.profileText.map((paragraph: string, idx: number) => (
 							<motion.p 
 								key={idx}
@@ -56,10 +56,10 @@ const About: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="py-5 px-6 rounded-2xl transition-colors duration-500 hover:bg-white"
+						className="py-5 px-6 rounded-2xl"
 					>
 						<SectionTitle title={t.about.engagementTitle} alignment="left" />
-						<div className="prose prose-base text-corail-400 space-y-6">
+						<div className="prose prose-base space-y-6" style={{ color: '#65758c' }}>
 							{t.about.engagementText.map((paragraph: string, idx: number) => (
 								<motion.p 
 									key={idx}
@@ -81,10 +81,10 @@ const About: React.FC = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="py-5 px-6 rounded-2xl transition-colors duration-500 hover:bg-white"
+						className="py-5 px-6 rounded-2xl"
 					>
 						<SectionTitle title={t.about.approachTitle} alignment="left" />
-						<div className="prose prose-base text-corail-400 space-y-6">
+						<div className="prose prose-base space-y-6" style={{ color: '#65758c' }}>
 							{t.about.approachText.map((paragraph: string, idx: number) => (
 								<motion.p
 									key={idx}
@@ -125,7 +125,7 @@ const About: React.FC = () => {
 		</div>
 
 			{/* Tagline */}
-			<Tagline />
+			<TaglineCFC />
 		</div>
 	);
 };

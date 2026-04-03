@@ -68,16 +68,20 @@ const Hero: React.FC = () => {
 								);
 							})()}
 						</motion.h1>
-						<motion.div 
+						<motion.p 
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-							className={`text-sm sm:text-base xl:text-lg text-white/90 mb-8 font-light ${language === 'ar' ? 'text-right' : 'text-left'}`}
+							className={`text-sm sm:text-base xl:text-lg text-white/90 mb-8 font-light ${language === 'ar' ? 'text-right' : 'text-justify'}`}
+							style={language === 'ar' ? {} : { textAlign: 'justify', textAlignLast: 'justify' }}
 						>
 							{t.hero.subtitle.map((line, i) => (
-								<div key={i}>{line}</div>
+								<React.Fragment key={i}>
+									{line}
+									{i < t.hero.subtitle.length - 1 && <br />}
+								</React.Fragment>
 							))}
-						</motion.div>
+						</motion.p>
 
 						<motion.div 
 							initial={{ opacity: 0, y: 40 }}

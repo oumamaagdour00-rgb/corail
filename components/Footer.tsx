@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
 								</span>
 							</div>
 						</div>
-						<p className="text-sm text-corail-300 leading-relaxed mb-4">
+						<p className="text-sm leading-relaxed mb-4" style={{ color: '#65758c' }}>
 							{t.footer.description}
 						</p>
 						<div className="flex space-x-4">
@@ -47,20 +47,20 @@ const Footer: React.FC = () => {
 						<h3 className="text-xs font-bold text-corail-900 uppercase tracking-widest mb-4 border-b-2 border-corail-200 w-fit pb-1">
 							{t.footer.contact}
 						</h3>
-						<ul className="space-y-3 text-sm">
-							<li className="flex items-start space-x-3 text-corail-400">
+						<ul className="space-y-3 text-sm" style={{ color: '#65758c' }}>
+							<li className="flex items-start space-x-3">
 								<MapPin
 									size={20}
 									className="text-teal-500 mt-0.5 flex-shrink-0"
 									strokeWidth={1.5}
 								/>
 								<span className="leading-relaxed">
-									Parc Industriel Sapino, Nouaceur
+									Corail L'Océan, Parc Industriel Sapino, 57
 									<br />
-									Casablanca 20100, Maroc
+									Nouaceur 20100, Casablanca, Maroc
 								</span>
 							</li>
-							<li className="flex items-center space-x-3 text-corail-400">
+							<li className="flex items-center space-x-3" style={{ color: '#65758c' }}>
 								<Mail
 									size={20}
 									className="text-teal-500 flex-shrink-0"
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
 									contact@coraillocean.com
 								</a>
 							</li>
-							<li className="flex items-center space-x-3 text-corail-400">
+							<li className="flex items-center space-x-3" style={{ color: '#65758c' }}>
 								<Phone
 									size={20}
 									className="text-teal-500 flex-shrink-0"

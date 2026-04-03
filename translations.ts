@@ -148,10 +148,8 @@ export const translations: { [key: string]: TranslationData } = {
     hero: {
       title: "Connecting markets to the brands that shape everyday life",
       subtitle: [
-        "With over 15 years of experience,",
-        "Corail L'Océan is a key player in FMCG distribution in Morocco.",
-        "We operate across the entire distributive value chain:",
-        "from go-to-market to field execution.",
+        "With over 15 years of experience, Corail L'Océan is a key player in FMCG distribution in Morocco.",
+        "We operate across the entire distributive value chain: from go-to-market to field execution.",
         "Our mission: to transform distribution into a structural lever for sustainable value creation.",
       ],
       button: "Learn more"
@@ -406,7 +404,7 @@ export const translations: { [key: string]: TranslationData } = {
         },
         {
           id: '3',
-          title: 'Commercial management & field execution',
+          title: 'Commercial management & data-driven steering',
           iconName: 'Megaphone',
           blocks: [
             { type: 'text', content: 'FMCG performance relies on execution discipline.' },
@@ -497,10 +495,8 @@ export const translations: { [key: string]: TranslationData } = {
     hero: {
       title: "Connecter les marchés aux marques qui façonnent le quotidien",
       subtitle: [
-        "Fort de plus de 15 ans d'expérience,",
-        "Corail L'Océan est un acteur clé de la distribution FMCG au Maroc.",
-        "Nous opérons sur l'ensemble de la chaîne de valeur distributive :",
-        "du go-to-market à l'exécution terrain.",
+        "Fort de plus de 15 ans d'expérience, Corail L'Océan est un acteur clé de la distribution FMCG au Maroc.",
+        "Nous opérons sur l'ensemble de la chaîne de valeur distributive : du go-to-market à l'exécution terrain.",
         "Notre mission : transformer la distribution en un levier structurant de création de valeur durable.",
       ],
       button: "En savoir plus"
@@ -520,7 +516,7 @@ export const translations: { [key: string]: TranslationData } = {
         'Une exécution commerciale basée sur des KPI terrain, portée par un pilotage data-driven',
         'Un merchandising structuré'
       ],
-      growthFooter: "Corail agit également en tant que full service provider, accompagnant ses partenaires à travers des dispositifs intégrés couvrant les dimensions commerciales, logistiques et opérationnelles. Notre approche vise à sécuriser le sell-in tout en soutenant le sell-out, grâce à une exécution disciplinée. Nos dispositifs commerciaux combinent des modèles de pré-vente et de vente conventionnelle, déployés en fonction des besoins et des spécificités propres à chaque produit.",
+      growthFooter: "Corail agit également en tant que full service provider, accompagnant ses partenaires, grâce à une exécution disciplinée. Nos dispositifs commerciaux combinent des modèles de pré-vente et de vente conventionnelle, déployés en fonction des besoins et des spécificités propres à chaque produit.",
       figuresTitle: "Chiffres clés",
       brandsTitle: "Marques distribuées",
       newsTitle: "Actualités",
@@ -755,7 +751,7 @@ export const translations: { [key: string]: TranslationData } = {
         },
         {
           id: '3',
-          title: 'Gestion commerciale & exécution terrain',
+          title: 'Gestion commerciale & pilotage data-driven',
           iconName: 'Megaphone',
           blocks: [
             { type: 'text', content: 'La performance FMCG repose sur la discipline d\'exécution.' },

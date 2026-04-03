@@ -4,7 +4,7 @@ import SEO from "../components/SEO";
 import StatCard from "../components/StatCard";
 import SectionTitle from "../components/SectionTitle";
 import { NavLink } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Check } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import BrandCarousel from "../components/BrandCarousel";
 import presImg from "../public/assets/businessman-using-tablet-working-car-inside-compressed.webp";
@@ -38,27 +38,57 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
 							className="flex flex-col justify-center"
 						>
-							<p className="text-sm sm:text-base xl:text-base text-corail-600 mb-8 font-light leading-relaxed text-justify">
+							<p className="text-sm sm:text-base xl:text-base mb-8 font-light leading-relaxed text-justify" style={{ color: '#65758c' }}>
 								{t.home.growthSubtitle}
 							</p>
-							<div className="flex flex-col space-y-4">
-								{t.home.growthList.map((item, i) => (
-									<motion.div 
-										key={i}
-										initial={{ opacity: 0, y: 20 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										viewport={{ once: true, amount: 0.3 }}
-										transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
-										className="flex items-center space-x-3"
-									>
-										<div className="bg-white shadow-sm border border-corail-100 p-1 rounded-md flex-shrink-0">
-											<CheckCircle2 className="h-3.5 w-3.5 text-teal-500" />
-										</div>
-										<span className="text-corail-800 leading-snug">
-											{item}
-										</span>
-									</motion.div>
-								))}
+							<div className="rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 hover:bg-white" style={{ backgroundColor: '#f7fbfc' }}>
+								<div className="md:hidden space-y-3">
+									{t.home.growthList.map((item, i) => (
+										<motion.div 
+											key={i}
+											initial={{ opacity: 0, y: 20 }}
+											whileInView={{ opacity: 1, y: 0 }}
+											viewport={{ once: true, amount: 0.3 }}
+											transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
+											className="flex items-start space-x-2 text-sm text-corail-500"
+										>
+											<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+											<span>{item}</span>
+										</motion.div>
+									))}
+								</div>
+								<div className="hidden md:grid md:grid-cols-2 gap-6">
+									<div className="space-y-3">
+										{t.home.growthList.filter((_, idx) => idx % 2 === 0).map((item, i) => (
+											<motion.div 
+												key={i}
+												initial={{ opacity: 0, y: 20 }}
+												whileInView={{ opacity: 1, y: 0 }}
+												viewport={{ once: true, amount: 0.3 }}
+												transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
+												className="flex items-start space-x-2 text-sm text-corail-500"
+											>
+												<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+												<span>{item}</span>
+											</motion.div>
+										))}
+									</div>
+									<div className="space-y-3">
+										{t.home.growthList.filter((_, idx) => idx % 2 === 1).map((item, i) => (
+											<motion.div 
+												key={i}
+												initial={{ opacity: 0, y: 20 }}
+												whileInView={{ opacity: 1, y: 0 }}
+												viewport={{ once: true, amount: 0.3 }}
+												transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
+												className="flex items-start space-x-2 text-sm text-corail-500"
+											>
+												<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+												<span>{item}</span>
+											</motion.div>
+										))}
+									</div>
+								</div>
 							</div>
 						</motion.div>
 						<motion.div 
@@ -69,7 +99,7 @@ const Home: React.FC = () => {
 							className="p-8 md:p-12 rounded-3xl border border-corail-100 shadow-xl flex items-center hover:bg-corail-100 transition-colors duration-700 h-full w-full"
 							style={{ backgroundColor: '#E2E8F0' }}
 						>
-							<p className="text-sm sm:text-base xl:text-base text-corail-700 leading-relaxed font-light italic text-justify">
+							<p className="text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify" style={{ color: '#65758c' }}>
 								{t.home.growthFooter
 									.split(/(service provider)/i)
 									.map((part, i) =>
@@ -88,7 +118,7 @@ const Home: React.FC = () => {
 			</section>
 
 		{/* Key Figures */}
-			<section className="py-12 border-y border-corail-100" style={{ backgroundColor: '#f2f3f5' }}>
+			<section className="py-12 border-y border-corail-100" style={{ backgroundColor: '#f0f7fa' }}>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<SectionTitle title={t.home.figuresTitle} alignment="center" />
 
@@ -151,7 +181,8 @@ const Home: React.FC = () => {
 										whileInView={{ opacity: 1, y: 0 }}
 										viewport={{ once: true, amount: 0.3 }}
 										transition={{ duration: 0.6, delay: 0.2 + (i * 0.1), ease: "easeOut" }}
-										className="text-sm sm:text-base xl:text-base leading-relaxed text-corail-600 text-justify font-light"
+										className="text-sm sm:text-base xl:text-base leading-relaxed text-justify font-light"
+										style={{ color: '#65758c' }}
 									>
 										{paragraph}
 									</motion.p>

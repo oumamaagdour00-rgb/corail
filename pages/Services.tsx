@@ -11,15 +11,15 @@ import {
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
-import Tagline from "../components/Tagline";
+import TaglineCFC from "../components/TaglineCFC";
 import PageBanner from "../components/PageBanner";
 import { motion } from "motion/react";
 
-import img1 from "../public/assets/dis_multicanal.webp";
-import img2 from "../public/assets/Capture d'écran 2026-03-13 140135.webp";
-import img3 from "../public/assets/salle_reunion.webp";
-import img4 from "../public/assets/container.webp";
-import img5 from "../public/assets/distant-shot-port-shipment-nighttime-compressed.webp";
+import img1 from "../public/canal.webp";
+import img2 from "../public/dev_marques.webp";
+import img3 from "../public/commerce.webp";
+import img4 from "../public/logistic.webp";
+import img5 from "../public/comm_internationa.webp";
 
 const Services: React.FC = () => {
 	const { t, language } = useLanguage();
@@ -70,7 +70,7 @@ const Services: React.FC = () => {
 									<div className="relative group/image">
 										<div
 											className="absolute -inset-4 rounded-3xl opacity-100 transform rotate-2 group-hover:rotate-4 transition-transform duration-[1500ms] ease-out"
-											style={{ backgroundColor: '#f2f3f5' }}
+											style={{ backgroundColor: '#f7fbfc' }}
 										></div>
 										<div className="relative h-[250px] sm:h-[320px] lg:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-[1500ms]">
 											<img
@@ -78,9 +78,6 @@ const Services: React.FC = () => {
 												alt={service.title}
 												className="w-full h-full object-cover object-center scale-110 transform group-hover/image:scale-115 transition-transform duration-[2000ms] ease-out"
 											/>
-											<div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/20 group-hover/image:-translate-y-1 transition-all duration-700">
-												<Icon className="h-8 w-8 text-corail-600" />
-											</div>
 										</div>
 									</div>
 								</div>
@@ -99,7 +96,8 @@ const Services: React.FC = () => {
 												return paragraphs.map((p: string, j: number) => (
 													<p
 														key={`${i}-${j}`}
-														className={`text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify ${index % 2 === 1 ? "text-white/90" : "text-corail-400"}`}
+														className={`text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify ${index % 2 === 1 ? "text-white/90" : ""}`}
+														style={index % 2 === 0 ? { color: '#65758c' } : {}}
 													>
 														{p}
 													</p>
@@ -112,8 +110,8 @@ const Services: React.FC = () => {
 												return (
 													<div
 														key={i}
-														className={`group/list rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 ${index % 2 === 1 ? "bg-white hover:bg-white" : "hover:bg-white"}`}
-												style={index % 2 === 0 ? { backgroundColor: '#f2f3f5' } : {}}
+														className={`group/list rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 ${index % 2 === 1 ? "hover:bg-white" : "hover:bg-white"}`}
+												style={{ backgroundColor: '#f7fbfc' }}
 													>
 														<ul className="md:hidden space-y-3">
 															{items.map((item: string, k: number) => (
@@ -149,8 +147,8 @@ const Services: React.FC = () => {
 												return (
 													<div
 														key={i}
-														className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg ${index % 2 === 1 ? "bg-white" : ""}` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg ${index % 2 === 1 ? "bg-white" : ""}`}
-											style={index % 2 === 0 ? { backgroundColor: '#f2f3f5' } : {}}
+														className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg`}
+											style={{ backgroundColor: '#f7fbfc' }}
 													>
 														{content.map((p: string, l: number) => (
 															<p key={l} className="text-[14px] text-corail-900 font-bold italic">{p}</p>
@@ -170,7 +168,7 @@ const Services: React.FC = () => {
 									{footerBlocks.map((block: any, i: number) => {
 										if (block.type === 'footer-text') {
 											return (
-												<p key={i} className={`text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify ${index % 2 === 1 ? "text-white/90" : "text-corail-600"}`}>
+												<p key={i} className={`text-sm sm:text-base xl:text-base leading-relaxed font-light text-justify ${index % 2 === 1 ? "text-white/90" : ""}`} style={index % 2 === 0 ? { color: '#65758c' } : {}}>
 													{block.content}
 												</p>
 											);
@@ -178,8 +176,8 @@ const Services: React.FC = () => {
 										if (block.type === 'footer-emphasis') {
 											const content = Array.isArray(block.content) ? block.content : [block.content];
 											return (
-												<div key={i} className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg ${index % 2 === 1 ? "bg-white" : ""}` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg ${index % 2 === 1 ? "bg-white" : ""}`}
-											style={index % 2 === 0 ? { backgroundColor: '#f2f3f5' } : {}}>
+												<div key={i} className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg`}
+											style={{ backgroundColor: '#f7fbfc' }}>
 													{content.map((p: string, l: number) => (
 														<p key={l} className="text-[14px] text-corail-900 font-bold italic">{p}</p>
 													))}
@@ -219,7 +217,7 @@ const Services: React.FC = () => {
 			</div>
 
 			{/* Tagline */}
-			<Tagline />
+			<TaglineCFC />
 		</div>
 	);
 };

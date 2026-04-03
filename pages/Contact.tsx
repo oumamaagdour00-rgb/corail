@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import Tagline from '../components/Tagline';
+import TaglineHassa from '../components/TaglineHassa';
 import PageBanner from '../components/PageBanner';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [hovered, setHovered] = useState<number | null>(null);
   const cardStyle = (idx: number) => ({
-    backgroundColor: hovered === idx ? '#ffffff' : '#f2f3f5',
+    backgroundColor: hovered === idx ? '#ffffff' : '#f7fbfc',
     color: hovered === idx ? '#000000' : '#1e3a5f',
   });
   const cardClass = "group rounded-2xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200";
@@ -41,8 +41,8 @@ const Contact: React.FC = () => {
             <MapPin className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.headquarters}</h4>
             <p className="text-sm leading-relaxed opacity-80 group-hover:opacity-100">
-              Parc Industriel Sapino, Nouaceur<br />
-              Casablanca 20100, Maroc
+              Corail L'Océan, Parc Industriel Sapino, 57<br />
+              Nouaceur 20100, Casablanca, Maroc
             </p>
           </motion.div>
 
@@ -98,7 +98,8 @@ const Contact: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="bg-white/60 backdrop-blur-md rounded-3xl p-8 lg:p-10 border border-corail-100/50 shadow-sm hover:shadow-2xl transition-all duration-700"
+          className="rounded-3xl p-8 lg:p-10 border border-corail-100/50 shadow-sm hover:shadow-2xl transition-all duration-700"
+          style={{ backgroundColor: '#f7fbfc' }}
         >
           <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-corail-900 mb-8">{t.contact.formTitle}</h3>
           <form className="space-y-6">
@@ -146,7 +147,7 @@ const Contact: React.FC = () => {
           className="rounded-3xl overflow-hidden shadow-xl border border-corail-200 h-[450px]"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53188.32!2d-7.5833!3d33.3667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62f3e6f6f6f6f%3A0x0!2sSapino%20Nouaceur!5e0!3m2!1sfr!2sma!4v1234567890!5m2!1sfr!2sma"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8!2d-7.5483986!3d33.406499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda631347f6f9f5b%3A0x54a671e826cfd9e6!2sCorail%20L'Oc%C3%A9an%2C%20Parc%20Industriel%20Sapino%2C%2057%2C%20Nouaceur%2020100!5e0!3m2!1sfr!2sma!4v1234567890!5m2!1sfr!2sma"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -155,7 +156,7 @@ const Contact: React.FC = () => {
           ></iframe>
         </motion.div>
       </div>
-      <Tagline className="mt-8" />
+      <TaglineHassa className="mt-8" />
     </div>
   );
 };

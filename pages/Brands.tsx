@@ -3,7 +3,7 @@ import React from 'react';
 import SEO from '../components/SEO';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import Tagline from '../components/Tagline';
+import TaglineHassa from '../components/TaglineHassa';
 import { useLanguage } from '../contexts/LanguageContext';
 import { BRAND_DETAILS } from '../constants';
 import YouTubeSlider from '../components/YouTubeSlider';
@@ -66,7 +66,7 @@ const Brands: React.FC = () => {
         </div>
 
       </div>
-      <Tagline />
+      <TaglineHassa />
     </div>
   );
 };
