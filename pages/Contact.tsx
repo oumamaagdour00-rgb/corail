@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
           >
             <Mail className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.email}</h4>
-            <a href="mailto:contact@coraillocean.com" className="text-sm opacity-80 group-hover:opacity-100 hover:underline transition-opacity">
+            <a href="mailto:contact@coraillocean.com" className="opacity-80 group-hover:opacity-100 hover:underline transition-opacity" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
               contact@coraillocean.com
             </a>
           </motion.div>

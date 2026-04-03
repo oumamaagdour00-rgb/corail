@@ -189,7 +189,7 @@ const Catalog: React.FC = () => {
                   <Search size={48} className="mx-auto" />
                 </div>
                 <h3 className="text-xl font-bold text-corail-900 mb-2">{t.catalog.noProducts}</h3>
-                <p className="text-corail-300 text-justify">{t.catalog.noProductsText}</p>
+                <p className="text-justify" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>{t.catalog.noProductsText}</p>
                 <button
                   onClick={() => {
                     setSelectedBrand('All');
