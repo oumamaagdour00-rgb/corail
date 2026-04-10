@@ -165,9 +165,8 @@ export const translations: { [key: string]: TranslationData } = {
       growthSubtitle: "At Corail, distribution is not limited to product movement. We build sustainable bridges between brands, networks, and consumers through:",
       growthList: [
         'Route-to-market optimization',
-        'Strategic SKU selection',
         'Logistics flow management',
-        'Commercial execution based on field KPIs, driven by data',
+        'Data-driven management',
         'Structured merchandising'
       ],
       growthFooter: "Corail also acts as a full-service provider, supporting its partners through integrated solutions covering commercial, logistical, and operational dimensions. Our approach aims to secure sell-in while supporting sell-out, through disciplined execution and intervention schemes adapted to market realities. Our commercial setups combine pre-sale and conventional sale models, deployed according to the needs and specificities of each product.",
@@ -253,7 +252,7 @@ export const translations: { [key: string]: TranslationData } = {
     },
     brandsPage: {
       title: "Distributed brands",
-      subtitle: "Proudly distributing world-class portfolios across Morocco.",
+      subtitle: "Distribution of recognized brands",
       introTitle: "Official distribution partner",
       introText: "We serve as the exclusive distributor for major international brands, acting as the bridge between global manufacturers and Moroccan households.",
       brands: {
@@ -267,9 +266,9 @@ export const translations: { [key: string]: TranslationData } = {
         Holder: { description: "Reliable and eco-friendly paper solutions for everyday household needs.", category: "Paper products" },
         Joyful_Solo: { description: "Mouthwash solutions for complete oral hygiene and fresh breath confidence.", category: "Oral care" }
       },
-      ctaTitle: "Partner with us",
+      ctaTitle: "Contact us",
       ctaSubtitle: "Looking for a reliable distribution partner for your brand in Morocco?",
-      ctaButton: "Contact our team"
+      ctaButton: "Contact us"
     },
     catalog: {
       title: "Product catalog",
@@ -338,7 +337,7 @@ export const translations: { [key: string]: TranslationData } = {
         {
           value: "10,000 M³",
           label: "Warehousing",
-          description: "With over 10,000 m³ of storage capacity, our facilities are designed to support large-scale distribution.",
+          description: "With over 10,000 m³ of storage capacity, our facilities are designed to support structured distribution.",
           iconName: "Warehouse"
         },
         {
@@ -383,7 +382,7 @@ export const translations: { [key: string]: TranslationData } = {
               content: [
                 'Modern trade (Hypermarkets & Supermarkets)',
                 'Traditional trade (Grocery & Proximity)',
-                'Semi-wholesale & Structured Wholesalers',
+                'Semi-wholesale & Wholesalers',
                 'Specialized circuits',
                 'Emerging & Digital channels'
               ]
@@ -395,12 +394,12 @@ export const translations: { [key: string]: TranslationData } = {
                 'Coverage',
                 'Visit frequency',
                 'Success rate',
-                'Assortment depth (Average items per invoice)',
+                'Assortment depth (Items per invoice)',
                 'Stock rotation'
               ]
             },
             { type: 'footer-text', content: 'Our commercial setups integrate both conventional and pre-sale models, allowing for fine-tuned performance optimization based on needs and product type.' },
-            { type: 'footer-emphasis', content: ['Our goal:', 'To ensure a consistent, profitable, and sustainable presence.'] }
+            { type: 'footer-emphasis', content: ['Goal:', 'To ensure a consistent, profitable, and sustainable presence.'] }
           ]
         },
         {
@@ -419,9 +418,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'Merchandising and in-store activation'
               ]
             },
-            { type: 'text', content: 'Our teams operate on a data-driven logic with analytical reporting.' },
             { type: 'footer-text', content: 'Corail also acts as a full service provider, structuring integrated setups adapted to the commercial, logistical, and operational challenges of its partners.' },
-            { type: 'footer-emphasis', content: ['Our goal:', 'Optimize commercial performance through disciplined execution.'] }
+            { type: 'footer-emphasis', content: ['Goal:', 'Optimize commercial performance through disciplined execution.'] }
           ]
         },
         {
@@ -439,7 +437,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Optimization of stock levels'
               ]
             },
-            { type: 'emphasis', content: ['Our goal:', 'Fluidity, reliability, and risk management.'] }
+            { type: 'emphasis', content: ['Goal:', 'Fluidity, reliability, and risk management.'] }
           ]
         },
         {
@@ -458,7 +456,7 @@ export const translations: { [key: string]: TranslationData } = {
               ]
             },
             { type: 'text', content: 'We act as a development partner, moving beyond a simple distribution link.' },
-            { type: 'emphasis', content: ['Our goal:', 'Structure strong brands capable of establishing themselves sustainably.'] }
+            { type: 'emphasis', content: ['Goal:', 'Structure strong brands capable of establishing themselves sustainably.'] }
           ]
         },
         {
@@ -476,7 +474,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Monitoring of files in case of regulatory changes'
               ]
             },
-            { type: 'emphasis', content: ['Our goal:', 'To ensure compliant, controlled, and sustainable market entry.'] }
+            { type: 'emphasis', content: ['Goal:', 'To ensure compliant, controlled, and sustainable market entry.'] }
           ]
         }
       ]
@@ -513,9 +511,8 @@ export const translations: { [key: string]: TranslationData } = {
       growthSubtitle: "Chez Corail, la distribution ne se limite pas à la circulation des produits. Nous construisons des passerelles durables entre marques, réseaux et consommateurs grâce à :",
       growthList: [
         'Une optimisation du Route-to-Market',
-        'Une sélection stratégique des SKUs',
         'Une maîtrise des flux logistiques',
-        'Une exécution commerciale basée sur des KPI terrain, portée par un pilotage data-driven',
+        'Un pilotage data-driven',
         'Un merchandising structuré'
       ],
       growthFooter: "Corail agit également en tant que full service provider, accompagnant ses partenaires, grâce à une exécution disciplinée. Nos dispositifs commerciaux combinent des modèles de pré-vente et de vente conventionnelle, déployés en fonction des besoins et des spécificités propres à chaque produit.",
@@ -601,7 +598,7 @@ export const translations: { [key: string]: TranslationData } = {
     },
     brandsPage: {
       title: "Marques distribuées",
-      subtitle: "Distribution de portefeuilles de classe mondiale à travers le Maroc.",
+      subtitle: "Distribution de marques reconnues",
       introTitle: "Partenaire de distribution officiel",
       introText: "Nous servons de distributeur exclusif pour de grandes marques internationales, servant de pont entre les fabricants mondiaux et les foyers marocains.",
       brands: {
@@ -615,9 +612,9 @@ export const translations: { [key: string]: TranslationData } = {
         Holder: { description: "Solutions papier fiables et écologiques pour les besoins quotidiens de la maison.", category: "Produits papier" },
         Joyful_Solo: { description: "Solutions de bain de bouche pour une higiene bucco-dentaire complète et une confiance en son haleine.", category: "Hygiène bucco-dentaire" }
       },
-      ctaTitle: "Devenez partenaire",
+      ctaTitle: "Nous contacter",
       ctaSubtitle: "Vous cherchez un partenaire de distribution fiable pour votre marque au Maroc ?",
-      ctaButton: "Contactez notre équipe"
+      ctaButton: "Nous contacter"
     },
     catalog: {
       title: "Catalogue produits",
@@ -686,7 +683,7 @@ export const translations: { [key: string]: TranslationData } = {
         {
           value: "10 000 m³",
           label: "Stockage",
-          description: "Avec plus de 10 000 m³ de capacité de stockage, nos installations sont conçues pour soutenir une distribution à grande échelle.",
+          description: "Avec plus de 10 000 m³ de capacité de stockage, nos installations sont conçues pour soutenir une distribution structurée.",
           iconName: "Warehouse"
         },
         {
@@ -731,7 +728,7 @@ export const translations: { [key: string]: TranslationData } = {
               content: [
                 'Grandes et moyennes surfaces',
                 'Commerce traditionnel (épiceries, proximité)',
-                'Demi-gros & grossistes structurés',
+                'Demi-gros & grossistes',
                 'Circuits spécialisés',
                 'Canaux émergents et digitaux'
               ]
@@ -743,12 +740,12 @@ export const translations: { [key: string]: TranslationData } = {
                 'La couverture',
                 'La fréquence de visite',
                 'Le taux de succès',
-                'La profondeur d\'assortiment (nombre de lignes moyen par facture)',
+                'La profondeur d\'assortiment (nombre de lignes par facture)',
                 'La rotation des stocks'
               ]
             },
             { type: 'footer-text', content: 'Nos dispositifs commerciaux intègrent aussi bien des modèles de vente conventionnelle que de pré-vente, permettant une optimisation fine de la couverture et de la performance terrain en fonction des besoins et du type de produit.' },
-            { type: 'footer-emphasis', content: ['Notre objectif :', 'Garantir une présence cohérente, rentable et durable.'] }
+            { type: 'footer-emphasis', content: ['Objectif :', 'Garantir une présence cohérente, rentable et durable.'] }
           ]
         },
         {
@@ -767,9 +764,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'Merchandising et activation en magasin'
               ]
             },
-            { type: 'text', content: 'Nos équipes opèrent selon une logique data-driven intégrant un reporting analytique.' },
             { type: 'footer-text', content: 'Corail intervient également comme full service provider, en structurant des dispositifs intégrés adaptés aux enjeux commerciaux, logistiques et opérationnels de ses partenaires.' },
-            { type: 'footer-emphasis', content: ['Notre objectif :', 'Optimiser la performance commerciale par une exécution disciplinée.'] }
+            { type: 'footer-emphasis', content: ['Objectif :', 'Optimiser la performance commerciale par une exécution disciplinée.'] }
           ]
         },
         {
@@ -787,7 +783,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Optimisation des niveaux de stock'
               ]
             },
-            { type: 'emphasis', content: ['Notre objectif :', 'Disponibilité, réactivité et maîtrise du risque.'] }
+            { type: 'emphasis', content: ['Objectif :', 'Disponibilité, réactivité et maîtrise du risque.'] }
           ]
         },
         {
@@ -806,7 +802,7 @@ export const translations: { [key: string]: TranslationData } = {
               ]
             },
             { type: 'text', content: 'Nous agissons comme un partenaire de développement, au-delà du simple relais distributif.' },
-            { type: 'emphasis', content: ['Notre objectif :', 'Structurer des marques solides capables de s\'imposer durablement.'] }
+            { type: 'emphasis', content: ['Objectif :', 'Structurer des marques solides capables de s\'imposer durablement.'] }
           ]
         },
         {
@@ -824,7 +820,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Suivi des dossiers en cas d\'évolution réglementaire'
               ]
             },
-            { type: 'emphasis', content: ['Notre objectif :', 'Garantir une mise en marché conforme, maîtrisée et durable.'] }
+            { type: 'emphasis', content: ['Objectif :', 'Garantir une mise en marché conforme, maîtrisée et durable.'] }
           ]
         }
       ]
@@ -862,9 +858,8 @@ export const translations: { [key: string]: TranslationData } = {
     growthSubtitle: "في كوراي، لا يقتصر التوزيع على مجرد نقل المنتجات، بل نعمل على بناء جسور مستدامة بين العلامات التجارية وشبكات التوزيع والمستهلكين من خلال:",
     growthList: [
       'تحسين استراتيجية الوصول إلى السوق',
-      'اختيار استراتيجي دقيق للمنتجات (SKU)',
       'إدارة محكمة للتدفقات اللوجستية',
-      'تنفيذ تجاري قائم على مؤشرات أداء ميدانية مع قيادة تعتمد على تحليل البيانات',
+      'قيادة تعتمد على تحليل البيانات',
       'عرض وتسويق منظم داخل نقاط البيع'
     ],
       growthFooter: "تعمل كوراي أيضًا كمزوّد خدمات متكامل، حيث ترافق شركاءها عبر منظومات متكاملة تشمل الجوانب التجارية واللوجستية والتشغيلية. ويهدف نهجنا إلى تأمين عمليات البيع للموزعين (Sell-in) مع دعم المبيعات لدى المستهلك النهائي (Sell-out)، من خلال تنفيذ منضبط وفعّال. كما تجمع منظوماتنا التجارية بين نماذج البيع المسبق والبيع التقليدي، ويتم اعتمادها وفقًا لاحتياجات وخصوصيات كل منتج.",
@@ -947,7 +942,7 @@ export const translations: { [key: string]: TranslationData } = {
     },
     brandsPage: {
       title: "العلامات التجارية الموزعة",
-      subtitle: "نفخر بتوزيع محافظ من العلامات التجارية العالمية عبر مختلف أنحاء المغرب.",
+      subtitle: "توزيع علامات تجارية معروفة",
       introTitle: "شريك التوزيع الرسمي",
       introText: "نؤدي دور الموزع الحصري لعدد من أبرز العلامات التجارية الدولية.",
       brands: {
@@ -961,9 +956,9 @@ export const translations: { [key: string]: TranslationData } = {
         Holder: { description: "حلول ورقية موثوقة وصديقة للبيئة.", category: "المنتجات الورقية" },
         Joyful_Solo: { description: "محاليل غسول الفم لضمان نظافة فموية متكاملة.", category: "العناية بالفم والأسنان" }
       },
-      ctaTitle: "كن شريكًا لنا",
+      ctaTitle: "اتصل بنا",
       ctaSubtitle: "هل تبحث عن شريك توزيع موثوق لعلامتك التجارية في المغرب؟",
-      ctaButton: "تواصل مع فريقنا"
+      ctaButton: "اتصل بنا"
     },
     catalog: {
       title: "كتالوج المنتجات",
@@ -1097,7 +1092,7 @@ export const translations: { [key: string]: TranslationData } = {
               content: [
                 'التجارة الحديثة (الهايبرماركت والسوبرماركت)',
                 'التجارة التقليدية (البقالات ومتاجر القرب)',
-                'شبه الجملة وتجار الجملة المنظمون',
+                'شبه الجملة وتجار الجملة',
                 'القنوات المتخصصة',
                 'القنوات الناشئة والرقمية'
               ]
@@ -1114,7 +1109,7 @@ export const translations: { [key: string]: TranslationData } = {
               ]
             },
             { type: 'footer-text', content: 'تعتمد منظوماتنا التجارية على نماذج البيع التقليدي والبيع المسبق، بما يتيح تحسين الأداء بدقة وفق احتياجات كل منتج وطبيعة السوق.' },
-            { type: 'footer-emphasis', content: ['هدفنا:', 'ضمان حضور متماسك ومربح ومستدام في السوق.'] }
+            { type: 'footer-emphasis', content: ['هدف:', 'ضمان حضور متماسك ومربح ومستدام في السوق.'] }
           ]
         },
         {
@@ -1133,9 +1128,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'تنفيذ أنشطة العرض والترويج داخل نقاط البيع'
               ]
             },
-            { type: 'text', content: 'تعمل فرقنا وفق منهجية قائمة على تحليل البيانات، مدعومة بتقارير تحليلية دقيقة.' },
             { type: 'footer-text', content: 'كما تعمل كوراي كمزوّد خدمات متكامل، من خلال تصميم منظومات متكاملة تستجيب للتحديات التجارية واللوجستية والتشغيلية لشركائها.' },
-            { type: 'footer-emphasis', content: ['هدفنا:', 'تحسين الأداء التجاري من خلال تنفيذ منضبط.'] }
+            { type: 'footer-emphasis', content: ['هدف:', 'تحسين الأداء التجاري من خلال تنفيذ منضبط.'] }
           ]
         },
         {
@@ -1173,7 +1167,7 @@ export const translations: { [key: string]: TranslationData } = {
               ]
             },
             { type: 'text', content: 'نؤدي دور شريك في تطوير العلامات التجارية، وليس مجرد حلقة ضمن سلسلة التوزيع.' },
-            { type: 'emphasis', content: ['هدفنا:', 'بناء علامات تجارية قوية قادرة على فرض حضورها بشكل مستدام.'] }
+            { type: 'emphasis', content: ['هدف:', 'بناء علامات تجارية قوية قادرة على فرض حضورها بشكل مستدام.'] }
           ]
         },
         {
@@ -1192,7 +1186,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'متابعة الملفات في حال حدوث تغييرات تنظيمية'
               ]
             },
-            { type: 'emphasis', content: ['هدفنا:', 'ضمان دخول منظم وآمن ومستدام إلى السوق.'] }
+            { type: 'emphasis', content: ['هدف:', 'ضمان دخول منظم وآمن ومستدام إلى السوق.'] }
           ]
         }
       ]

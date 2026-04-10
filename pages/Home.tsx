@@ -20,90 +20,83 @@ const Home: React.FC = () => {
 
 			{/* Growth Platform Section */}
 			<section className="py-24 bg-white relative overflow-hidden">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-					<motion.h2 
-						initial={{ opacity: 0, y: 50 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, amount: 0.3 }}
-						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-center text-corail-900 leading-tight break-words"
-						style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
-					>
-						{t.home.growthTitle}
-					</motion.h2>
-					<motion.div 
-						initial={{ opacity: 0, y: 50 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, amount: 0.3 }}
-						transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-						className="flex flex-col justify-center"
-					>
-						<p className="text-justify mb-8 leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-							{t.home.growthSubtitle}
-						</p>
-						<div className="rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 hover:bg-white mb-8" style={{ backgroundColor: '#f7fbfc' }}>
-							<div className="md:hidden space-y-3">
-								{t.home.growthList.map((item, i) => (
-									<motion.div 
-										key={i}
-										initial={{ opacity: 0, y: 20 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										viewport={{ once: true, amount: 0.3 }}
-										transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
-										className="flex items-start space-x-2 text-sm text-corail-500"
-									>
-										<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
-										<span>{item}</span>
-									</motion.div>
-								))}
+				<div className="max-w-7xl ml-0 mr-auto relative z-10">
+					<div className="px-4 sm:px-6 lg:px-8">
+					<div className="pl-4 sm:pl-8">
+						<motion.h2 
+							initial={{ opacity: 0, y: 50 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.8, ease: "easeOut" }}
+							className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-left text-corail-900 leading-tight break-words"
+							style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
+						>
+							{t.home.growthTitle}
+						</motion.h2>
+						<motion.div 
+							initial={{ opacity: 0, y: 50 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+							className="flex flex-col justify-center"
+						>
+						<div className="flex flex-col gap-8">
+							<p className="text-justify leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
+								{t.home.growthSubtitle}
+							</p>
+
+							{/* Bullet points */}
+							<div className="w-full lg:w-[500px]">
+								<div className="group/list rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 hover:bg-white" style={{ backgroundColor: '#f7fbfc' }}>
+								<ul className="md:hidden space-y-3">
+									{t.home.growthList.map((item, i) => (
+										<li key={i} className="flex items-start space-x-2 text-sm text-corail-500">
+											<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+								<div className="hidden md:grid md:grid-cols-2 gap-6">
+									<ul className="space-y-3">
+										{t.home.growthList.filter((_, idx) => idx % 2 === 0).map((item, i) => (
+											<li key={i} className="flex items-start space-x-2 text-sm text-corail-500">
+												<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+												<span>{item}</span>
+											</li>
+										))}
+									</ul>
+									<ul className="space-y-3">
+										{t.home.growthList.filter((_, idx) => idx % 2 === 1).map((item, i) => (
+											<li key={i} className="flex items-start space-x-2 text-sm text-corail-500">
+												<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
+												<span>{item}</span>
+											</li>
+										))}
+									</ul>
+								</div>
+								</div>
 							</div>
-							<div className="hidden md:grid md:grid-cols-2 gap-6">
-								<div className="space-y-3">
-									{t.home.growthList.filter((_, idx) => idx % 2 === 0).map((item, i) => (
-										<motion.div 
-											key={i}
-											initial={{ opacity: 0, y: 20 }}
-											whileInView={{ opacity: 1, y: 0 }}
-											viewport={{ once: true, amount: 0.3 }}
-											transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
-											className="flex items-start space-x-2 text-sm text-corail-500"
-										>
-											<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
-											<span>{item}</span>
-										</motion.div>
-									))}
-								</div>
-								<div className="space-y-3">
-									{t.home.growthList.filter((_, idx) => idx % 2 === 1).map((item, i) => (
-										<motion.div 
-											key={i}
-											initial={{ opacity: 0, y: 20 }}
-											whileInView={{ opacity: 1, y: 0 }}
-											viewport={{ once: true, amount: 0.3 }}
-											transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: "easeOut" }}
-											className="flex items-start space-x-2 text-sm text-corail-500"
-										>
-											<CheckCircle2 size={16} className="text-teal-500 flex-shrink-0 mt-0.5" />
-											<span>{item}</span>
-										</motion.div>
-									))}
-								</div>
+
+							{/* Footer emphasis */}
+							<div className="border-l-4 pl-4 py-2 rounded-r-lg" style={{ backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' }}>
+								<p className="text-[14px] text-corail-900 font-bold italic">
+									{t.home.growthFooter
+										.split(/(service provider)/i)
+										.map((part, i) =>
+											part.toLowerCase() === "service provider" ? (
+												<strong key={i} className="font-bold text-corail-900">
+													{part}
+												</strong>
+											) : (
+												part
+											),
+										)}
+								</p>
 							</div>
 						</div>
-						<p className="text-justify leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-							{t.home.growthFooter
-								.split(/(service provider)/i)
-								.map((part, i) =>
-									part.toLowerCase() === "service provider" ? (
-										<strong key={i} className="font-bold text-corail-900">
-											{part}
-										</strong>
-									) : (
-										part
-									),
-								)}
-						</p>
-					</motion.div>
+						</motion.div>
+					</div>
+					</div>
 				</div>
 			</section>
 

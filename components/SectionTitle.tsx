@@ -13,7 +13,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle, alignment 
   
   return (
     <div className={`mb-12 ${alignment === 'center' ? 'text-center' : 'text-left'}`}>
-      <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold my-4 break-words ${light ? 'text-white' : isArabic ? 'text-corail-900' : 'bg-clip-text text-transparent bg-gradient-to-r from-corail-900 via-corail-800 to-corail-600'}`} style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+      <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold my-4 break-words ${light ? 'text-white' : 'text-corail-900'}`} style={{ wordWrap: 'break-word', overflowWrap: 'break-word', color: light ? undefined : '#0f172a' }}>
         {title}
       </h2>
       {subtitle && (

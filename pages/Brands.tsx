@@ -3,7 +3,7 @@ import React from 'react';
 import SEO from '../components/SEO';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import TaglineHassa from '../components/TaglineHassa';
+import TaglineCFC from '../components/TaglineCFC';
 import { useLanguage } from '../contexts/LanguageContext';
 import { BRAND_DETAILS } from '../constants';
 import YouTubeSlider from '../components/YouTubeSlider';
@@ -56,7 +56,7 @@ const Brands: React.FC = () => {
             to="/contact"
             className="inline-flex items-center px-8 py-3 bg-corail-900 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-corail-800 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
-            {t.nav.partnerCta}
+            {t.brandsPage.ctaButton}
             {language === 'ar' ? (
               <ArrowLeft className="mr-2 h-4 w-4" />
             ) : (
@@ -66,7 +66,7 @@ const Brands: React.FC = () => {
         </div>
 
       </div>
-      <TaglineHassa />
+      <TaglineCFC />
     </div>
   );
 };

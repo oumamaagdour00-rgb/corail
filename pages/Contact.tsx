@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import TaglineHassa from '../components/TaglineHassa';
+import TaglineCFC from '../components/TaglineCFC';
 import PageBanner from '../components/PageBanner';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   const cardStyle = (idx: number) => ({
     backgroundColor: hovered === idx ? '#ffffff' : '#f7fbfc',
-    color: hovered === idx ? '#000000' : '#1e3a5f',
+    color: hovered === idx ? '#0f172a' : '#1e3a5f',
   });
   const cardClass = "group rounded-2xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200";
 
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="rounded-3xl p-8 lg:p-10 border border-corail-100/50 shadow-sm hover:shadow-2xl transition-all duration-700"
-          style={{ backgroundColor: '#f7fbfc' }}
+          style={{ backgroundColor: '#ffffff' }}
         >
           <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-corail-900 mb-8 break-words">{t.contact.formTitle}</h3>
           <form className="space-y-6">
@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
           ></iframe>
         </motion.div>
       </div>
-      <TaglineHassa className="mt-8" />
+      <TaglineCFC className="mt-8" />
     </div>
   );
 };

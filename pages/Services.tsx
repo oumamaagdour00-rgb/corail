@@ -147,12 +147,15 @@ const Services: React.FC = () => {
 												return (
 													<div
 														key={i}
-														className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg`}
-											style={index % 2 === 1 ? { backgroundColor: '#ffffff' } : { backgroundColor: '#f7fbfc' }}
+														className={language === 'ar' ? `border-r-4 pr-4 py-2 rounded-l-lg flex items-center` : `border-l-4 pl-4 py-2 rounded-r-lg flex items-center`}
+											style={index % 2 === 1 ? 
+												(language === 'ar' ? { backgroundColor: '#ffffff', borderRightColor: '#0F172A' } : { backgroundColor: '#ffffff', borderLeftColor: '#0F172A' }) : 
+												(language === 'ar' ? { backgroundColor: '#f7fbfc', borderRightColor: '#0F172A' } : { backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' })
+											}
 													>
-														{content.map((p: string, l: number) => (
-															<p key={l} className="text-[14px] text-corail-900 font-bold italic">{p}</p>
-														))}
+														<p className="text-[14px] text-corail-900 font-bold italic">
+															{content.join(' ')}
+														</p>
 													</div>
 												);
 											}
@@ -176,11 +179,14 @@ const Services: React.FC = () => {
 										if (block.type === 'footer-emphasis') {
 											const content = Array.isArray(block.content) ? block.content : [block.content];
 											return (
-												<div key={i} className={language === 'ar' ? `border-r-4 border-corail-500 pr-4 py-2 rounded-l-lg` : `border-l-4 border-corail-500 pl-4 py-2 rounded-r-lg`}
-											style={index % 2 === 1 ? { backgroundColor: '#ffffff' } : { backgroundColor: '#f7fbfc' }}>
-													{content.map((p: string, l: number) => (
-														<p key={l} className="text-[14px] text-corail-900 font-bold italic">{p}</p>
-													))}
+												<div key={i} className={language === 'ar' ? `border-r-4 pr-4 py-2 rounded-l-lg flex items-center` : `border-l-4 pl-4 py-2 rounded-r-lg flex items-center`}
+											style={index % 2 === 1 ? 
+												(language === 'ar' ? { backgroundColor: '#ffffff', borderRightColor: '#0F172A' } : { backgroundColor: '#ffffff', borderLeftColor: '#0F172A' }) : 
+												(language === 'ar' ? { backgroundColor: '#f7fbfc', borderRightColor: '#0F172A' } : { backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' })
+											}>
+													<p className="text-[14px] text-corail-900 font-bold italic">
+														{content.join(' ')}
+													</p>
 												</div>
 											);
 										}

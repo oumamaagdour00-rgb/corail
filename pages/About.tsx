@@ -25,7 +25,7 @@ const About: React.FC = () => {
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.8, ease: "easeOut" }}
+					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
 					<div className="prose prose-base">
 						{t.about.profileText.map((paragraph: string, idx: number) => (
@@ -34,7 +34,7 @@ const About: React.FC = () => {
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, amount: 0.3 }}
-								transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+								transition={{ duration: 0.6, ease: "easeOut" }}
 								className="mb-4 text-justify"
 								style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 							>
@@ -46,7 +46,7 @@ const About: React.FC = () => {
 			</div>
 		</div>
 
-		<div className="w-full pt-6 pb-8" style={{ backgroundColor: '#edf3f5' }}>
+		<div className="w-full pt-6 pb-8 bg-white">
 			<div className="max-w-7xl mx-auto px-0 sm:px-0 lg:px-2 space-y-6">
 
 				{/* Approach and Engagement - Two Columns */}
@@ -56,8 +56,8 @@ const About: React.FC = () => {
 						initial={{ opacity: 0, y: 40 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
-						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="py-5 px-6 rounded-2xl"
+						transition={{ duration: 0.6, ease: "easeOut" }}
+						className="py-5 px-6 rounded-2xl bg-white"
 					>
 						<SectionTitle title={t.about.engagementTitle} alignment="left" />
 						<div className="prose prose-base space-y-6">
@@ -67,7 +67,7 @@ const About: React.FC = () => {
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.3 }}
-									transition={{ duration: 0.6, delay: 0.2 + (idx * 0.1), ease: "easeOut" }}
+									transition={{ duration: 0.6, ease: "easeOut" }}
 									className="text-justify"
 									style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 								>
@@ -82,8 +82,8 @@ const About: React.FC = () => {
 						initial={{ opacity: 0, y: 40 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
-						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="py-5 px-6 rounded-2xl"
+						transition={{ duration: 0.6, ease: "easeOut" }}
+						className="py-5 px-6 rounded-2xl bg-white"
 					>
 						<SectionTitle title={t.about.approachTitle} alignment="left" />
 						<div className="prose prose-base space-y-6">
@@ -93,7 +93,7 @@ const About: React.FC = () => {
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.3 }}
-									transition={{ duration: 0.6, delay: 0.2 + (idx * 0.1), ease: "easeOut" }}
+									transition={{ duration: 0.6, ease: "easeOut" }}
 									className="text-justify"
 									style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
 								>
@@ -109,7 +109,7 @@ const About: React.FC = () => {
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.8, ease: "easeOut" }}
+					transition={{ duration: 0.6, ease: "easeOut" }}
 					className="text-center pt-2 pb-2"
 				>
 					<NavLink
