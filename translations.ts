@@ -418,8 +418,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'Merchandising and in-store activation'
               ]
             },
-            { type: 'footer-text', content: 'Corail also acts as a full service provider, structuring integrated setups adapted to the commercial, logistical, and operational challenges of its partners.' },
-            { type: 'footer-emphasis', content: ['Goal:', 'Optimize commercial performance through disciplined execution.'] }
+            { type: 'text', content: 'Corail also acts as a full service provider, structuring integrated setups adapted to the commercial, logistical, and operational challenges of its partners.' },
+            { type: 'emphasis', content: ['Goal:', 'Optimize commercial performance through disciplined execution.'] }
           ]
         },
         {
@@ -764,8 +764,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'Merchandising et activation en magasin'
               ]
             },
-            { type: 'footer-text', content: 'Corail intervient également comme full service provider, en structurant des dispositifs intégrés adaptés aux enjeux commerciaux, logistiques et opérationnels de ses partenaires.' },
-            { type: 'footer-emphasis', content: ['Objectif :', 'Optimiser la performance commerciale par une exécution disciplinée.'] }
+            { type: 'text', content: 'Corail intervient également comme full service provider, en structurant des dispositifs intégrés adaptés aux enjeux commerciaux, logistiques et opérationnels de ses partenaires.' },
+            { type: 'emphasis', content: ['Objectif :', 'Optimiser la performance commerciale par une exécution disciplinée.'] }
           ]
         },
         {
@@ -1128,8 +1128,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'تنفيذ أنشطة العرض والترويج داخل نقاط البيع'
               ]
             },
-            { type: 'footer-text', content: 'كما تعمل كوراي كمزوّد خدمات متكامل، من خلال تصميم منظومات متكاملة تستجيب للتحديات التجارية واللوجستية والتشغيلية لشركائها.' },
-            { type: 'footer-emphasis', content: ['هدف:', 'تحسين الأداء التجاري من خلال تنفيذ منضبط.'] }
+            { type: 'text', content: 'كما تعمل كوراي كمزوّد خدمات متكامل، من خلال تصميم منظومات متكاملة تستجيب للتحديات التجارية واللوجستية والتشغيلية لشركائها.' },
+            { type: 'emphasis', content: ['هدف:', 'تحسين الأداء التجاري من خلال تنفيذ منضبط.'] }
           ]
         },
         {

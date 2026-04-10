@@ -147,7 +147,7 @@ const Services: React.FC = () => {
 												return (
 													<div
 														key={i}
-														className={language === 'ar' ? `border-r-4 pr-4 py-2 rounded-l-lg flex items-center` : `border-l-4 pl-4 py-2 rounded-r-lg flex items-center`}
+														className={language === 'ar' ? `mt-4 border-r-4 pr-4 py-2 rounded-l-lg flex items-center` : `mt-4 border-l-4 pl-4 py-2 rounded-r-lg flex items-center`}
 											style={index % 2 === 1 ? 
 												(language === 'ar' ? { backgroundColor: '#ffffff', borderRightColor: '#0F172A' } : { backgroundColor: '#ffffff', borderLeftColor: '#0F172A' }) : 
 												(language === 'ar' ? { backgroundColor: '#f7fbfc', borderRightColor: '#0F172A' } : { backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' })
