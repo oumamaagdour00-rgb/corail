@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
     backgroundColor: hovered === idx ? '#ffffff' : '#f7fbfc',
     color: hovered === idx ? '#0f172a' : '#1e3a5f',
   });
-  const cardClass = "group rounded-2xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-corail-200";
+  const cardClass = "rounded-2xl p-8 flex flex-col items-center text-center shadow-lg border border-transparent";
 
   return (
     <div className="flex flex-col w-full relative overflow-hidden bg-white">
@@ -40,9 +40,8 @@ const Contact: React.FC = () => {
           >
             <MapPin className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.headquarters}</h4>
-            <p className="leading-relaxed opacity-80 group-hover:opacity-100" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-              Corail L'Océan, Parc Industriel Sapino, 57<br />
-              Nouaceur 20100, Casablanca, Maroc
+            <p className="leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
+              Parc Industriel Sapino, Nouaceur 20100, Casablanca, Maroc
             </p>
           </motion.div>
 
@@ -57,7 +56,7 @@ const Contact: React.FC = () => {
           >
             <Phone className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.phone}</h4>
-            <p className="opacity-80 group-hover:opacity-100" dir="ltr" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>+212 (0)5 22 53 84 41</p>
+            <p dir="ltr" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>+212 (0)5 22 53 84 41</p>
           </motion.div>
 
           {/* Email */}
@@ -71,7 +70,7 @@ const Contact: React.FC = () => {
           >
             <Mail className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.email}</h4>
-            <a href="mailto:contact@coraillocean.com" className="opacity-80 group-hover:opacity-100 hover:underline transition-opacity" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
+            <a href="mailto:contact@coraillocean.com" className="hover:underline transition-opacity" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
               contact@coraillocean.com
             </a>
           </motion.div>
@@ -88,7 +87,7 @@ const Contact: React.FC = () => {
             <Clock className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.hours}</h4>
             {t.contact.hoursText.map((hour: string, idx: number) => (
-              <p key={idx} className="opacity-80 group-hover:opacity-100" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>{hour}</p>
+              <p key={idx} style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>{hour}</p>
             ))}
           </motion.div>
         </div>
@@ -101,7 +100,7 @@ const Contact: React.FC = () => {
           className="rounded-3xl p-8 lg:p-10 border border-corail-100/50 shadow-sm hover:shadow-2xl transition-all duration-700"
           style={{ backgroundColor: '#ffffff' }}
         >
-          <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-corail-900 mb-8 break-words">{t.contact.formTitle}</h3>
+          <h3 className="text-lg sm:text-xl xl:text-2xl font-bold mb-8 break-words" style={{ color: '#162032' }}>{t.contact.formTitle}</h3>
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>

@@ -21,15 +21,15 @@ const Home: React.FC = () => {
 			{/* Growth Platform Section */}
 			<section className="py-24 bg-white relative overflow-hidden">
 				<div className="max-w-7xl ml-0 mr-auto relative z-10">
-					<div className="px-4 sm:px-6 lg:px-8">
-					<div className="pl-4 sm:pl-8">
+					<div className="px-4 sm:px-6 lg:px-8 w-full">
+					<div className="pl-4 sm:pl-8 pr-4 sm:pr-8 w-full">
 						<motion.h2 
 							initial={{ opacity: 0, y: 50 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, amount: 0.3 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
-							className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-left text-corail-900 leading-tight break-words"
-							style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
+							className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-left leading-tight break-words"
+							style={{ wordWrap: 'break-word', overflowWrap: 'break-word', color: '#162032' }}
 						>
 							{t.home.growthTitle}
 						</motion.h2>
@@ -40,14 +40,13 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
 							className="flex flex-col justify-center"
 						>
-						<div className="flex flex-col gap-8">
-							<p className="text-justify leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-								{t.home.growthSubtitle}
-							</p>
-
-							{/* Bullet points */}
-							<div className="w-full lg:w-[500px]">
-								<div className="group/list rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 hover:bg-white" style={{ backgroundColor: '#f7fbfc' }}>
+						<div className="flex flex-col lg:flex-row items-stretch justify-between gap-12">
+							{/* Texte à gauche */}
+							<div className="w-full lg:w-[45%] flex flex-col">
+								<p className="text-justify mb-4 leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
+									{t.home.growthSubtitle}
+								</p>
+								<div className="group/list rounded-xl p-6 border border-corail-100 hover:border-corail-200 shadow-sm hover:shadow-md transition-all duration-700 hover:bg-white flex-1" style={{ backgroundColor: '#f7fbfc' }}>
 								<ul className="md:hidden space-y-3">
 									{t.home.growthList.map((item, i) => (
 										<li key={i} className="flex items-start space-x-2 text-sm text-corail-500">
@@ -77,21 +76,23 @@ const Home: React.FC = () => {
 								</div>
 							</div>
 
-							{/* Footer emphasis */}
-							<div className="border-l-4 pl-4 py-2 rounded-r-lg" style={{ backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' }}>
-								<p className="text-[14px] text-corail-900 font-bold italic">
-									{t.home.growthFooter
-										.split(/(service provider)/i)
-										.map((part, i) =>
-											part.toLowerCase() === "service provider" ? (
-												<strong key={i} className="font-bold text-corail-900">
-													{part}
-												</strong>
-											) : (
-												part
-											),
-										)}
-								</p>
+							{/* Footer emphasis à droite */}
+							<div className="w-full lg:w-[45%] flex-shrink-0 flex">
+								<div className="border-l-4 pl-6 pr-4 py-2 rounded-r-lg flex items-center w-full" style={{ backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' }}>
+									<p className="text-[14px] text-corail-900 font-bold italic text-justify" style={{ lineHeight: '26px' }}>
+										{t.home.growthFooter
+											.split(/(service provider)/i)
+											.map((part, i) =>
+												part.toLowerCase() === "service provider" ? (
+													<strong key={i} className="font-bold text-corail-900">
+														{part}
+													</strong>
+												) : (
+													part
+												),
+											)}
+									</p>
+								</div>
 							</div>
 						</div>
 						</motion.div>
@@ -149,7 +150,7 @@ const Home: React.FC = () => {
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className="w-full lg:w-3/5"
 						>
-							<h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-corail-900 leading-tight flex items-center gap-4 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+							<h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 leading-tight flex items-center gap-4 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', color: '#162032' }}>
 								<span className="h-1 w-12 bg-corail-900 flex-shrink-0"></span>
 								{t.home.presidentTitle}
 							</h1>

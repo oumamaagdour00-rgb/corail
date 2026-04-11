@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
 								className="h-10 w-auto group-hover:scale-105 transition-transform duration-500"
 							/>
 							<div className="flex flex-col">
-								<span className="text-lg font-display font-black text-corail-900 uppercase tracking-tight leading-none group-hover:text-corail-600 transition-colors duration-500">
+								<span className="text-lg font-display font-black uppercase tracking-tight leading-none group-hover:text-corail-600 transition-colors duration-500" style={{ color: '#162032' }}>
 									Corail L'Océan
 								</span>
 								<span className="text-[9px] font-bold text-corail-400 uppercase tracking-[0.1em] mt-0.5 group-hover:text-corail-500 transition-colors duration-500">

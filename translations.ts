@@ -162,7 +162,7 @@ export const translations: { [key: string]: TranslationData } = {
       introList: ['Strategic Go-to-Market', 'Field Execution', 'Logistical Mastery', 'Commercial Performance'],
       introButton: "More about us",
       growthTitle: "A platform for growth, beyond distribution",
-      growthSubtitle: "At Corail, distribution is not limited to product movement. We build sustainable bridges between brands, networks, and consumers through:",
+      growthSubtitle: "At Corail, distribution is not limited to product movement. We build sustainable bridges between brands, networks, and consumers.",
       growthList: [
         'Route-to-market optimization',
         'Logistics flow management',
@@ -373,7 +373,7 @@ export const translations: { [key: string]: TranslationData } = {
       services: [
         {
           id: '1',
-          title: 'Multi-channel distribution',
+          title: 'Multichannel distribution',
           iconName: 'Truck',
           blocks: [
             { type: 'text', content: 'Channels are evolving and purchasing behaviors are fragmenting. Corail deploys a Route-to-Market architecture tailored to each channel:' },
@@ -508,7 +508,7 @@ export const translations: { [key: string]: TranslationData } = {
       introList: ['Go-to-Market Stratégique', 'Exécution Terrain', 'Maîtrise Logistique', 'Pilotage de la Performance'],
       introButton: "En savoir plus",
       growthTitle: "Une plateforme de croissance, au-delà de la distribution",
-      growthSubtitle: "Chez Corail, la distribution ne se limite pas à la circulation des produits. Nous construisons des passerelles durables entre marques, réseaux et consommateurs grâce à :",
+      growthSubtitle: "Chez Corail, la distribution ne se limite pas à la circulation des produits. Nous construisons des passerelles durables entre marques, réseaux et consommateurs.",
       growthList: [
         'Une optimisation du Route-to-Market',
         'Une maîtrise des flux logistiques',
@@ -523,10 +523,10 @@ export const translations: { [key: string]: TranslationData } = {
       newsButton: "Lire l’article",
       presidentTitle: "Mot du président",
       presidentText: [
-        "La création de Corail s’inscrit dans une vision claire : structurer une plateforme de distribution fondée sur la rigueur et l’intégrité.",
-        "Dans un environnement FMCG caractérisé par la rapidité et l’intensité concurrentielle, nous avons fait le choix d’un développement guidé par l’exigence opérationnelle, la précision commerciale et une logique de long terme.",
-        "Notre ambition dépasse la simple distribution de produits. Nous nous attachons à accompagner la croissance de nos partenaires et le développement de leurs marques.",
-        "Cette exigence repose avant tout sur notre capital humain — moteur de notre performance."
+        "Nous avons b\u00e2ti notre d\u00e9veloppement autour d\u2019une vision claire : structurer une plateforme de distribution fond\u00e9e sur la rigueur et inscrite sur le long terme.",
+        "Dans un environnement FMCG exigeant, nous avons fait le choix d\u2019un d\u00e9veloppement guid\u00e9 par la ma\u00eetrise op\u00e9rationnelle et la discipline d\u2019ex\u00e9cution commerciale.",
+        "Chez Corail, nous consid\u00e9rons la distribution comme un levier direct de cr\u00e9ation de valeur, au service de la croissance de nos partenaires et du d\u00e9veloppement de leurs marques.",
+        "Cette cr\u00e9ation de valeur repose avant tout sur notre capital humain \u2014 moteur de notre performance."
       ],
       presidentName: "Mohammed Bouzoubaa",
       presidentRole: "Président"
@@ -536,23 +536,22 @@ export const translations: { [key: string]: TranslationData } = {
       subtitle: "Distributeur spécialisé en FMCG au Maroc depuis 2010",
       profileTitle: "À propos de Corail L’Océan",
       profileText: [
-        "Corail L’Océan SARL est une société de distribution basée à Casablanca, créée en 2010. Nous sommes un acteur clé du secteur FMCG, avec plus de 10 000 m³ d’installations de stockage et une flotte robuste assurant une logistique efficace et une couverture nationale.",
-        "Corail opère également en tant que full service provider, avec une approche visant à optimiser la performance du sell-in et du sell-out grâce à des dispositifs commerciaux intégrant aussi bien des modèles de pré-vente que de vente conventionnelle, calibrés selon les spécificités de chaque produit.",
-        "Notre mission est de fournir des produits de qualité, accompagnés d’un service fiable, à nos partenaires à travers l’ensemble du Royaume."
+        "Corail est une soci\u00e9t\u00e9 de distribution bas\u00e9e \u00e0 Casablanca, cr\u00e9\u00e9e en 2010. Nous accompagnons le d\u00e9veloppement de marques FMCG au Maroc, avec plus de 10 000 m\u00b3 de capacit\u00e9 de stockage et une flotte d\u00e9di\u00e9e assurant une ex\u00e9cution logistique fiable et une couverture nationale.",
+        "Corail op\u00e8re \u00e9galement en tant que full service provider, avec une approche end-to-end couvrant l\u2019ensemble de la cha\u00eene de valeur : de la strat\u00e9gie de mise en march\u00e9 \u00e0 l\u2019ex\u00e9cution terrain. Nos dispositifs combinent pr\u00e9-vente et vente directe, adapt\u00e9s aux sp\u00e9cificit\u00e9s de chaque cat\u00e9gorie, afin de s\u00e9curiser le sell-in et soutenir le sell-out.",
+        "Notre priorit\u00e9 est d\u2019assurer une distribution ma\u00eetris\u00e9e et align\u00e9e avec les objectifs de nos partenaires."
       ],
       approachTitle: "Notre approche",
       approachText: [
-        "Nous opérons avec une approche structurée, guidée par l’optimisation du Route-to-Market, la discipline d’exécution commerciale, la maîtrise des dynamiques multi-canales et le pilotage continu de la performance.",
-        "À travers l’intégration de dispositifs analytiques avancés, de systèmes de pilotage des flux et d’outils intelligents de gestion des stocks et des opérations, Corail renforce l’efficacité de ses architectures distributives, optimise la productivité opérationnelle et sécurise la fiabilité de l’exécution.",
-        "Cette approche systémique favorise la fluidité des processus end-to-end, la maîtrise des risques opérationnels et la création de valeur durable pour l’ensemble des partenaires.",
-        "Notre rôle est de transformer la distribution en un système mesurable, prévisible et générateur de croissance durable pour les marques que nous accompagnons."
+        "Corail op\u00e8re \u00e0 travers une approche structur\u00e9e autour du Route-to-Market et d\u2019une ex\u00e9cution commerciale disciplin\u00e9e.",
+        "\u00c0 travers l\u2019int\u00e9gration de dispositifs analytiques avanc\u00e9s et de syst\u00e8mes de gestion de stock et des flux op\u00e9rationnels, Corail renforce l\u2019efficacit\u00e9 de ses architectures distributives et assure une disponibilit\u00e9 produit constante sur le terrain.",
+        "Cette organisation favorise une gestion fluide de la cha\u00eene end-to-end, avec un niveau de contr\u00f4le \u00e9lev\u00e9 sur les op\u00e9rations.",
+        "Notre r\u00f4le est de transformer la distribution en un syst\u00e8me g\u00e9n\u00e9rateur de croissance durable pour les marques que nous accompagnons."
       ],
       engagementTitle: "Notre engagement",
       engagementText: [
         "Chez Corail, nous considérons la distribution comme une infrastructure stratégique de création de valeur. Notre vision repose sur une conviction simple : la performance des marques ne dépend pas uniquement de leur qualité, mais de la précision avec laquelle elles sont déployées sur leurs marchés.",
-        "Corail accompagne les marques dans la structuration, le déploiement et l’optimisation de leur présence marché. Notre mission consiste à construire des architectures distributives adaptées aux réalités terrain, à optimiser la performance du sell-in et du sell-out et à assurer un maximum de visibilité marché tout en simplifiant la complexité opérationnelle et logistique.",
-        "Nous intervenons comme une plateforme de performance, combinant expertise commerciale, rigueur opérationnelle et pilotage data-driven.",
-        "Notre engagement est clair : créer des environnements de croissance durables et mesurables pour nos partenaires."
+        "En combinant expertise commerciale, rigueur op\u00e9rationnelle et pilotage data-driven, nous permettons \u00e0 nos partenaires de construire des architectures distributives adapt\u00e9es aux r\u00e9alit\u00e9s terrain, \u00e0 optimiser la performance du sell-in et du sell-out et \u00e0 assurer un maximum de visibilit\u00e9 sur le march\u00e9 tout en simplifiant la complexit\u00e9 op\u00e9rationnelle et logistique.",
+        "Notre engagement est clair : cr\u00e9er des environnements de croissance durables et mesurables pour nos partenaires."
       ],
       servicesButton: "En savoir plus sur nos services"
     },
@@ -660,7 +659,7 @@ export const translations: { [key: string]: TranslationData } = {
     seo: {
       home: { title: "Corail | Performance-Driven Distribution", description: "Corail est une plateforme de distribution FMCG spécialisée dans le développement de portefeuilles de marques au Maroc." },
       about: { title: "À Propos | Corail", description: "Découvrez la mission, la vision et l’approche stratégique de Corail, distributeur leader au Maroc." },
-      services: { title: "Nos Services | Corail", description: "Distribution multi-canale, développement de marques, maîtrise logistique et pilotage commercial." },
+      services: { title: "Nos Services | Corail", description: "Distribution multicanale, développement de marques, maîtrise logistique et pilotage commercial." },
       partners: { title: "Réseau & Partenaires | Corail", description: "Connecter les marques à chaque coin du Royaume grâce à un réseau de distribution robuste." },
       brands: { title: "Marques Distribuées | Corail", description: "Partenaire de distribution officiel de marques mondiales comme Colgate, Selpak, Joyful, etc." },
       catalog: { title: "Catalogue Produits | Corail", description: "Explorez notre vaste catalogue de produits d’hygiène, de soins pour bébés et d’entretien." },
@@ -719,7 +718,7 @@ export const translations: { [key: string]: TranslationData } = {
       services: [
         {
           id: '1',
-          title: 'Distribution multi-canale',
+          title: 'Distribution multicanale',
           iconName: 'Truck',
           blocks: [
             { type: 'text', content: 'Les circuits évoluent et les comportements d’achat se fragmentent. Corail déploie une architecture Route-to-Market adaptée à chaque canal :' },
@@ -744,8 +743,8 @@ export const translations: { [key: string]: TranslationData } = {
                 'La rotation des stocks'
               ]
             },
-            { type: 'footer-text', content: 'Nos dispositifs commerciaux intègrent aussi bien des modèles de vente conventionnelle que de pré-vente, permettant une optimisation fine de la couverture et de la performance terrain en fonction des besoins et du type de produit.' },
-            { type: 'footer-emphasis', content: ['Objectif :', 'Garantir une présence cohérente, rentable et durable.'] }
+            { type: 'text', content: 'Nos dispositifs commerciaux intègrent aussi bien des modèles de vente conventionnelle que de pré-vente, permettant une optimisation fine de la couverture et de la performance terrain en fonction des besoins et du type de produit.' },
+            { type: 'emphasis', content: ['Objectif :', 'Garantir une présence cohérente, rentable et durable.'] }
           ]
         },
         {
@@ -753,18 +752,17 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'Gestion commerciale & pilotage data-driven',
           iconName: 'Megaphone',
           blocks: [
-            { type: 'text', content: 'La performance FMCG repose sur la discipline d\'exécution.' },
-            { type: 'text', content: 'Corail assure :' },
+            { type: 'text', content: 'Une distribution maîtrisée repose sur plusieurs leviers :' },
             {
               type: 'list',
               content: [
                 'Structuration du plan de couverture',
-                'Pilotage des forces de vente',
-                'Suivi data-driven des KPIs par canal',
-                'Merchandising et activation en magasin'
+                'Suivi des KPIs par canal',
+                'Pilotage des équipes commerciales',
+                'Merchandising et activation en point de vente'
               ]
             },
-            { type: 'text', content: 'Corail intervient également comme full service provider, en structurant des dispositifs intégrés adaptés aux enjeux commerciaux, logistiques et opérationnels de ses partenaires.' },
+            { type: 'text', content: 'Corail intervient également comme full service provider, en structurant des dispositifs adaptés aux enjeux commerciaux, logistiques et opérationnels de ses partenaires.' },
             { type: 'emphasis', content: ['Objectif :', 'Optimiser la performance commerciale par une exécution disciplinée.'] }
           ]
         },
@@ -783,6 +781,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Optimisation des niveaux de stock'
               ]
             },
+            { type: 'text', content: 'Cette organisation permet de sécuriser les flux et de maintenir un haut niveau de fiabilité opérationnelle.' },
             { type: 'emphasis', content: ['Objectif :', 'Disponibilité, réactivité et maîtrise du risque.'] }
           ]
         },
@@ -801,7 +800,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Identification des axes de développement et de croissance'
               ]
             },
-            { type: 'text', content: 'Nous agissons comme un partenaire de développement, au-delà du simple relais distributif.' },
+            { type: 'text', content: 'Nous agissons comme un partenaire de développement, en combinant vision stratégique et excellence d\'exécution.' },
             { type: 'emphasis', content: ['Objectif :', 'Structurer des marques solides capables de s\'imposer durablement.'] }
           ]
         },
@@ -810,7 +809,7 @@ export const translations: { [key: string]: TranslationData } = {
           title: 'Commerce international et accompagnement réglementaire',
           iconName: 'CheckCircle2',
           blocks: [
-            { type: 'text', content: 'Chaque marché présente ses contraintes. Nous accompagnons nos partenaires sur :' },
+            { type: 'text', content: 'Chaque marché présente ses contraintes. Nous accompagnons nos partenaires à chaque étape pour garantir l\'accès au marché.' },
             {
               type: 'list',
               content: [
@@ -820,6 +819,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Suivi des dossiers en cas d\'évolution réglementaire'
               ]
             },
+            { type: 'text', content: 'Nous assurons une coordination étroite entre les parties prenantes - fournisseurs, autorités, transitaires, etc. - afin de fluidifier les démarches.' },
             { type: 'emphasis', content: ['Objectif :', 'Garantir une mise en marché conforme, maîtrisée et durable.'] }
           ]
         }
@@ -855,7 +855,7 @@ export const translations: { [key: string]: TranslationData } = {
     introList: ['استراتيجية دخول السوق', 'التنفيذ الميداني', 'إدارة لوجستية متقنة', 'قيادة الأداء'],
     introButton: "اكتشف المزيد",
     growthTitle: "منصة للنمو تتجاوز مفهوم التوزيع",
-    growthSubtitle: "في كوراي، لا يقتصر التوزيع على مجرد نقل المنتجات، بل نعمل على بناء جسور مستدامة بين العلامات التجارية وشبكات التوزيع والمستهلكين من خلال:",
+    growthSubtitle: "في كوراي، لا يقتصر التوزيع على مجرد نقل المنتجات، بل نعمل على بناء جسور مستدامة بين العلامات التجارية وشبكات التوزيع والمستهلكين.",
     growthList: [
       'تحسين استراتيجية الوصول إلى السوق',
       'إدارة محكمة للتدفقات اللوجستية',

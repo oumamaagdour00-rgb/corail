@@ -12,19 +12,18 @@ const About: React.FC = () => {
 	const { t, language } = useLanguage();
 
 	return (
-		<div className="flex flex-col w-full">
+		<div className="flex flex-col w-full" style={{ backgroundColor: '#edf3f7' }}>
 			<SEO pageKey="about" />
 			
 			{/* Header Image Section */}
 			<PageBanner />
 
-		<div className="w-full bg-gray-50 mt-4 shadow-md">
+		<div className="w-full bg-white">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 				{/* Company Profile */}
 				<motion.div 
 					initial={{ opacity: 0, y: 50 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.3 }}
+					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
 					<div className="prose prose-base">
@@ -32,8 +31,7 @@ const About: React.FC = () => {
 							<motion.p 
 								key={idx}
 								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, amount: 0.3 }}
+								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, ease: "easeOut" }}
 								className="mb-4 text-justify"
 								style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
@@ -46,7 +44,7 @@ const About: React.FC = () => {
 			</div>
 		</div>
 
-		<div className="w-full pt-6 pb-8 bg-white">
+		<div className="w-full pt-6 pb-8" style={{ backgroundColor: '#f7fbfc' }}>
 			<div className="max-w-7xl mx-auto px-0 sm:px-0 lg:px-2 space-y-6">
 
 				{/* Approach and Engagement - Two Columns */}
@@ -54,10 +52,9 @@ const About: React.FC = () => {
 					{/* Engagement */}
 					<motion.div 
 						initial={{ opacity: 0, y: 40 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, amount: 0.3 }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, ease: "easeOut" }}
-						className="py-5 px-6 rounded-2xl bg-white"
+						className="py-5 px-6 rounded-2xl bg-white shadow-sm border border-corail-100"
 					>
 						<SectionTitle title={t.about.engagementTitle} alignment="left" />
 						<div className="prose prose-base space-y-6">
@@ -65,8 +62,7 @@ const About: React.FC = () => {
 								<motion.p 
 									key={idx}
 									initial={{ opacity: 0, y: 20 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true, amount: 0.3 }}
+									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.6, ease: "easeOut" }}
 									className="text-justify"
 									style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
@@ -80,10 +76,9 @@ const About: React.FC = () => {
 					{/* Approach */}
 					<motion.div
 						initial={{ opacity: 0, y: 40 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, amount: 0.3 }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, ease: "easeOut" }}
-						className="py-5 px-6 rounded-2xl bg-white"
+						className="py-5 px-6 rounded-2xl bg-white shadow-sm border border-corail-100"
 					>
 						<SectionTitle title={t.about.approachTitle} alignment="left" />
 						<div className="prose prose-base space-y-6">
@@ -91,8 +86,7 @@ const About: React.FC = () => {
 								<motion.p
 									key={idx}
 									initial={{ opacity: 0, y: 20 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true, amount: 0.3 }}
+									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.6, ease: "easeOut" }}
 									className="text-justify"
 									style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}
@@ -107,8 +101,7 @@ const About: React.FC = () => {
 				{/* CTA to Services */}
 				<motion.div 
 					initial={{ opacity: 0, y: 50 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.3 }}
+					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, ease: "easeOut" }}
 					className="text-center pt-2 pb-2"
 				>

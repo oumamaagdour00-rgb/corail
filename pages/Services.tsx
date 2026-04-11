@@ -63,16 +63,16 @@ const Services: React.FC = () => {
 							>
 							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 rounded-2xl py-12">
 								<div
-									className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 lg:gap-20 items-center group`}
+									className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 lg:gap-20 items-stretch group`}
 								>
 								{/* Image Visual */}
 								<div className="w-full lg:w-1/2">
-									<div className="relative group/image">
+									<div className="relative group/image h-full">
 										<div
 											className="absolute -inset-4 rounded-3xl opacity-100 transform rotate-2 group-hover:rotate-4 transition-transform duration-[1500ms] ease-out"
 											style={index % 2 === 1 ? { backgroundColor: '#ffffff' } : { backgroundColor: '#f7fbfc' }}
 										></div>
-										<div className="relative h-[250px] sm:h-[320px] lg:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-[1500ms]">
+										<div className="relative h-[250px] sm:h-[320px] lg:h-full w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-[1500ms]" style={{ minHeight: '400px' }}>
 											<img
 												src={serviceImages[service.id]}
 												alt={service.title}
@@ -83,11 +83,11 @@ const Services: React.FC = () => {
 								</div>
 
 								{/* Text Content */}
-								<div className="w-full lg:w-1/2">
-									<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-display font-bold mb-6 text-corail-900 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
+								<div className="w-full lg:w-1/2 flex flex-col">
+									<h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-display font-bold mb-6 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', color: '#162032' }}>
 										{service.title}
 									</h3>
-									<div className="space-y-2">
+									<div className="space-y-2 flex-1">
 										{mainBlocks.map((block: any, i: number) => {
 											if (block.type === "text") {
 												const paragraphs = Array.isArray(block.content)
@@ -162,36 +162,33 @@ const Services: React.FC = () => {
 											return null;
 										})}
 									</div>
+
+									{/* Footer emphasis inline with text column */}
+									{footerBlocks.filter((b: any) => b.type === 'footer-emphasis').map((block: any, i: number) => {
+										const content = Array.isArray(block.content) ? block.content : [block.content];
+										return (
+											<div key={i} className={language === 'ar' ? `mt-4 border-r-4 pr-4 py-2 rounded-l-lg flex items-center` : `mt-4 border-l-4 pl-4 py-2 rounded-r-lg flex items-center`}
+										style={index % 2 === 1 ? 
+											(language === 'ar' ? { backgroundColor: '#ffffff', borderRightColor: '#0F172A' } : { backgroundColor: '#ffffff', borderLeftColor: '#0F172A' }) : 
+											(language === 'ar' ? { backgroundColor: '#f7fbfc', borderRightColor: '#0F172A' } : { backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' })
+										}>
+												<p className="text-[14px] text-corail-900 font-bold italic">
+													{content.join(' ')}
+												</p>
+											</div>
+										);
+									})}
 								</div>
 							</div>
 							
-							{/* Footer Content - Full Width Below */}
-							{footerBlocks.length > 0 && (
+							{/* Footer text only - Full Width Below */}
+							{footerBlocks.filter((b: any) => b.type === 'footer-text').length > 0 && (
 								<div className="w-full space-y-4">
-									{footerBlocks.map((block: any, i: number) => {
-										if (block.type === 'footer-text') {
-											return (
-												<p key={i} className="text-justify leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-													{block.content}
-												</p>
-											);
-										}
-										if (block.type === 'footer-emphasis') {
-											const content = Array.isArray(block.content) ? block.content : [block.content];
-											return (
-												<div key={i} className={language === 'ar' ? `border-r-4 pr-4 py-2 rounded-l-lg flex items-center` : `border-l-4 pl-4 py-2 rounded-r-lg flex items-center`}
-											style={index % 2 === 1 ? 
-												(language === 'ar' ? { backgroundColor: '#ffffff', borderRightColor: '#0F172A' } : { backgroundColor: '#ffffff', borderLeftColor: '#0F172A' }) : 
-												(language === 'ar' ? { backgroundColor: '#f7fbfc', borderRightColor: '#0F172A' } : { backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' })
-											}>
-													<p className="text-[14px] text-corail-900 font-bold italic">
-														{content.join(' ')}
-													</p>
-												</div>
-											);
-										}
-										return null;
-									})}
+									{footerBlocks.filter((b: any) => b.type === 'footer-text').map((block: any, i: number) => (
+										<p key={i} className="text-justify leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
+											{block.content}
+										</p>
+									))}
 								</div>
 							)}
 						</div>

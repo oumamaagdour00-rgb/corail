@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
 						<div className="mb-4 flex items-center space-x-4 group cursor-default">
 							<img src={logoUrl} alt="Corail L'Océan" className="h-14 w-auto" />
 							<div className="flex flex-col">
-								<span className="text-2xl font-display font-black text-corail-900 uppercase tracking-tight leading-none">
+								<span className="text-2xl font-display font-black uppercase tracking-tight leading-none" style={{ color: '#162032' }}>
 									Corail L'Océan
 								</span>
 								<span className="text-[11px] font-bold text-corail-400 uppercase tracking-[0.1em] mt-1.5">
@@ -55,9 +55,7 @@ const Footer: React.FC = () => {
 									strokeWidth={1.5}
 								/>
 								<span className="leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-									Corail L'Océan, Parc Industriel Sapino, 57
-									<br />
-									Nouaceur 20100, Casablanca, Maroc
+									Parc Industriel Sapino, Nouaceur 20100, Casablanca, Maroc
 								</span>
 							</li>
 							<li className="flex items-center space-x-3">
