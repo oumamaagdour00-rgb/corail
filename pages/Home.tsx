@@ -20,9 +20,7 @@ const Home: React.FC = () => {
 
 			{/* Growth Platform Section */}
 			<section className="py-24 bg-white relative overflow-hidden">
-				<div className="max-w-7xl ml-0 mr-auto relative z-10">
-					<div className="px-4 sm:px-6 lg:px-8 w-full">
-					<div className="pl-4 sm:pl-8 pr-4 sm:pr-8 w-full">
+				<div className=" mx-auto w-full" style={{ paddingLeft: '64px', paddingRight: '64px' }}>
 						<motion.h2 
 							initial={{ opacity: 0, y: 50 }}
 							whileInView={{ opacity: 1, y: 0 }}
@@ -96,8 +94,6 @@ const Home: React.FC = () => {
 							</div>
 						</div>
 						</motion.div>
-					</div>
-					</div>
 				</div>
 			</section>
 
