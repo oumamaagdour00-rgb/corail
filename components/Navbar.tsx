@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
 						</NavLink>
 
 						{/* Desktop Nav */}
-						<div className="hidden lg:flex items-center space-x-8">
+						<div className={`hidden lg:flex items-center ${language === 'ar' ? 'gap-8' : 'space-x-8'}`}>
 							{navLinks.map((link) => (
 								<NavLink
 									key={link.name}

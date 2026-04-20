@@ -12,7 +12,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle, alignment 
   const isArabic = /[\u0600-\u06FF]/.test(title);
   
   return (
-    <div className={`mb-12 ${alignment === 'center' ? 'text-center' : 'text-left'}`}>
+    <div className={`mb-12 ${alignment === 'center' ? 'text-center' : isArabic ? 'text-right' : 'text-left'}`}>
       <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold my-4 break-words ${light ? 'text-white' : 'text-corail-900'}`} style={{ wordWrap: 'break-word', overflowWrap: 'break-word', color: light ? undefined : '#162032' }}>
         {title}
       </h2>
@@ -21,7 +21,10 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle, alignment 
           {subtitle}
         </p>
       )}
-      <div className={`mt-6 h-1.5 w-24 bg-gradient-to-r from-corail-500 to-teal-400 rounded-full ${alignment === 'center' ? 'mx-auto' : ''}`}></div>
+      <div 
+        className={`mt-6 h-1.5 w-24 rounded-full ${alignment === 'center' ? 'mx-auto' : ''}`}
+        style={{ background: 'linear-gradient(to right, #67B2E6, #365B78)' }}
+      ></div>
     </div>
   );
 };

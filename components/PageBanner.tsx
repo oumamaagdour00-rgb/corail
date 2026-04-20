@@ -22,7 +22,7 @@ const PageBanner: React.FC = () => {
 					backgroundRepeat: 'no-repeat',
 				}}
 			></div>
-			<div className="absolute inset-0 bg-corail-900/95 pointer-events-none"></div>
+			<div className="absolute inset-0 bg-corail-900/90 pointer-events-none"></div>
 		</div>
 	);
 };

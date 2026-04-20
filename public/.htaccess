@@ -1,0 +1,150 @@
+# Configuration Apache pour Corail L'Océan
+# À placer dans public_html/ sur cPanel
+
+# ============================================
+# SÉCURITÉ
+# ============================================
+
+# Désactiver l'affichage des erreurs PHP en production
+php_flag display_errors Off
+php_flag display_startup_errors Off
+
+# Activer les logs d'erreur
+php_flag log_errors On
+
+# Protection contre les injections
+<IfModule mod_headers.c>
+    # Protection XSS
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Empêcher le MIME sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Protection contre le clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Content Security Policy (à adapter selon vos besoins)
+    # Header set Content-Security-Policy "default-src 'self'"
+</IfModule>
+
+# Bloquer l'accès aux fichiers sensibles
+<FilesMatch "\.(env|log|ini|sh|sql|md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protéger les fichiers de configuration
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# ============================================
+# PERFORMANCE
+# ============================================
+
+# Compression GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Cache des fichiers statiques
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS et JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    
+    # Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    
+    # HTML (pas de cache pour les pages dynamiques)
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# ============================================
+# REDIRECTIONS
+# ============================================
+
+# Forcer HTTPS (décommenter si vous avez un certificat SSL)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# Redirection www vers non-www (ou inverse)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#     RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# </IfModule>
+
+# ============================================
+# REACT ROUTER (HashRouter)
+# ============================================
+
+# Pas besoin de configuration spéciale pour HashRouter
+# Si vous utilisez BrowserRouter, décommentez :
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteBase /
+#     RewriteRule ^index\.html$ - [L]
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule . /index.html [L]
+# </IfModule>
+
+# ============================================
+# PROTECTION SEND.PHP
+# ============================================
+
+
+
+# Bloquer l'accès aux fichiers de test en production
+# (décommenter après avoir testé)
+# <Files "test-send.php">
+#     Order allow,deny
+#     Deny from all
+# </Files>
+# <Files "test-email.html">
+#     Order allow,deny
+#     Deny from all
+# </Files>
+
+# ============================================
+# PROTECTION CONTRE LES BOTS
+# ============================================
+
+# Bloquer les user agents malveillants (optionnel)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTP_USER_AGENT} ^.*(bot|spider|crawl|scraper).*$ [NC]
+#     RewriteRule ^send\.php$ - [F,L]
+# </IfModule>
+
+# ============================================
+# ERREURS PERSONNALISÉES
+# ============================================
+
+# Pages d'erreur personnalisées (optionnel)
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
+# ============================================
+# NOTES
+# ============================================
+
+# 1. Testez toujours après avoir modifié ce fichier
+# 2. Si vous obtenez une erreur 500, vérifiez les logs
+# 3. Certaines directives peuvent ne pas être supportées par votre hébergeur
+# 4. Adaptez selon vos besoins spécifiques

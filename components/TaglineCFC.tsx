@@ -8,6 +8,7 @@ interface TaglineProps {
 const TaglineCFC: React.FC<TaglineProps> = ({ className = '' }) => {
     const { language } = useLanguage();
     const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
@@ -28,6 +29,18 @@ const TaglineCFC: React.FC<TaglineProps> = ({ className = '' }) => {
         return () => observer.disconnect();
     }, []);
 
+    // Détecte si on est sur mobile
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const phrase = language === 'fr'
         ? "Parce que la distribution n'est pas une simple fonction, mais un levier de performance durable."
         : language === 'ar'
@@ -42,7 +55,7 @@ const TaglineCFC: React.FC<TaglineProps> = ({ className = '' }) => {
             <div
                 style={{
                     backgroundImage: 'url("/assets/cfc.webp")',
-                    backgroundAttachment: 'fixed',
+                    backgroundAttachment: isMobile ? 'scroll' : 'fixed', // Fixed sur PC, scroll sur mobile
                     backgroundPosition: 'center 0%',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',

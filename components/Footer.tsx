@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
 									strokeWidth={1.5}
 								/>
 								<span className="leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-									Parc Industriel Sapino, Nouaceur 20100, Casablanca, Maroc
+									{t.footer.address}
 								</span>
 							</li>
 							<li className="flex items-center space-x-3">

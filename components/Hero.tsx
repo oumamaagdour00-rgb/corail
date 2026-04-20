@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className={`font-display font-bold text-white leading-tight mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}
-							style={{ wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto' }}
+							style={{ wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'none' }}
 						>
 							{(() => {
 								const title = t.hero.title;

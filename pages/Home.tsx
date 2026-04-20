@@ -26,7 +26,7 @@ const Home: React.FC = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, amount: 0.3 }}
 							transition={{ duration: 0.8, ease: "easeOut" }}
-							className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 text-left leading-tight break-words"
+							className={`text-xl sm:text-2xl md:text-3xl lg:text-[36px] font-display font-bold mb-10 xl:mb-16 leading-tight break-words ${language === 'ar' ? 'text-right' : 'text-left'}`}
 							style={{ wordWrap: 'break-word', overflowWrap: 'break-word', color: '#162032' }}
 						>
 							{t.home.growthTitle}
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
 
 							{/* Footer emphasis à droite */}
 							<div className="w-full lg:w-[45%] flex-shrink-0 flex">
-								<div className="border-l-4 pl-6 pr-4 py-2 rounded-r-lg flex items-center w-full" style={{ backgroundColor: '#f7fbfc', borderLeftColor: '#0F172A' }}>
+								<div className={`${language === 'ar' ? 'border-r-4 pr-6 pl-4 rounded-l-lg' : 'border-l-4 pl-6 pr-4 rounded-r-lg'} py-2 flex items-center w-full`} style={{ backgroundColor: '#f7fbfc', borderColor: '#0F172A' }}>
 									<p className="text-[14px] text-corail-900 font-bold italic text-justify" style={{ lineHeight: '26px' }}>
 										{t.home.growthFooter
 											.split(/(service provider)/i)

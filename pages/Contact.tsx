@@ -9,11 +9,82 @@ import { motion } from "motion/react";
 const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [hovered, setHovered] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  React.useEffect(() => {
+    if (t.contact.subjects?.length > 0) {
+      setFormData(prev => ({ ...prev, subject: t.contact.subjects[0] }));
+    }
+  }, [t.contact.subjects]);
+
   const cardStyle = (idx: number) => ({
     backgroundColor: hovered === idx ? '#ffffff' : '#f7fbfc',
     color: hovered === idx ? '#0f172a' : '#1e3a5f',
   });
   const cardClass = "rounded-2xl p-8 flex flex-col items-center text-center shadow-lg border border-transparent";
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validation côté client
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus('error');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Envoi vers le fichier PHP
+      const response = await fetch('/send.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitStatus('success');
+        setFormData({ 
+          name: '', 
+          email: '', 
+          subject: t.contact.subjects[0] || '', 
+          message: '' 
+        });
+        
+        // Réinitialiser le statut après 5 secondes
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        console.error('Erreur serveur:', result.message || 'Erreur inconnue');
+      }
+    } catch (err) {
+      console.error('Erreur lors de l\'envoi:', err);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="flex flex-col w-full relative overflow-hidden bg-white">
@@ -41,7 +112,7 @@ const Contact: React.FC = () => {
             <MapPin className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.headquarters}</h4>
             <p className="leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-              Parc Industriel Sapino, Nouaceur 20100, Casablanca, Maroc
+              {t.footer.address}
             </p>
           </motion.div>
 
@@ -101,38 +172,85 @@ const Contact: React.FC = () => {
           style={{ backgroundColor: '#ffffff' }}
         >
           <h3 className="text-lg sm:text-xl xl:text-2xl font-bold mb-8 break-words" style={{ color: '#162032' }}>{t.contact.formTitle}</h3>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formName}</label>
-                <input type="text" id="name" className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50" placeholder={t.contact.formName} />
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  value={formData.name} 
+                  onChange={handleChange} 
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50" 
+                  placeholder={t.contact.formName} 
+                />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formEmail}</label>
-                <input type="email" id="email" className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50" placeholder={t.contact.formEmail} />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  value={formData.email} 
+                  onChange={handleChange} 
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50" 
+                  placeholder={t.contact.formEmail} 
+                />
               </div>
             </div>
 
             <div>
               <label htmlFor="subject" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formSubject}</label>
-              <select id="subject" className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50">
+              <select 
+                id="subject" 
+                name="subject"
+                value={formData.subject} 
+                onChange={handleChange} 
+                className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50 font-semibold"
+                style={{ color: '#162023' }}
+              >
                 {t.contact.subjects.map((subject: string) => (
-                  <option key={subject}>{subject}</option>
+                  <option key={subject} className="font-semibold" style={{ color: '#162023' }}>{subject}</option>
                 ))}
               </select>
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formMessage}</label>
-              <textarea id="message" rows={5} className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all resize-none bg-white/50" placeholder="..."></textarea>
+              <textarea 
+                id="message" 
+                name="message"
+                value={formData.message} 
+                onChange={handleChange} 
+                required
+                rows={5} 
+                className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all resize-none bg-white/50" 
+                placeholder="..."
+              ></textarea>
             </div>
 
+            {submitStatus === 'success' && (
+              <div className="p-4 rounded-xl bg-green-50 border border-green-200 text-green-700 text-sm">
+                ✓ Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                ✗ Échec de l'envoi. Veuillez réessayer ou nous contacter directement à contact@coraillocean.com
+              </div>
+            )}
+
             <button 
-              type="button" 
-              className="w-full bg-corail-900 hover:bg-teal-500 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex items-center justify-center space-x-2"
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-corail-900 hover:bg-teal-500 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
-              <span>{t.contact.formButton}</span>
-              <Send size={18} />
+              <span>{isSubmitting ? 'Envoi en cours...' : t.contact.formButton}</span>
+              <Send size={18} className={isSubmitting ? 'animate-pulse' : ''} />
             </button>
           </form>
         </motion.div>

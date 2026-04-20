@@ -166,7 +166,7 @@
 h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
+    hyphens: none;
 }
 
 /* Better text justification on mobile */
@@ -175,23 +175,61 @@ h1, h2, h3, h4, h5, h6 {
         text-align: justify;
         text-align-last: left;
         word-spacing: normal;
-        hyphens: auto;
+        hyphens: none;
     }
+}
+
+/* Disable hyphens globally */
+* {
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    -ms-hyphens: none !important;
 }
 
 /* RTL Support */
 [dir="rtl"] {
     direction: rtl;
-    font-family: "Cairo", sans-serif;
+    font-family: "Cairo" !important;
     font-optical-sizing: auto;
     font-variation-settings: "slnt" 0;
 }
 
-/* Arabic font styling */
-[lang="ar"], [dir="rtl"] * {
-    font-family: "Cairo", sans-serif;
+/* Arabic font styling - Force Cairo on ALL elements when in RTL/Arabic mode */
+[lang="ar"], 
+[lang="ar"] *, 
+[lang="ar"] *::before, 
+[lang="ar"] *::after,
+[dir="rtl"], 
+[dir="rtl"] *, 
+[dir="rtl"] *::before, 
+[dir="rtl"] *::after,
+html[lang="ar"] body,
+html[lang="ar"] body *,
+html[dir="rtl"] body,
+html[dir="rtl"] body * {
+    font-family: "Cairo" !important;
     font-optical-sizing: auto;
     font-variation-settings: "slnt" 0;
+}
+
+/* Override any potential Tailwind or component-level font families in RTL */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] div,
+[dir="rtl"] a,
+[dir="rtl"] button,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select,
+[dir="rtl"] label {
+    font-family: "Cairo" !important;
 }
 
 [dir="rtl"] .space-x-3 > * + * {
