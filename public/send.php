@@ -22,9 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $smtpHost      = 'smtp.gmail.com';
 $smtpPort      = 465;
-$senderEmail   = 'oumamaagdour00@gmail.com';
-$appPassword   = 'cfku kkoq apjz hvmc';
-$receiverEmail = 'abdlhadi.laassi@gmail.com';
+$senderEmail   = 'coraillocean5@gmail.com';
+$appPassword   = 'qahf vejp aakn rfcz';
+$receiverEmail = 'k.bouzoubaa@coraillocean.com';
+$receiverEmail2 = 'contact@coraillocean.com'; // Deuxième destinataire
 
 $json_data = file_get_contents('php://input');
 $data = json_decode($json_data, true);
@@ -36,7 +37,9 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 }
 
 $name = isset($data['name']) ? trim($data['name']) : '';
+$firstName = isset($data['firstName']) ? trim($data['firstName']) : '';
 $email = isset($data['email']) ? trim($data['email']) : '';
+$phone = isset($data['phone']) ? trim($data['phone']) : '';
 $subject = isset($data['subject']) ? trim($data['subject']) : '';
 $message = isset($data['message']) ? trim($data['message']) : '';
 
@@ -46,20 +49,22 @@ if (empty($name) || empty($email) || empty($message)) {
     exit();
 }
 
-// L'email s'affiche de manière très simple et normale
+// Format de l'email
 $email_body = "
 <html>
 <body style='font-family: Arial, sans-serif; font-size: 14px; color: #111;'>
-    <p><strong>Nom :</strong> " . htmlspecialchars($name) . "</p>
     <p><strong>Email :</strong> " . htmlspecialchars($email) . "</p>
+    <p><strong>Téléphone :</strong> " . htmlspecialchars($phone) . "</p>
     <br/>
     <p><strong>Message :</strong></p>
     <p>" . nl2br(htmlspecialchars($message)) . "</p>
+    <br/>
+    <p style='color: #666; font-size: 12px;'><em>Envoyé à " . date('d/m/Y à H:i') . "</em></p>
 </body>
 </html>
 ";
 
-function sendSmtpMail($server, $port, $user, $password, $from, $to, $replyTo, $replyToName, $subject, $htmlMessage, $senderDisplayEmail) {
+function sendSmtpMail($server, $port, $user, $password, $from, $to, $to2, $replyTo, $replyToName, $subject, $htmlMessage, $senderDisplayEmail) {
     if (!extension_loaded('openssl')) {
         return ['success' => false, 'message' => 'L\'extension OpenSSL est requise sur le serveur PHP.'];
     }
@@ -102,13 +107,15 @@ function sendSmtpMail($server, $port, $user, $password, $from, $to, $replyTo, $r
     read_res($socket);
     fputs($socket, "RCPT TO: <$to>\r\n");
     read_res($socket);
+    fputs($socket, "RCPT TO: <$to2>\r\n"); // Deuxième destinataire
+    read_res($socket);
     fputs($socket, "DATA\r\n");
     read_res($socket);
 
-    // Titre de l'email : on utilise exactement le sujet sélectionné par le client, pas de préfixe.
+    // Titre de l'email : Nom Prénom
     $encodedSubject = "=?UTF-8?B?" . base64_encode($subject) . "?=";
 
-    // Nom de l'émetteur : On utilise l'email du visiteur pour que ça s'affiche "de : oumamaagdour00@gmail.com"
+    // Nom de l'émetteur : Nom Prénom
     $encodedFromName = "=?UTF-8?B?" . base64_encode($senderDisplayEmail) . "?=";
 
     $headers = "From: $encodedFromName <$from>\r\n";
@@ -137,12 +144,13 @@ $result = sendSmtpMail(
     $senderEmail, 
     $appPassword, 
     $senderEmail, 
-    $receiverEmail, 
+    $receiverEmail,
+    $receiverEmail2, // Deuxième destinataire
     $email, // Reply-to email
-    $name,  // Reply-to name
+    "$firstName $name",  // Reply-to name
     $subject, 
     $email_body,
-    "$name ($email)" // L'affichage sera "Nom (Email) <oumamaagdour00@gmail.com>"
+    "$name $firstName" // L'affichage sera "Nom Prénom"
 );
 
 if ($result['success']) {

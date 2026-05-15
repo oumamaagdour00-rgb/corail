@@ -23,7 +23,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle, alignment 
       )}
       <div 
         className={`mt-6 h-1.5 w-24 rounded-full ${alignment === 'center' ? 'mx-auto' : ''}`}
-        style={{ background: 'linear-gradient(to right, #67B2E6, #365B78)' }}
+        style={{ background: 'linear-gradient(to right,#162032 ,#365B78)' }}
       ></div>
     </div>
   );

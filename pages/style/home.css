@@ -1,0 +1,19 @@
+.custom-head-padding {
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+@media screen and (max-width: 767px) {
+   .custom-head-padding {
+    padding-left: 32px;
+    padding-right: 32px; 
+    }
+}
+
+/* Growth list responsive layout */
+@media screen and (min-width: 768px) and (max-width: 1348px) {
+    .growth-list-responsive {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+    }
+}

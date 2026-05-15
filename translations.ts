@@ -104,9 +104,11 @@ interface TranslationData {
     hoursText: string[];
     formTitle: string;
     formName: string;
+    formFirstName: string;
     formEmail: string;
     formSubject: string;
     formMessage: string;
+    formPhone: string;
     formButton: string;
     subjects: string[];
   };
@@ -147,30 +149,29 @@ export const translations: { [key: string]: TranslationData } = {
       partnerCta: 'Become a partner'
     },
     hero: {
-      title: "Connecting markets to the brands that shape everyday life",
+      title: "Connecting markets with brands that shape everyday life",
       subtitle: [
-        "With over 15 years of experience, Corail L'Océan is a key player",
-        "in FMCG distribution in Morocco. We operate across the entire distributive",
-        "value chain: from go-to-market to field execution. Our mission:",
-        "to transform distribution into a structural lever for sustainable value creation.",
+          "With over 15 years of experience, Corail is a key player",
+          "in FMCG distribution in Morocco. We operate across the entire distribution",
+          "value chain: from route-to-market to field execution. Our mission is to",
+          "position distribution as a structural lever for sustainable value creation.",
       ],
       button: "Learn more"
     },
     home: {
       introTitle: "Corail",
       introSubtitle: "Corail is an FMCG distribution platform specializing in the development of brand portfolios.",
-      introText: "With over 15 years of experience, Corail L’Océan is a key player in FMCG distribution in Morocco. We operate across the entire distributive value chain: from go-to-market to field execution, including logistical mastery, deep understanding of local dynamics, and commercial performance management. Our mission is clear: to transform distribution into a structural lever for sustainable value creation.",
-      introList: ['Strategic Go-to-Market', 'Field Execution', 'Logistical Mastery', 'Commercial Performance'],
+      introText: "With over 15 years of experience, Corail is a key player in FMCG distribution in Morocco. We operate across the entire distribution value chain: from route-to-market to field execution. Our mission is clear: to position distribution as a structural lever for sustainable value creation.",      introList: ['Strategic Go-to-Market', 'Field Execution', 'Logistical Mastery', 'Performance Management'],
       introButton: "More about us",
       growthTitle: "A platform for growth, beyond distribution",
-      growthSubtitle: "At Corail, distribution is not limited to product movement. We build sustainable bridges between brands, networks, and consumers.",
+      growthSubtitle: "At Corail, distribution goes beyond product movement. We build sustainable connections between brands, distribution networks, and consumers.",
       growthList: [
-        'Route-to-market optimization',
-        'Logistics flow management',
-        'Data-driven management',
+        'Route-to-Market optimization',
+        'Logistics and flow management',
+        'Data-driven operations',
         'Structured merchandising'
       ],
-      growthFooter: "Corail also acts as a full-service provider, supporting its partners through disciplined execution covering logistical and commercial dimensions. We implement adapted commercial setups, combining pre-sale and conventional sale models, deployed according to different distribution channels and the specificities of each product.",
+      growthFooter: "Corail also acts as a full-service provider, supporting its partners through disciplined execution across both logistical and commercial dimensions. We implement tailored commercial setups, combining pre-sale and conventional sale models, deployed according to different distribution channels and the specificities of each product.",
       figuresTitle: "Key figures",
       brandsTitle: "Brands we distribute",
       newsTitle: "News",
@@ -191,22 +192,22 @@ export const translations: { [key: string]: TranslationData } = {
       subtitle: "Specialized FMCG distributor in Morocco since 2010.",
       profileTitle: "About Corail L’Océan",
       profileText: [
-        "Corail L’Océan SARL is a distribution company based in Casablanca, created in 2010. We are a key player in the FMCG sector, with over 10,000 m³ of warehousing facilities and a robust fleet ensuring efficient logistics and nationwide coverage.",
-        "Corail also operates as a full-service provider, with an approach aimed at optimizing sell-in and sell-out performance through commercial setups integrating both pre-sale and conventional sale models, calibrated according to the specificities of each product.",
-        "Our mission is to provide quality products, accompanied by reliable service, to our partners throughout the Kingdom."
+        "Corail is a Casablanca-based distribution company, established in 2010. We support the growth of FMCG brands in Morocco, leveraging over 10,000 m³ of warehousing capacity and a dedicated fleet to ensure reliable logistics execution and nationwide coverage.",
+        "Corail also operates as a full-service provider, with an end-to-end approach spanning the entire value chain—from route-to-market strategy to field execution. Our commercial setups combine pre-sales and direct sales models, tailored to the specificities of each category, in order to secure sell-in and drive sell-out.",
+        "Our priority is to deliver controlled, disciplined distribution aligned with our partners’ objectives."
       ],
       approachTitle: "Our approach",
       approachText: [
         "Corail operates through a structured approach around Route-to-Market and disciplined commercial execution.",
-        "Through the integration of advanced analytical devices and stock and operational flow management systems, Corail strengthens the efficiency of its distributive architectures and ensures constant product availability in the field.",
-        "This organization promotes fluid end-to-end chain management, with a high level of operational control.",
-        "Our role is to transform distribution into a system that generates sustainable growth for the brands we accompany."
+        "Through the integration of advanced analytics and operational flow management systems, we enhance the efficiency of our distribution architectures and ensure consistent product availability in the field.",
+        "This organization enables seamless end-to-end operations with a high level of execution control.",
+        "Our role is to transform distribution into a system that generates sustainable growth for the brands we support."
       ],
-      engagementTitle: "Our engagement",
+      engagementTitle: "Our commitment",
       engagementText: [
-        "At Corail, we consider distribution as a strategic infrastructure for value creation. Our vision is based on a simple conviction: brand performance depends not only on their quality, but on the precision with which they are deployed in their markets.",
-        "By combining commercial expertise, operational rigor, and data-driven management, we enable our partners to build distributive architectures adapted to field realities, optimize sell-in and sell-out performance, and ensure maximum market visibility while simplifying operational and logistical complexity.",
-        "Our commitment is clear: to create sustainable and measurable growth environments for our partners."
+        "At Corail, we view distribution as a strategic infrastructure for value creation. Our vision is built on a simple conviction: brand performance depends not only on product quality, but also on the precision with which products are deployed in their markets.",
+        "By combining commercial expertise, operational discipline, and data-driven management, we enable our partners to design distribution architectures aligned with field realities, optimize sell-in and sell-out performance, and maximize market visibility while reducing operational and logistical complexity.",
+        "Our commitment is clear: to create sustainable and measurable growth for our partners."
       ],
       servicesButton: "Learn more about our services"
     },
@@ -252,7 +253,7 @@ export const translations: { [key: string]: TranslationData } = {
     },
     brandsPage: {
       title: "Distributed brands",
-      subtitle: "Distribution of recognized brands",
+      subtitle: "Distribution of established brands",
       introTitle: "Official distribution partner",
       introText: "We serve as the exclusive distributor for major international brands, acting as the bridge between global manufacturers and Moroccan households.",
       brands: {
@@ -295,11 +296,13 @@ export const translations: { [key: string]: TranslationData } = {
       hours: "Working hours",
       hoursText: ["Monday – Friday: 09:00 – 17:00"],
       formTitle: "Send us a message",
-      formName: "Name",
+      formName: "Last Name",
+      formFirstName: "First Name",
       formEmail: "Email address",
       formSubject: "Subject",
       formMessage: "Message",
-      formButton: "Send message",
+      formPhone: "Phone Number",
+      formButton: "Submit",
       subjects: ["Partnership proposal", "General inquiry", "Career opportunity"]
     },
     footer: {
@@ -307,7 +310,7 @@ export const translations: { [key: string]: TranslationData } = {
       navigation: "Navigation",
       contact: "Contact",
       brands: "Top brands",
-      rights: "Corail. All rights reserved.",
+      rights: "Corail L'Océan © Copyright 2026 - All rights reserved",
       privacy: "Privacy policy",
       terms: "Terms of service",
       address: "Parc Industriel Sapino, Nouaceur 20100, Casablanca, Maroc"
@@ -329,9 +332,9 @@ export const translations: { [key: string]: TranslationData } = {
       ],
       figures: [
         {
-          value: "+15 Years",
+          value: "+15 years",
           label: "Experience",
-          description: "Over 15 years of operational excellence and expertise in FMCG distribution since 2010.",
+          description: "Over 15 years of operational expertise in FMCG distribution.",
           iconName: "Award"
         },
 
@@ -342,9 +345,9 @@ export const translations: { [key: string]: TranslationData } = {
           iconName: "Warehouse"
         },
         {
-          value: "+5,000",
+          value: "+20,000",
           label: "Presence",
-          description: "A strong presence with over 5,000 active retail touchpoints in Casablanca and beyond.",
+          description: "A strong presence with over 20,000 active retail touchpoints in Casablanca and beyond.",
           iconName: "Truck"
         },
       ],
@@ -374,109 +377,109 @@ export const translations: { [key: string]: TranslationData } = {
       services: [
         {
           id: '1',
-          title: 'Multichannel distribution',
+          title: 'MULTICHANNEL DISTRIBUTION',
           iconName: 'Truck',
           blocks: [
-            { type: 'text', content: 'Channels are evolving and purchasing behaviors are fragmenting. Corail deploys a Route-to-Market architecture tailored to each channel:' },
+            { type: 'text', content: 'Channels are evolving and purchasing behaviors are becoming increasingly fragmented. Corail deploys Route-to-Market architectures tailored to each distribution channel:' },
             {
               type: 'list',
               content: [
-                'Modern trade (Hypermarkets & Supermarkets)',
-                'Traditional trade (Grocery & Proximity)',
-                'Semi-wholesale & Wholesalers',
-                'Specialized circuits',
-                'Emerging & Digital channels'
+                'Modern trade (hypermarkets & supermarkets)',
+                'Semi-wholesale & wholesale',
+                'Emerging and digital channels',
+                'Traditional trade (grocery & proximity retail)',
+                'Specialized channels'
               ]
             },
-            { type: 'text', content: 'We analyze each channel\'s dynamics to optimize:' },
+            { type: 'text', content: 'We analyze the dynamics of each channel to optimize:' },
             {
               type: 'list',
               content: [
                 'Coverage',
+                'Hit rate',
+                'Stock rotation',
                 'Visit frequency',
-                'Success rate',
-                'Assortment depth (number of lines per invoice)',
-                'Stock rotation'
+                'Assortment depth (number of SKUs per invoice)'
               ]
             },
-            { type: 'text', content: 'Our commercial setups also integrate both conventional sale and pre-sale models, allowing fine optimization of coverage and field performance based on needs and product type.' },
-            { type: 'emphasis', content: ['Goal:', 'To ensure a consistent, profitable, and sustainable presence.'] }
+            { type: 'text', content: 'Our commercial setups integrate both pre-sale and conventional sales models, enabling precise optimization of coverage and field performance based on product characteristics and channel requirements.' },
+            { type: 'emphasis', content: ['Objective:', 'Ensure a consistent, profitable, and sustainable market presence.'] }
           ]
         },
         {
           id: '3',
-          title: 'Commercial management & data-driven steering',
+          title: 'COMMERCIAL MANAGEMENT & DATA-DRIVEN EXECUTION',
           iconName: 'Megaphone',
           blocks: [
-            { type: 'text', content: 'Controlled distribution relies on several levers:' },
+            { type: 'text', content: 'Effective distribution relies on a set of key operational levers:' },
             {
               type: 'list',
               content: [
-                'Structuring of the coverage plan',
-                'Tracking of KPIs by channel',
+                'Structured coverage planning',
                 'Sales force management',
+                'KPI tracking by channel',
                 'Merchandising and in-store activation'
               ]
             },
-            { type: 'text', content: 'Corail also acts as a full service provider, structuring setups adapted to the commercial, logistical, and operational challenges of its partners.' },
-            { type: 'emphasis', content: ['Goal:', 'Optimize commercial performance through disciplined execution.'] }
+            { type: 'text', content: 'Corail also acts as a full-service provider, designing setups tailored to the commercial, logistical, and operational challenges of its partners.' },
+            { type: 'emphasis', content: ['Objective:', 'Drive commercial performance through disciplined execution.'] }
           ]
         },
         {
           id: '4',
-          title: 'Logistical & operational mastery',
+          title: 'LOGISTICS & OPERATIONAL EXCELLENCE',
           iconName: 'Warehouse',
           blocks: [
-            { type: 'text', content: 'Efficient distribution requires a robust supply chain. We coordinate:' },
+            { type: 'text', content: 'Efficient distribution requires a robust and well-coordinated supply chain. We manage:' },
             {
               type: 'list',
               content: [
                 'Supply planning',
-                'Management of warehousing operations',
-                'Order / delivery flow synchronization',
-                'Optimization of stock levels'
+                'Order and delivery flow synchronization',
+                'Warehousing operations',
+                'Stock level optimization'
               ]
             },
-            { type: 'text', content: 'This organization allows us to secure flows and maintain a high level of operational reliability.' },
-            { type: 'emphasis', content: ['Goal:', 'Availability, responsiveness, and risk management.'] }
+            { type: 'text', content: 'This organization ensures secure flows and a high level of operational reliability.' },
+            { type: 'emphasis', content: ['Objective:', 'Ensure availability, responsiveness, and risk control.'] }
           ]
         },
         {
           id: '2',
-          title: 'Brand development',
+          title: 'BRAND DEVELOPMENT',
           iconName: 'Handshake',
           blocks: [
-            { type: 'text', content: 'We intervene upstream and downstream of launch:' },
+            { type: 'text', content: 'We support brands both upstream and downstream of market entry:' },
             {
               type: 'list',
               content: [
-                'Structuring of range architecture and product mix',
-                'Definition of pricing and elasticity',
-                'Market implementation study and entry strategy',
-                'Identification of development and growth axes'
+                'Portfolio structuring and product mix definition',
+                'Market entry strategy and implementation planning',
+                'Pricing strategy and elasticity analysis',
+                'Identification of growth drivers'
               ]
             },
-            { type: 'text', content: 'We act as a development partner, combining strategic vision and execution excellence.' },
-            { type: 'emphasis', content: ['Goal:', 'Structure strong brands capable of establishing themselves sustainably.'] }
+            { type: 'text', content: 'We act as a development partner, combining strategic insight with execution excellence.' },
+            { type: 'emphasis', content: ['Objectif:', 'Build strong brands capable of achieving sustainable market traction.'] }
           ]
         },
         {
           id: '5',
-          title: 'International trade & regulatory support',
+          title: 'INTERNATIONAL TRADE & REGULATORY SUPPORT',
           iconName: 'CheckCircle2',
           blocks: [
-            { type: 'text', content: 'Each market presents its constraints. We support our partners at every step to ensure market access.' },
+            { type: 'text', content: 'Each market comes with its own regulatory framework. We support our partners at every stage to ensure smooth market access:' },
             {
               type: 'list',
               content: [
                 'Marketing authorization procedures (AMM)',
-                'Customs clearance handling in partnership with qualified freight forwarders',
-                'Assistance in product compliance with market regulatory requirements',
-                'Monitoring of files in case of regulatory changes'
+                'Regulatory compliance support',
+                'Customs clearance in coordination with qualified freight forwarders',
+                'Monitoring of regulatory developments'
               ]
             },
-            { type: 'text', content: 'We ensure close coordination between stakeholders - suppliers, authorities, freight forwarders, etc. - to streamline procedures.' },
-            { type: 'emphasis', content: ['Goal:', 'To ensure compliant, controlled, and sustainable market entry.'] }
+            { type: 'text', content: 'We ensure close coordination between all stakeholders — suppliers, authorities, and logistics partners — to streamline processes and reduce time-to-market.' },
+            { type: 'emphasis', content: ['Objective:', 'Ensure compliant, controlled, and sustainable market entry.'] }
           ]
         }
       ]
@@ -498,7 +501,7 @@ export const translations: { [key: string]: TranslationData } = {
       subtitle: [ 
         "Fort de plus de 15 ans d'expérience, Corail est un acteur clé",
         "de la distribution FMCG au Maroc. Nous opérons sur l'ensemble de la chaîne",
-        "de valeur distributive : du go-to-market à l'exécution terrain. Notre mission :",
+        "de valeur distributive : du route-to-market à l'exécution terrain. Notre mission :",
         "transformer la distribution en un levier structurant de création de valeur durable.",
       ],
       button: "En savoir plus"
@@ -512,10 +515,10 @@ export const translations: { [key: string]: TranslationData } = {
       growthTitle: "Une plateforme de croissance, au-delà de la distribution",
       growthSubtitle: "Chez Corail, la distribution ne se limite pas à la circulation des produits. Nous construisons des passerelles durables entre marques, réseaux et consommateurs.",
       growthList: [
-        'Une optimisation du Route-to-Market',
-        'Une maîtrise des flux logistiques',
-        'Un pilotage data-driven',
-        'Un merchandising structuré'
+        'Optimisation du Route-to-Market',
+        'Maîtrise des flux logistiques',
+        'Pilotage data-driven',
+        'Merchandising structuré'
       ],
       growthFooter: "Corail agit également en tant que full service provider, accompagnant ses partenaires grâce à une exécution disciplinée couvrant les dimensions logistiques et commerciales. Nous mettons en place des dispositifs commerciaux adaptés, combinant des modèles de pré-vente et de vente conventionnelle, déployés en fonction des différents canaux de distribution et des spécificités propres à chaque produit.",
       figuresTitle: "Chiffres clés",
@@ -525,7 +528,7 @@ export const translations: { [key: string]: TranslationData } = {
       newsButton: "Lire l’article",
       presidentTitle: "Mot du président",
       presidentText: [
-        "Nous avons b\u00e2ti le d\u00e9veloppement de corail autour d\u2019une vision claire : structurer une plateforme de distribution fond\u00e9e sur la rigueur et inscrite sur le long terme.",
+        "Nous avons b\u00e2ti le d\u00e9veloppement de Corail autour d\u2019une vision claire : structurer une plateforme de distribution fond\u00e9e sur la rigueur et inscrite sur le long terme.",
         "Dans un environnement FMCG exigeant, nous avons fait le choix d\u2019un d\u00e9veloppement guid\u00e9 par la ma\u00eetrise op\u00e9rationnelle et la discipline d\u2019ex\u00e9cution commerciale.",
         "Chez Corail, nous consid\u00e9rons la distribution comme un levier direct de cr\u00e9ation de valeur, au service de la croissance de nos partenaires et du d\u00e9veloppement de leurs marques.",
         "Cette cr\u00e9ation de valeur repose avant tout sur notre capital humain \u2014 moteur de notre performance."
@@ -642,9 +645,11 @@ export const translations: { [key: string]: TranslationData } = {
       hoursText: ["Lundi – Vendredi : 09:00 – 17:00"],
       formTitle: "Envoyez-nous un message",
       formName: "Nom",
+      formFirstName: "Prénom",
       formEmail: "Adresse de messagerie",
-      formSubject: "Sujet",
+      formSubject: "Objet",
       formMessage: "Message",
+      formPhone: "Téléphone",
       formButton: "Envoyer le message",
       subjects: ["Proposition de partenariat", "Demande générale", "Opportunité de carrière"]
     },
@@ -653,7 +658,7 @@ export const translations: { [key: string]: TranslationData } = {
       navigation: "Navigation",
       contact: "Contact",
       brands: "Top marques",
-      rights: "Corail. Tous droits réservés.",
+      rights: "Corail L'Océan © Copyright 2026 - Tous droits réservés",
       privacy: "Politique de confidentialité",
       terms: "Conditions d'utilisation",
       address: "Parc Industriel Sapino, Nouaceur 20100, Casablanca, Maroc"
@@ -675,9 +680,9 @@ export const translations: { [key: string]: TranslationData } = {
       ],
       figures: [
         {
-          value: "+15 Ans",
+          value: "+15 ans",
           label: "D’expérience",
-          description: "Plus de 15 ans d’excellence opérationnelle et d’expertise dans la distribution FMCG depuis 2010.",
+          description: "Plus de 15 ans d’excellence opérationnelle et d’expertise.",
           iconName: "Award"
         },
 
@@ -688,9 +693,9 @@ export const translations: { [key: string]: TranslationData } = {
           iconName: "Warehouse"
         },
         {
-          value: "+5 000",
+          value: "+20 000",
           label: "Présence multi-canal",
-          description: "Une forte présence avec plus de 5 000 points de vente actifs à Casablanca et au-delà.",
+          description: "Une forte présence avec plus de 20 000 points de vente actifs à Casablanca et au-delà.",
           iconName: "Truck"
         },
       ],
@@ -734,7 +739,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Canaux émergents et digitaux'
               ]
             },
-            { type: 'text', content: 'Nous analysons les dynamiques de chaque canal afin d optimiser :' },
+            { type: 'text', content: 'Nous analysons les dynamiques de chaque canal afin d\'optimiser :' },
             {
               type: 'list',
               content: [
@@ -761,7 +766,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Structuration du plan de couverture',
                 'Suivi des KPIs par canal',
                 'Pilotage des équipes commerciales',
-                'Merchandising et activation en point de vente'
+                'Merchandising & activation en point de vente'
               ]
             },
             { type: 'text', content: 'Corail intervient également comme full service provider, en structurant des dispositifs adaptés aux enjeux commerciaux, logistiques et opérationnels de ses partenaires.' },
@@ -799,7 +804,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'Structuration de l\'architecture de gamme et du mix produit',
                 'Définition du pricing et de l\'élasticité',
                 'Étude d\'implantation et stratégie d\'entrée marché',
-                'Identification des axes de développement et de croissance'
+                'Identification des axes de croissance'
               ]
             },
             { type: 'text', content: 'Nous agissons comme un partenaire de développement, en combinant vision stratégique et excellence d\'exécution.' },
@@ -842,18 +847,17 @@ export const translations: { [key: string]: TranslationData } = {
     hero: {
       title: "ربط الأسواق بالعلامات التجارية التي تشكّل تفاصيل الحياة اليومية",
       subtitle: [
-        "بخبرة تتجاوز 15 عاماً،",
-        "تُعدّ كوراي لوسيان فاعلاً رئيسياً في توزيع السلع الاستهلاكية في المغرب.",
-        "نعمل على مختلف مراحل سلسلة القيمة في التوزيع:",
-        "من استراتيجيات الدخول إلى السوق وتنفيذ العمليات ميدانياً.",
-        "مهمتنا: تحويل التوزيع إلى رافعة استراتيجية لخلق قيمة مستدامة.",
+        "بخبرة تتجاوز 15 عاماً، تُعدّ كوراي فاعلاً رئيسياً",
+    "في توزيع السلع الاستهلاكية سريعة التداول في المغرب. نعمل على كامل",
+    "سلسلة القيمة التوزيعية: من استراتيجية الدخول إلى السوق إلى التنفيذ الميداني.",
+    "مهمتنا هي تحويل التوزيع إلى رافعة هيكلية لخلق قيمة مستدامة."
       ],
       button: "اكتشف المزيد"
     },
     home: {
       introTitle: "كوراي",
       introSubtitle: "كوراي منصة متخصصة في توزيع السلع الاستهلاكية سريعة التداول، تركز على تطوير محافظ العلامات التجارية.",
-      introText: "بخبرة تمتد لأكثر من 15 عاماً، تُعدّ كوراي لوسيان فاعلاً محورياً في قطاع توزيع السلع الاستهلاكية سريعة التداول في المغرب. نعمل عبر مختلف مراحل سلسلة القيمة في التوزيع: من استراتيجيات الدخول إلى السوق وتنفيذ العمليات على أرض الواقع، مروراً بإدارة لوجستية فعّالة وفهم دقيق لديناميكيات الأسواق المحلية، وصولاً إلى قيادة الأداء التجاري بكفاءة عالية. رسالتنا واضحة: تحويل التوزيع إلى ركيزة أساسية لخلق قيمة مستدامة.",
+      introText: "بخبرة تتجاوز 15 عاماً، تُعدّ كوراي فاعلاً رئيسياً في توزيع السلع الاستهلاكية سريعة التداول في المغرب. نعمل على كامل سلسلة القيمة التوزيعية: من استراتيجية الدخول إلى السوق إلى التنفيذ الميداني. مهمتنا واضحة: تحويل التوزيع إلى رافعة هيكلية لخلق قيمة مستدامة.",
       introList: ['استراتيجية دخول السوق', 'التنفيذ الميداني', 'إدارة لوجستية متقنة', 'قيادة الأداء'],
       introButton: "اكتشف المزيد",
       growthTitle: "منصة للنمو تتجاوز مفهوم التوزيع",
@@ -885,22 +889,21 @@ export const translations: { [key: string]: TranslationData } = {
       subtitle: "موزّع متخصص في السلع الاستهلاكية سريعة التداول في المغرب منذ عام 2010",
       profileTitle: "حول كوراي لوسيان",
       profileText: [
-        "كوراي لوسيان ش.ذ.م.م هي شركة توزيع مقرها الدار البيضاء، تأسست سنة 2010. وتُعد اليوم فاعلاً رئيسياً في قطاع السلع الاستهلاكية سريعة التداول، بفضل بنية لوجستية متطورة تضم أكثر من 10,000 متر مكعب من مرافق التخزين، إلى جانب أسطول نقل متكامل يضمن كفاءة العمليات اللوجستية وتغطية على المستوى الوطني.",
-        "كما تعمل كوراي كمزوّد خدمات متكامل، من خلال مقاربة تهدف إلى تحسين أداء عمليات البيع للموزعين (Sell-in) ودعم المبيعات لدى المستهلك النهائي (Sell-out)، عبر منظومات تجارية تجمع بين نماذج البيع المسبق والبيع التقليدي، ويتم تكييفها وفق خصوصيات كل منتج.",
-        "تتمثل مهمتنا في توفير منتجات عالية الجودة مصحوبة بخدمة موثوقة لشركائنا عبر مختلف جهات المملكة."
+        "كوراي شركة توزيع مقرها الدار البيضاء، تأسست سنة 2010. نواكب تطوير العلامات التجارية في قطاع السلع الاستهلاكية سريعة التداول في المغرب، مع أكثر من 10,000 متر مكعب من القدرة التخزينية وأسطول مخصص يضمن تنفيذًا لوجستيًا موثوقًا وتغطية وطنية.",
+        "كما تعمل كوراي كمزوّد خدمات متكامل، من خلال مقاربة شاملة تغطي كامل سلسلة القيمة: من استراتيجية الدخول إلى السوق إلى التنفيذ الميداني. وتعتمد منظوماتنا على الجمع بين البيع المسبق والبيع المباشر، بما يتلاءم مع خصوصيات كل فئة، بهدف تأمين البيع للموزعين ودعم المبيعات لدى المستهلك النهائي.",
+        "أولويتنا هي ضمان توزيع محكوم ومتوافق مع أهداف شركائنا."
       ],
       approachTitle: "مقاربتنا",
       approachText: [
-        "نعتمد مقاربة منظمة تقوم على تحسين استراتيجية الوصول إلى السوق (Route-to-Market)، والانضباط في التنفيذ التجاري، وإتقان إدارة القنوات المتعددة، إلى جانب المتابعة المستمرة للأداء.",
-        "ومن خلال دمج أدوات تحليل متقدمة، وأنظمة متطورة لإدارة تدفقات العمليات، وحلول ذكية لإدارة المخزون والأنشطة التشغيلية، تعمل كوراي على تعزيز كفاءة بنياتها التوزيعية، وتحسين الإنتاجية التشغيلية، وضمان موثوقية التنفيذ.",
-        "تسهم هذه المقاربة المنهجية في تحقيق انسيابية العمليات من البداية إلى النهاية، والحد من المخاطر التشغيلية، وخلق قيمة مستدامة لجميع الشركاء.",
-        "ويتمثل دورنا في تحويل التوزيع إلى منظومة قابلة للقياس والتوقع، وقادرة على توليد نمو مستدام للعلامات التجارية التي نواكبها."
+        "تعتمد كوراي مقاربة منظمة ترتكز على استراتيجية الوصول إلى السوق وتنفيذ تجاري منضبط.",
+        "من خلال دمج أدوات تحليل متقدمة وأنظمة إدارة المخزون والتدفقات التشغيلية، تعزز كوراي كفاءة بنياتها التوزيعية وتضمن توفر المنتجات بشكل مستمر في الميدان.",
+        "تساهم هذه المنظومة في تحقيق إدارة سلسة لسلسلة القيمة من البداية إلى النهاية، مع مستوى عالٍ من التحكم في العمليات.",
+        "يتمثل دورنا في تحويل التوزيع إلى نظام يخلق نمواً مستداماً للعلامات التجارية التي نواكبها."
       ],
       engagementTitle: "التزامنا",
       engagementText: [
-        "في كوراي، نعتبر التوزيع بنية استراتيجية أساسية لخلق القيمة. وترتكز رؤيتنا على قناعة واضحة مفادها أن أداء العلامات التجارية لا يعتمد فقط على جودة منتجاتها، بل أيضاً على دقة انتشارها وتنفيذها داخل الأسواق.",
-        "تواكب كوراي العلامات التجارية في هيكلة حضورها في السوق ونشره وتحسينه. وتتمثل مهمتنا في بناء منظومات توزيع تتلاءم مع واقع الميدان، وتحسين أداء عمليات البيع للموزعين (Sell-in) ودعم المبيعات لدى المستهلك النهائي (Sell-out)، مع ضمان أقصى درجات الحضور في السوق وتبسيط التعقيد التشغيلي واللوجستي.",
-        "نحن نعمل كمنصة أداء تجمع بين الخبرة التجارية والانضباط التشغيلي والقيادة المعتمدة على تحليل البيانات.",
+        "في كوراي، نعتبر التوزيع بنية استراتيجية لخلق القيمة. وترتكز رؤيتنا على قناعة بسيطة مفادها أن أداء العلامات التجارية لا يعتمد فقط على جودتها، بل على دقة نشرها في الأسواق.",
+        "من خلال الجمع بين الخبرة التجارية والانضباط التشغيلي والقيادة المعتمدة على البيانات، نمكّن شركاءنا من بناء منظومات توزيع تتلاءم مع واقع الميدان، وتحسين أداء البيع للموزعين والمبيعات لدى المستهلك النهائي، وضمان حضور قوي في السوق مع التحكم في التعقيد التشغيلي واللوجستي.",
         "التزامنا واضح: خلق بيئات نمو مستدامة وقابلة للقياس لشركائنا."
       ],
       servicesButton: "تعرف أكثر على خدماتنا"
@@ -987,10 +990,12 @@ export const translations: { [key: string]: TranslationData } = {
       hours: "ساعات العمل",
       hoursText: ["الاثنين – الجمعة : 09:00 – 17:00"],
       formTitle: "أرسل لنا رسالة",
-      formName: "الاسم",
+      formName: "الاسم العائلي",
+      formFirstName: "الاسم الشخصي",
       formEmail: "عنوان البريد الإلكتروني",
-      formSubject: "الموضوع",
+      formSubject: "موضوع الرسالة",
       formMessage: "الرسالة",
+      formPhone: "رقم الهاتف",
       formButton: "إرسال الرسالة",
       subjects: ["اقتراح شراكة", "استفسار عام", "فرصة عمل"]
     },
@@ -999,7 +1004,7 @@ export const translations: { [key: string]: TranslationData } = {
       navigation: "التنقل",
       contact: "اتصل بنا",
       brands: "أبرز العلامات التجارية",
-      rights: "كوراي. جميع الحقوق محفوظة.",
+      rights: "Corail L'Océan © Copyright 2026 - جميع الحقوق محفوظة",
       privacy: "سياسة الخصوصية",
       terms: "شروط الاستخدام",
       address: "المنطقة الصناعية سابينو، النواصر 20100، الدار البيضاء، المغرب"
@@ -1054,9 +1059,9 @@ export const translations: { [key: string]: TranslationData } = {
         iconName: "Warehouse"
       },
       {
-        value: "+5,000",
+        value: "+20,000",
         label: "الحضور في السوق",
-        description: "حضور قوي من خلال أكثر من 5,000 نقطة بيع نشطة في الدار البيضاء وما بعدها.",
+        description: "حضور قوي من خلال أكثر من 20,000 نقطة بيع نشطة في الدار البيضاء وما بعدها.",
         iconName: "Truck"
       },
       ],
@@ -1165,7 +1170,7 @@ export const translations: { [key: string]: TranslationData } = {
                 'هيكلة بنية التشكيلة ومزيج المنتجات',
                 'تحديد استراتيجية التسعير وتحليل مرونة الطلب',
                 'دراسة دخول السوق واستراتيجية الإطلاق',
-                'تحديد محاور التطوير وفرص النمو'
+                'تحديد محاور النمو'
               ]
             },
             { type: 'text', content: 'نؤدي دور شريك في التطوير، من خلال الجمع بين الرؤية الاستراتيجية والتميز في التنفيذ.' },

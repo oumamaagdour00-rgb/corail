@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import TaglineCFC from '../components/TaglineCFC';
 import PageBanner from '../components/PageBanner';
@@ -7,22 +7,18 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from "motion/react";
 
 const Contact: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [hovered, setHovered] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
+    firstName: '',
     email: '',
     subject: '',
+    phone: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  React.useEffect(() => {
-    if (t.contact.subjects?.length > 0) {
-      setFormData(prev => ({ ...prev, subject: t.contact.subjects[0] }));
-    }
-  }, [t.contact.subjects]);
 
   const cardStyle = (idx: number) => ({
     backgroundColor: hovered === idx ? '#ffffff' : '#f7fbfc',
@@ -55,8 +51,10 @@ const Contact: React.FC = () => {
         },
         body: JSON.stringify({
           name: formData.name,
+          firstName: formData.firstName,
           email: formData.email,
           subject: formData.subject,
+          phone: formData.phone,
           message: formData.message,
         }),
       });
@@ -67,8 +65,10 @@ const Contact: React.FC = () => {
         setSubmitStatus('success');
         setFormData({ 
           name: '', 
+          firstName: '',
           email: '', 
-          subject: t.contact.subjects[0] || '', 
+          subject: '', 
+          phone: '',
           message: '' 
         });
         
@@ -175,7 +175,18 @@ const Contact: React.FC = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formName}</label>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  name="firstName"
+                  value={formData.firstName} 
+                  onChange={handleChange} 
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50" 
+                  placeholder={t.contact.formFirstName} 
+                />
+              </div>
+              <div>
                 <input 
                   type="text" 
                   id="name" 
@@ -187,8 +198,10 @@ const Contact: React.FC = () => {
                   placeholder={t.contact.formName} 
                 />
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formEmail}</label>
                 <input 
                   type="email" 
                   id="email" 
@@ -200,26 +213,47 @@ const Contact: React.FC = () => {
                   placeholder={t.contact.formEmail} 
                 />
               </div>
+              <div>
+                <input 
+                  type="text" 
+                  id="phone" 
+                  name="phone"
+                  value={formData.phone} 
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50" 
+                  placeholder={t.contact.formPhone}
+                />
+              </div>
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formSubject}</label>
               <select 
                 id="subject" 
                 name="subject"
                 value={formData.subject} 
-                onChange={handleChange} 
-                className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50 font-semibold"
-                style={{ color: '#162023' }}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-white/50 appearance-none bg-no-repeat"
+                style={{ 
+                  color: formData.subject === '' ? '#9ca3af' : '#162023', 
+                  fontWeight: formData.subject === '' ? 300 : 600,
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23162023' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
+                  backgroundPosition: language === 'ar' ? 'left 0.75rem center' : 'right 0.75rem center',
+                  backgroundSize: '1.5rem',
+                  paddingRight: language === 'ar' ? '1rem' : '2.5rem',
+                  paddingLeft: language === 'ar' ? '2.5rem' : '1rem'
+                }}
               >
+                <option value="" disabled style={{ color: '#9ca3af', fontWeight: 300 }}>
+                  {t.contact.formSubject}
+                </option>
                 {t.contact.subjects.map((subject: string) => (
-                  <option key={subject} className="font-semibold" style={{ color: '#162023' }}>{subject}</option>
+                  <option key={subject} value={subject} className="font-semibold" style={{ color: '#162023' }}>{subject}</option>
                 ))}
               </select>
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-corail-700 mb-2">{t.contact.formMessage}</label>
               <textarea 
                 id="message" 
                 name="message"
@@ -228,7 +262,7 @@ const Contact: React.FC = () => {
                 required
                 rows={5} 
                 className="w-full px-4 py-3 rounded-xl border border-corail-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all resize-none bg-white/50" 
-                placeholder="..."
+                placeholder={t.contact.formMessage}
               ></textarea>
             </div>
 

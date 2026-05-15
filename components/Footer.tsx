@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import logoUrl from "../public/favicon-not-ocean.png";
 
@@ -20,8 +20,8 @@ const Footer: React.FC = () => {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
 					{/* Brand Logo Placeholder */}
-					<div className="col-span-1">
-						<div className="mb-4 flex items-center space-x-4 group cursor-default">
+					<div className="col-span-1 flex flex-col justify-between">
+						<div className="mb-4 mt-10 flex items-center space-x-4 group cursor-default">
 							<img src={logoUrl} alt="Corail L'Océan" className="h-14 w-auto" />
 							<div className="flex flex-col">
 								<span className="text-2xl font-display font-black uppercase tracking-tight leading-none" style={{ color: '#162032' }}>
@@ -32,14 +32,9 @@ const Footer: React.FC = () => {
 								</span>
 							</div>
 						</div>
-						<p className="leading-relaxed mb-4" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
+						<p className="leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
 							{t.footer.description}
 						</p>
-						<div className="flex space-x-4">
-							<div className="w-10 h-10 bg-corail-900 border-2 border-corail-900 flex items-center justify-center text-white shadow-[3px_3px_0px_0px_rgba(200,200,200,0.5)] transition-transform hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(200,200,200,0.5)]">
-								<Linkedin size={20} strokeWidth={2.5} />
-							</div>
-						</div>
 					</div>
 
 					{/* Contact */}
@@ -88,7 +83,7 @@ const Footer: React.FC = () => {
 
 				<div className="mt-8 pt-6 border-t border-corail-200 flex flex-col items-center justify-center text-[10px] font-bold text-corail-300 uppercase tracking-widest">
 					<p>
-						© {new Date().getFullYear()} {t.footer.rights}
+						{t.footer.rights}
 					</p>
 				</div>
 			</div>

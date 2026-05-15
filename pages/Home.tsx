@@ -9,6 +9,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import BrandCarousel from "../components/BrandCarousel";
 import presImg from "../public/assets/businessman-using-tablet-working-car-inside-compressed.webp";
 import { motion } from "motion/react";
+import './style/home.css'
 
 const Home: React.FC = () => {
 	const { t, language } = useLanguage();
@@ -20,7 +21,7 @@ const Home: React.FC = () => {
 
 			{/* Growth Platform Section */}
 			<section className="py-24 bg-white relative overflow-hidden">
-				<div className=" mx-auto w-full" style={{ paddingLeft: '64px', paddingRight: '64px' }}>
+				<div className=" mx-auto w-full custom-head-padding" >
 						<motion.h2 
 							initial={{ opacity: 0, y: 50 }}
 							whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +41,7 @@ const Home: React.FC = () => {
 						>
 						<div className="flex flex-col lg:flex-row items-stretch justify-between gap-12">
 							{/* Texte à gauche */}
-							<div className="w-full lg:w-[45%] flex flex-col">
+							<div className="w-full lg:w-[50%] flex flex-col">
 								<p className="text-justify mb-4 leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
 									{t.home.growthSubtitle}
 								</p>
@@ -53,7 +54,7 @@ const Home: React.FC = () => {
 										</li>
 									))}
 								</ul>
-								<div className="hidden md:grid md:grid-cols-2 gap-6">
+								<div className="hidden md:grid md:grid-cols-2 xl:grid-cols-2 gap-6 growth-list-responsive">
 									<ul className="space-y-3">
 										{t.home.growthList.filter((_, idx) => idx % 2 === 0).map((item, i) => (
 											<li key={i} className="flex items-start space-x-2 text-sm text-corail-500">
@@ -98,7 +99,7 @@ const Home: React.FC = () => {
 			</section>
 
 		{/* Key Figures */}
-			<section className="py-12 border-y border-corail-100" style={{ backgroundColor: '#f0f7fa' }}>
+			<section className="py-12 border-y border-corail-100" style={{ backgroundColor: '#F7FBFC' }}>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<SectionTitle title={t.home.figuresTitle} alignment="center" />
 
