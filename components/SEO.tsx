@@ -25,13 +25,15 @@ const SEO: React.FC<SEOProps> = ({
     // Fallback to pageKey from translations, or home if not found
     const seoData = t.seo[pageKey] || t.seo.home;
 
-    const siteUrl = "https://corail-88p.pages.dev/";
+    const siteUrl = "https://www.coraillocean.com/";
 
     const fullTitle = title || seoData.title || "Corail L'Océan";
     const metaDescription = description || seoData.description || "Corail L'Océan - Performance-Driven Distribution";
-    const metaKeywords = keywords || (language === 'fr'
-        ? "Corail L'Océan, distribution, FMCG, Maroc, Casablanca, logistique, go-to-market"
-        : "Corail L'Océan, distribution, FMCG, Morocco, Casablanca, logistics, go-to-market");
+    const metaKeywords = keywords || (language === 'ar' 
+        ? "كوراي، توزيع، السلع الاستهلاكية، المغرب، الدار البيضاء، لوجستيات"
+        : language === 'fr'
+        ? "Corail L'Océan, distribution FMCG, Maroc, Casablanca, logistique, route-to-market, entreposage, marques de consommation"
+        : "Corail L'Océan, FMCG distribution, Morocco, Casablanca, logistics, route-to-market, warehousing, consumer brands");
     const ogImage = image || siteUrl + "og-image.jpeg";
     const currentUrl = siteUrl + (pageKey === 'home' ? '' : `#/${pageKey}`);
 
@@ -48,7 +50,7 @@ const SEO: React.FC<SEOProps> = ({
         "name": "Corail L'Océan",
         "url": siteUrl,
         "logo": siteUrl + "favicon-not-ocean.png",
-        "description": "FMCG distribution platform specializing in the development of brand portfolios in Morocco.",
+        "description": "Nationwide FMCG distributor in Morocco, combining logistics, warehousing, route-to-market execution, and sales coverage for leading consumer brands.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Casablanca",
@@ -57,7 +59,7 @@ const SEO: React.FC<SEOProps> = ({
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "availableLanguage": ["en", "fr"]
+            "availableLanguage": ["en", "fr", "ar"]
         }
     };
 
@@ -70,6 +72,9 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="author" content="Corail L'Océan" />
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
             <meta name="theme-color" content="#ffffff" />
+            
+            {/* Google Search Console Verification */}
+            <meta name="google-site-verification" content="uv8eYAZ9N5O9BHgoRZj7IC6TZyou5pM-u7YuLOIZwCc" />
 
             {/* Canonical URL */}
             <link rel="canonical" href={currentUrl} />
@@ -85,7 +90,7 @@ const SEO: React.FC<SEOProps> = ({
             <meta property="og:image:height" content="630" />
             <meta property="og:type" content={article ? 'article' : type} />
             <meta property="og:url" content={currentUrl} />
-            <meta property="og:locale" content={language === 'fr' ? 'fr_FR' : 'en_US'} />
+            <meta property="og:locale" content={language === 'ar' ? 'ar_MA' : language === 'fr' ? 'fr_FR' : 'en_US'} />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />

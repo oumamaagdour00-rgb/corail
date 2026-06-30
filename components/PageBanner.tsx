@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import siegeImg from "../public/corail-siege.webp";
+import siegeImg from "../public/fmcg-distribution-warehouse.webp";
 
 const PageBanner: React.FC = () => {
 	const [bgSize, setBgSize] = useState('cover');
@@ -13,15 +13,15 @@ const PageBanner: React.FC = () => {
 
 	return (
 		<div className="relative text-white overflow-hidden" style={{ height: '220px' }}>
-			<div
-				className="absolute inset-0 pointer-events-none"
+			<img 
+				src={siegeImg} 
+				alt="FMCG distribution warehouse"
+				className="absolute inset-0 w-full h-full object-cover pointer-events-none"
 				style={{ 
-					backgroundImage: `url(${siegeImg})`,
-					backgroundPosition: "center 35%",
-					backgroundSize: bgSize,
-					backgroundRepeat: 'no-repeat',
+					objectPosition: "center 35%",
+					transform: bgSize === '250%' ? 'scale(2.5)' : 'scale(1)',
 				}}
-			></div>
+			/>
 			<div className="absolute inset-0 bg-corail-900/90 pointer-events-none"></div>
 		</div>
 	);

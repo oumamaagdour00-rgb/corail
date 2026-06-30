@@ -54,7 +54,7 @@ const TaglineCFC: React.FC<TaglineProps> = ({ className = '' }) => {
         >
             <div
                 style={{
-                    backgroundImage: 'url("/assets/cfc.webp")',
+                    backgroundImage: 'url("/assets/route-to-market-distribution.webp")',
                     backgroundAttachment: isMobile ? 'scroll' : 'fixed', // Fixed sur PC, scroll sur mobile
                     backgroundPosition: 'center 0%',
                     backgroundSize: 'cover',
@@ -62,6 +62,8 @@ const TaglineCFC: React.FC<TaglineProps> = ({ className = '' }) => {
                     position: 'absolute',
                     inset: 0,
                 }}
+                role="img"
+                aria-label="Growth-driven distribution in Morocco"
             ></div>
 
             <div className="absolute inset-0 bg-corail-900/30 mix-blend-multiply"></div>

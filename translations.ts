@@ -1,4 +1,4 @@
-﻿
+
 import { Service, Stat, NewsItem } from './types';
 
 interface TranslationData {
@@ -306,7 +306,7 @@ export const translations: { [key: string]: TranslationData } = {
       subjects: ["Partnership proposal", "General inquiry", "Career opportunity"]
     },
     footer: {
-      description: "Specialized FMCG distributor in Morocco since 2010.",
+      description: "FMCG Distribution company in Morocco since 2010",
       navigation: "Navigation",
       contact: "Contact",
       brands: "Top brands",
@@ -316,7 +316,7 @@ export const translations: { [key: string]: TranslationData } = {
       address: "Parc Industriel Sapino, Nouaceur 20100, Casablanca, Maroc"
     },
     seo: {
-      home: { title: "Corail | Performance-Driven Distribution", description: "Corail is an FMCG distribution platform specializing in the development of brand portfolios in Morocco." },
+      home: { title: "FMCG Distribution Company in Morocco", description: "Corail is a nationwide FMCG distributor in Morocco, combining logistics, warehousing, route-to-market execution, and sales coverage for leading consumer brands." },
       about: { title: "About Us | Corail", description: "Learn more about Corail’s mission, vision, and strategic approach to distribution." },
       services: { title: "Our Services | Corail", description: "Multi-channel distribution, brand development, logistical mastery, and commercial management." },
       partners: { title: "Network & Partners | Corail", description: "Connecting brands to every corner of the Kingdom through a robust distribution network." },
@@ -379,6 +379,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '1',
           title: 'MULTICHANNEL DISTRIBUTION',
           iconName: 'Truck',
+          imageAlt: 'FMCG warehouse loading operations in Morocco',
           blocks: [
             { type: 'text', content: 'Channels are evolving and purchasing behaviors are becoming increasingly fragmented. Corail deploys Route-to-Market architectures tailored to each distribution channel:' },
             {
@@ -409,6 +410,7 @@ export const translations: { [key: string]: TranslationData } = {
         {
           id: '3',
           title: 'COMMERCIAL MANAGEMENT & DATA-DRIVEN EXECUTION',
+          imageAlt: 'FMCG sales and operations meeting in Morocco',
           iconName: 'Megaphone',
           blocks: [
             { type: 'text', content: 'Effective distribution relies on a set of key operational levers:' },
@@ -429,6 +431,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '4',
           title: 'LOGISTICS & OPERATIONAL EXCELLENCE',
           iconName: 'Warehouse',
+          imageAlt: 'FMCG warehouse logistics operations in Morocco',
           blocks: [
             { type: 'text', content: 'Efficient distribution requires a robust and well-coordinated supply chain. We manage:' },
             {
@@ -448,6 +451,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '2',
           title: 'BRAND DEVELOPMENT',
           iconName: 'Handshake',
+          imageAlt: 'FMCG brand development and route-to-market planning in Morocco',
           blocks: [
             { type: 'text', content: 'We support brands both upstream and downstream of market entry:' },
             {
@@ -467,6 +471,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '5',
           title: 'INTERNATIONAL TRADE & REGULATORY SUPPORT',
           iconName: 'CheckCircle2',
+          imageAlt: 'Market access and import logistics operations in Morocco',
           blocks: [
             { type: 'text', content: 'Each market comes with its own regulatory framework. We support our partners at every stage to ensure smooth market access:' },
             {
@@ -500,9 +505,10 @@ export const translations: { [key: string]: TranslationData } = {
       title: "Connecter les marchés aux marques qui façonnent le quotidien",
       subtitle: [ 
         "Fort de plus de 15 ans d'expérience, Corail est un acteur clé",
-        "de la distribution FMCG au Maroc. Nous opérons sur l'ensemble de la chaîne",
-        "de valeur distributive : du route-to-market à l'exécution terrain. Notre mission :",
-        "transformer la distribution en un levier structurant de création de valeur durable.",
+        "de la distribution FMCG au Maroc. Nous opérons sur l'ensemble",
+        "de la chaîne de valeur distributive : du route-to-market à",
+        "l'exécution terrain. Notre mission : transformer la distribution",
+        "en un levier structurant de création de valeur durable.",
       ],
       button: "En savoir plus"
     },
@@ -541,7 +547,7 @@ export const translations: { [key: string]: TranslationData } = {
       subtitle: "Distributeur spécialisé en FMCG au Maroc depuis 2010",
       profileTitle: "À propos de Corail L’Océan",
       profileText: [
-        "Corail est une soci\u00e9t\u00e9 de distribution bas\u00e9e \u00e0 Casablanca, cr\u00e9\u00e9e en 2010. Nous accompagnons le d\u00e9veloppement de marques FMCG au Maroc, avec plus de 10 000 m\u00b3 de capacit\u00e9 de stockage et une flotte d\u00e9di\u00e9e assurant une ex\u00e9cution logistique fiable et une couverture nationale.",
+        "Corail est une soci\u00e9t\u00e9 de distribution bas\u00e9e \u00e0 Maroc, cr\u00e9\u00e9e en 2010. Nous accompagnons le d\u00e9veloppement de marques FMCG au Maroc, avec plus de 10 000 m\u00b3 de capacit\u00e9 de stockage et une flotte d\u00e9di\u00e9e assurant une ex\u00e9cution logistique fiable et une couverture nationale.",
         "Corail op\u00e8re \u00e9galement en tant que full service provider, avec une approche end-to-end couvrant l\u2019ensemble de la cha\u00eene de valeur : de la strat\u00e9gie de mise en march\u00e9 \u00e0 l\u2019ex\u00e9cution terrain. Nos dispositifs combinent pr\u00e9-vente et vente directe, adapt\u00e9s aux sp\u00e9cificit\u00e9s de chaque cat\u00e9gorie, afin de s\u00e9curiser le sell-in et soutenir le sell-out.",
         "Notre priorit\u00e9 est d\u2019assurer une distribution ma\u00eetris\u00e9e et align\u00e9e avec les objectifs de nos partenaires."
       ],
@@ -664,7 +670,7 @@ export const translations: { [key: string]: TranslationData } = {
       address: "Parc Industriel Sapino, Nouaceur 20100, Casablanca, Maroc"
     },
     seo: {
-      home: { title: "Corail | Performance-Driven Distribution", description: "Corail est une plateforme de distribution FMCG spécialisée dans le développement de portefeuilles de marques au Maroc." },
+      home: { title: "Entreprise de Distribution FMCG au Maroc", description: "Corail est un distributeur FMCG national au Maroc, combinant logistique, entreposage, exécution route-to-market et couverture commerciale pour les grandes marques de consommation." },
       about: { title: "À Propos | Corail", description: "Découvrez la mission, la vision et l’approche stratégique de Corail, distributeur leader au Maroc." },
       services: { title: "Nos Services | Corail", description: "Distribution multicanale, développement de marques, maîtrise logistique et pilotage commercial." },
       partners: { title: "Réseau & Partenaires | Corail", description: "Connecter les marques à chaque coin du Royaume grâce à un réseau de distribution robuste." },
@@ -727,6 +733,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '1',
           title: 'Distribution multicanale',
           iconName: 'Truck',
+          imageAlt: 'Opérations de chargement d\'entrepôt FMCG au Maroc',
           blocks: [
             { type: 'text', content: 'Les circuits évoluent et les comportements d’achat se fragmentent. Corail déploie une architecture Route-to-Market adaptée à chaque canal :' },
             {
@@ -758,6 +765,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '3',
           title: 'Gestion commerciale & pilotage data-driven',
           iconName: 'Megaphone',
+          imageAlt: 'Réunion commerciale et opérationnelle FMCG au Maroc',
           blocks: [
             { type: 'text', content: 'Une distribution maîtrisée repose sur plusieurs leviers :' },
             {
@@ -777,6 +785,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '4',
           title: 'Maîtrise logistique & opérationnelle',
           iconName: 'Warehouse',
+          imageAlt: 'Opérations logistiques d\'entrepôt FMCG au Maroc',
           blocks: [
             { type: 'text', content: 'Une distribution performante nécessite une supply chain robuste. Nous coordonnons :' },
             {
@@ -796,6 +805,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '2',
           title: 'Développement de marques',
           iconName: 'Handshake',
+          imageAlt: 'Développement de marques FMCG et planification route-to-market au Maroc',
           blocks: [
             { type: 'text', content: 'Nous intervenons en amont et en aval du lancement :' },
             {
@@ -815,6 +825,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '5',
           title: 'Commerce international et accompagnement réglementaire',
           iconName: 'CheckCircle2',
+          imageAlt: 'Accès au marché et opérations logistiques d\'importation au Maroc',
           blocks: [
             { type: 'text', content: 'Chaque marché présente ses contraintes. Nous accompagnons nos partenaires à chaque étape pour garantir l\'accès au marché.' },
             {
@@ -1011,8 +1022,8 @@ export const translations: { [key: string]: TranslationData } = {
     },
     seo: {
       home: { 
-        title: "كوراي | التوزيع القائم على الأداء", 
-        description: "كوراي منصة توزيع للسلع الاستهلاكية سريعة التداول متخصصة في تطوير محافظ العلامات التجارية في المغرب." 
+        title: "شركة توزيع السلع الاستهلاكية في المغرب", 
+        description: "كوراي موزع وطني للسلع الاستهلاكية في المغرب، يجمع بين اللوجستيات والتخزين وتنفيذ استراتيجية الوصول إلى السوق والتغطية التجارية للعلامات الاستهلاكية الرائدة." 
       },
       about: { 
         title: "من نحن | كوراي", 
@@ -1093,6 +1104,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '1',
           title: 'التوزيع متعدد القنوات',
           iconName: 'Truck',
+          imageAlt: 'عمليات تحميل مستودع السلع الاستهلاكية في المغرب',
           blocks: [
             { type: 'text', content: 'تشهد قنوات التوزيع تطورًا مستمرًا، كما تتزايد تجزئة سلوكيات الشراء لدى المستهلكين. تعتمد كوراي بنية Route-to-Market مصممة خصيصًا لكل قناة توزيع:' },
             {
@@ -1124,6 +1136,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '3',
           title: 'الإدارة التجارية والتنفيذ الميداني',
           iconName: 'Megaphone',
+          imageAlt: 'اجتماع المبيعات والعمليات للسلع الاستهلاكية في المغرب',
           blocks: [
             { type: 'text', content: 'تعتمد التوزيع المحكم على عدة روافع:' },
             {
@@ -1143,6 +1156,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '4',
           title: 'إدارة لوجستية وتشغيلية متقنة',
           iconName: 'Warehouse',
+          imageAlt: 'عمليات لوجستيات مستودع السلع الاستهلاكية في المغرب',
           blocks: [
             { type: 'text', content: 'يتطلب التوزيع الفعّال سلسلة إمداد قوية ومتكاملة. نقوم بتنسيق ما يلي:' },
             {
@@ -1162,6 +1176,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '2',
           title: 'تطوير العلامات التجارية',
           iconName: 'Handshake',
+          imageAlt: 'تطوير العلامات التجارية للسلع الاستهلاكية وتخطيط استراتيجية الوصول إلى السوق في المغرب',
           blocks: [
             { type: 'text', content: 'نتدخل في مراحل ما قبل الإطلاق وما بعده:' },
             {
@@ -1181,6 +1196,7 @@ export const translations: { [key: string]: TranslationData } = {
           id: '5',
           title: 'التجارة الدولية والمواكبة التنظيمية',
           iconName: 'CheckCircle2',
+          imageAlt: 'الوصول إلى السوق وعمليات لوجستيات الاستيراد في المغرب',
           blocks: [
             { type: 'text', content: 'لكل سوق متطلباته وقيوده الخاصة. نواكب شركاءنا في كل مرحلة لضمان الوصول إلى السوق.' },
             {

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
-import bgImg from "../public/corail-siege.webp";
+import bgImg from "../public/fmcg-distribution-warehouse.webp";
 import { motion } from "motion/react";
 
 const Hero: React.FC = () => {
@@ -21,12 +21,14 @@ const Hero: React.FC = () => {
 
 	return (
 		<div className="relative w-full overflow-hidden" style={{ height: 'calc(96vh - 85px)', minHeight: '500px' }}>
-			{/* Background Image - Corporate Building */}
-			<div
+			{/* Background Image */}
+			<img 
+				src={bgImg} 
+				alt="FMCG distribution warehouse"
+				className="absolute inset-0 w-full h-full object-cover object-center will-change-transform scale-110"
+				style={{ top: '-10%', height: '120%' }}
 				ref={bgRef}
-				className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform scale-110"
-				style={{ backgroundImage: `url(${bgImg})`, top: '-10%', height: '120%' }}
-			></div>
+			/>
 
 			{/* Gradient Overlay */}
 			<div className={`absolute inset-0 ${language === 'ar' ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-corail-900 via-corail-900/85 to-teal-900/70`}></div>
@@ -55,8 +57,18 @@ const Hero: React.FC = () => {
 							style={{ wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'none' }}
 						>
 							{(() => {
+								if (language === 'fr') {
+									return (
+										<>
+											<div className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">Connecter les marchés aux</div>
+											<div className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">marques qui façonnent</div>
+											<div className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl lg:whitespace-nowrap">le quotidien.</div>
+										</>
+									);
+								}
+								
 								const title = t.hero.title;
-								const keyword = language === 'ar' ? 'العلامات' : language === 'en' ? 'brands' : 'marques';
+								const keyword = language === 'ar' ? 'العلامات' : 'brands';
 								const idx = title.toLowerCase().indexOf(keyword);
 								if (idx === -1) return <div className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{title}.</div>;
 								const line1 = title.slice(0, idx + keyword.length).trimEnd();
@@ -69,14 +81,16 @@ const Hero: React.FC = () => {
 								);
 							})()}
 						</motion.h1>
-						<motion.p 
+						<motion.div 
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-							className={`text-sm sm:text-base xl:text-lg text-white/90 mb-8 font-light ${language === 'ar' ? 'text-right' : 'text-justify'}`}
+							className={`text-sm sm:text-base xl:text-lg text-white/90 mb-8 font-light ${language === 'ar' ? 'text-right' : 'text-left'} space-y-1`}
 						>
-							{t.hero.subtitle.join(' ')}
-						</motion.p>
+							{t.hero.subtitle.map((line, index) => (
+								<div key={index} className="leading-relaxed">{line}</div>
+							))}
+						</motion.div>
 
 						<motion.div 
 							initial={{ opacity: 0, y: 40 }}

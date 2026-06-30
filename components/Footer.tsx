@@ -74,7 +74,8 @@ const Footer: React.FC = () => {
 									strokeWidth={1.5}
 								/>
 								<span className="hover:text-corail-600 transition-colors cursor-pointer" dir="ltr" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>
-									+212 (0)5 22 53 84 41
+									+212 (0)5 22 53 89 60
+
 								</span>
 							</li>
 						</ul>

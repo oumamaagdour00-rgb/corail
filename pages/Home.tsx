@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import BrandCarousel from "../components/BrandCarousel";
-import presImg from "../public/assets/businessman-using-tablet-working-car-inside-compressed.webp";
+import presImg from "../public/assets/fmcg-management-leader.webp";
 import { motion } from "motion/react";
 import './style/home.css'
 
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
 							<div className="relative rounded-3xl shadow-2xl hover:shadow-[0_20px_50px_rgba(54,91,120,0.2)] transition-shadow duration-[1500ms] overflow-hidden w-full h-[500px]">
 								<img
 									src={presImg}
-									alt="President"
+									alt="Distribution company leader"
 									className="w-full h-full object-cover filter contrast-110 grayscale group-hover/president:grayscale-0 group-hover/president:scale-105 transition-all duration-[2000ms] ease-out"
 								/>
 							</div>

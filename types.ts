@@ -20,6 +20,7 @@ export interface Service {
   title: string;
   iconName: 'Truck' | 'Warehouse' | 'Handshake' | 'Megaphone' | 'CheckCircle2' | 'Shield';
   blocks: ServiceBlock[];
+  imageAlt?: string;
 }
 
 export interface Stat {

@@ -15,11 +15,11 @@ import TaglineCFC from "../components/TaglineCFC";
 import PageBanner from "../components/PageBanner";
 import { motion } from "motion/react";
 
-import img1 from "../public/canal.webp";
-import img2 from "../public/dev_marques.webp";
-import img3 from "../public/commerce.webp";
-import img4 from "../public/logistic.webp";
-import img5 from "../public/comm_internationa.webp";
+import img1 from "../public/multichannel-distribution-morocco.webp";
+import img2 from "../public/fmcg-brand-development-morocco.webp";
+import img3 from "../public/Data-Driven-Distribution-Operations.webp";
+import img4 from "../public/fmcg-warehouse-logistics-morocco.webp";
+import img5 from "../public/import-logistics-international-morocco.webp";
 
 const Services: React.FC = () => {
 	const { t, language } = useLanguage();
@@ -75,7 +75,7 @@ const Services: React.FC = () => {
 										<div className="relative h-[250px] sm:h-[320px] lg:h-full w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-[1500ms]" style={{ minHeight: '400px' }}>
 											<img
 												src={serviceImages[service.id]}
-												alt={service.title}
+												alt={service.imageAlt}
 												className="w-full h-full object-cover object-center scale-110 transform group-hover/image:scale-115 transition-transform duration-[2000ms] ease-out"
 											/>
 										</div>

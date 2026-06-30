@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
           >
             <Phone className="h-10 w-10 mb-4" />
             <h4 className="text-base font-bold mb-3">{t.contact.phone}</h4>
-            <p dir="ltr" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>+212 (0)5 22 53 84 41</p>
+            <p dir="ltr" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, fontSize: '16px', lineHeight: '26px', color: '#65758C' }}>+212 (0)5 22 53 89 60</p>
           </motion.div>
 
           {/* Email */}
